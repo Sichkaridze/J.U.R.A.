@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load crispy_forms_filters %}
+{% block content %}
+  <br>
+  <div class="d-flex align-items-center">
+    <h2 class="me-2">Responsibilities:</h2>
+    <a href="/responsibility/create/" class="btn link-to-page me-5">➕</a>
+    {% include 'includes/search.html' %}
+  </div>
+  <br>
+  {% if responsibility_list %}
+    <table class="table">
+      <tr>
+        <th></th>
+        <th></th>
+      </tr>
+    <br>
+    {% for responsibility in responsibility_list %}
+      <tr>
+        <td><a class="text-highlight" href="{% url 'task-manager:responsibility-update' pk=responsibility.id %}">{{ responsibility.description }}</a></td>
+        <td style="width: 1%;"><a class="btn float-end me-5" href="{% url 'task-manager:responsibility-delete' pk=responsibility.id %}">❌</a></td>
+      </tr>
+    {% endfor %}
+    </table>
+  {% else %}
+    <p>There are no responsibilities yet!</p>
+  {% endif %}
+{% endblock %}

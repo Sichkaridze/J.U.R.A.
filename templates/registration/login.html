@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load crispy_forms_filters %}
+{% block sidebar %}{% endblock %}
+{% block filter_sidebar %}{% endblock %}
+
+{% block login_content %}
+
+<div class="container d-flex justify-content-center align-items-center" style="height: 85vh;" >
+  <div class="card p-4 shadow-lg" style="width: 600px;">
+    <h1 class="navbar-brand text-center"><strong>Sign in</strong></h1>
+      <br>
+    {% if next %}
+      <p>Please sign in to see this page.</p>
+    {% endif %}
+      {% if form.errors %}
+        <p>Your username and password didn't match. Try again.</p>
+      {% endif %}
+    <form class="" method="post" action="{% url 'login' %}">
+      {% csrf_token %}
+      {{ form|crispy }}
+
+      <input type="submit" value="Sign in" class="btn btn-playful" />
+      <input type="hidden" name="next" value="{{ next }}" />
+    </form>
+  </div>
+</div>
+{% endblock %}

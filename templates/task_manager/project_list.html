@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+    <br>
+  <div class="d-flex align-items-center">
+    <h2>Projects:
+      <a href="{% url 'task-manager:project-create' %}" class="btn link-to-page">➕</a>
+    </h2>
+    {% include 'includes/search.html' %}
+  </div>
+    <br>
+    {% if project_list %}
+    <table class="table">
+      <tr>
+        <th>Project</th>
+        <th>Deadline</th>
+        <th></th>
+      </tr>
+      <br>
+    {% for project in project_list %}
+      <tr>
+        <td><a class="text-highlight" href="{% url 'task-manager:project-detail' pk=project.id %}">{{ project.name }}</a></td>
+        <td>{{ project.deadline }}</td>
+        <td style="width: 1%;">
+          <div class="btn-group float-end me-5">
+            <a class="btn" href="{% url 'task-manager:project-update' pk=project.id %}">✏️</a>
+            <a class="btn" href="{% url 'task-manager:project-delete' pk=project.id %}">❌</a>
+            <a class="btn" href="{% url 'task-manager:project-done' pk=project.id %}">✅</a>
+          </div>
+        </td>
+      </tr>
+    {% endfor %}
+
+    </table>
+    {% else %}
+      <p>There are no projects yet!</p>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,32 @@
+<aside class="sidebar bg-light p-4 border rounded">
+    {% if user.is_authenticated %}
+      <li class="list-group-item"><a href="{{ user.get_absolute_url }}">{{ user.get_username }}</a></li>
+      <li class="list-group-item">
+        <form method="post" action="{% url 'logout'%}?next={{request.path}}">
+          {% csrf_token %}
+          <a><input class="list-group-item" type="submit" value="️Sign Out  🚪🚶‍♂️‍"></a>
+        </form>
+      </li>
+    {% else %}
+      <li class="list-group-item"><a class="nav-link" href="{% url 'login'%}?next={{request.path}}">👉 Sign In</a></li>
+      <li class="list-group-item"><a class="nav-link" href="#soon?next={{request.path}}">🔐 Sign Up</a></li>
+    {% endif %}
+
+    <br>
+    <h3 class="mb-4">Quick Links</h3>
+    <ul class="list-unstyled">
+        <li><a href="/task-types/" class="d-block py-2">📌 Task Types</a></li>
+        <li><a href="/responsibilities/" class="d-block py-2">📎 Responsibilities</a></li>
+        <li><a href="/positions/" class="d-block py-2">🎭 Positions</a></li>
+        <li><a href="/workers/" class="d-block py-2">👨‍💻 Workers</a></li>
+        <li><a href="/teams/" class="d-block py-2">👥 Teams</a></li>
+        <li><a href="/projects/" class="d-block py-2">📂 Projects</a></li>
+        <li><a href="/tasks/" class="d-block py-2">📝 Tasks</a></li>
+        <li><a href="#/archive/" class="d-block py-2">🗄️️ Archive (Awaiting...)</a></li>
+    </ul>
+    <h3 class="mt-4">Resources</h3>
+    <ul class="list-unstyled">
+        <li><a href="https://github.com/Sichkaridze/J.U.R.A." target="_blank" class="d-block py-2">🔗 GitHub Repository</a></li>
+        <li><a href="#/docs/" class="d-block py-2">📖 Documentation (Awaiting...)</a></li>
+    </ul>
+</aside>

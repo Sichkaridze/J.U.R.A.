@@ -1,0 +1,292 @@
+/* Загальні налаштування тем */
+:root {
+  --primary-color: #F64C72;
+  --secondary-color: #FDBB2D;
+  --light-bg: #fff;
+  --light-text: #333;
+}
+
+/* Налаштування для темної теми */
+body.theme-dark {
+  --bg-color: #121212;
+  --nav-bg: #1e1e1e;
+  --hero-bg: linear-gradient(135deg, #1e1e1e, #2a2a2a);
+  --card-bg: #2a2a2a;
+  --text-color: #e0e0e0;
+  --nav-text: #cccccc;
+  --footer-bg: #1e1e1e;
+  --footer-text: #999;
+  --bubble-color: rgba(246, 76, 114, 0.3);
+  --sidebar-bg: #1e1e1e;
+  --footer-box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Налаштування для світлої теми */
+body.theme-light {
+  --bg-color: var(--light-bg);
+  --nav-bg: rgba(255, 255, 255, 0.95);
+  --hero-bg: linear-gradient(135deg, #F64C72, #FDBB2D);
+  --card-bg: #fff;
+  --text-color: var(--light-text);
+  --nav-text: #333;
+  --footer-bg: #ffffff;
+  --footer-text: #333;
+  --bubble-color: rgba(255, 255, 255, 0.3);
+  --sidebar-bg: rgba(255, 255, 255, 0.95);
+}
+
+/* Загальні стилі */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.text-highlight, .text-highlight a {
+  color: var(--primary-color) !important;
+  text-decoration: none !important;
+}
+
+.text-highlight:hover, .text-highlight a:hover {
+  color: black !important;
+}
+
+/* Навігація */
+.navbar {
+  background: var(--nav-bg);
+  box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+}
+.navbar-brand {
+  font-family: 'Fredoka One', cursive;
+  font-size: 1.8rem;
+  color: var(--primary-color);
+}
+.nav-link {
+  font-weight: 600;
+  color: var(--nav-text);
+  margin-right: 15px;
+  transition: color 0.3s;
+}
+.nav-link:hover {
+  color: var(--primary-color);
+}
+
+/* Герой-секція */
+.hero {
+  position: relative;
+  background: var(--hero-bg);
+  color: #fff;
+  padding: 150px 0;
+  text-align: center;
+  overflow: hidden;
+}
+.hero h1 {
+  font-family: 'Fredoka One', cursive;
+  font-size: 4rem;
+  margin-bottom: 20px;
+}
+.hero p {
+  font-size: 1.5rem;
+  margin-bottom: 40px;
+}
+.btn-playful {
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: transform 0.3s, background-color 0.3s;
+}
+.btn-playful:hover {
+  transform: scale(1.1);
+  background-color: #ff8f80;
+}
+
+/* Грайливі "бульбашки" у фоні герої-секції */
+.hero::before,
+.hero::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  background: var(--bubble-color);
+  animation: float 6s ease-in-out infinite;
+}
+.hero::before {
+  width: 100px;
+  height: 100px;
+  top: 20%;
+  left: 10%;
+}
+.hero::after {
+  width: 150px;
+  height: 150px;
+  bottom: 15%;
+  right: 15%;
+  animation-duration: 8s;
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+/* Секція Функцій */
+.features {
+  padding: 80px 0;
+  background-color: var(--nav-bg);
+}
+.feature-card {
+  background: var(--card-bg);
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: center;
+  min-height: 350px; /* Забезпечує рівну висоту блоків */
+}
+.feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+}
+.feature-card img {
+  width: 80px;
+  margin-bottom: 20px;
+}
+.feature-card h4 {
+  font-family: 'Fredoka One', cursive;
+  margin-bottom: 15px;
+  color: var(--primary-color);
+}
+.feature-card p {
+  color: var(--nav-text);
+}
+
+/* Секція "Про проект" */
+.about {
+  padding: 80px 0;
+  background-color: var(--bg-color);
+}
+.about h2 {
+  font-family: 'Fredoka One', cursive;
+  margin-bottom: 30px;
+  color: var(--primary-color);
+}
+.about p {
+  font-size: 1.1rem;
+  color: var(--nav-text);
+}
+
+
+.pagination-container {
+    position: fixed;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+
+.content-wrapper {
+      display: flex;
+      flex: 1;
+      margin-top: 56px; /* Висота navbar, щоб sidebar не накладався */
+    }
+
+.sidebar {
+      border: none !important;
+      box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+      position: fixed;
+      top: 56px;
+      left: 0;
+      height: calc(100vh - 56px);
+      width: 250px;
+      background: var(--sidebar-bg) !important;
+      padding-top: 20px;
+      overflow-y: auto;
+      color: var(--primary-color);
+    }
+
+.sidebar a {
+      color: var(--primary-color);
+      text-decoration: none;
+      padding: 10px 20px;
+      display: block;
+      transition: background 0.3s;
+    }
+
+.sidebar a:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+.main-content {
+      margin-left: 250px;
+      padding: 20px;
+      width: calc(100% - 250px);
+      flex-grow: 1; /* Щоб займав всю доступну ширину */
+    }
+
+/* Підвал */
+.footer {
+  box-shadow: var(--footer-box-shadow);
+  background-color: var(--footer-bg);
+  color: var(--footer-text);
+  padding: 15px 0;
+  margin-top: auto;
+  text-align: center;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+
+.filter-sidebar {
+    position: fixed;
+    top: 70px;
+    right: -300px; /* Початково прихований */
+    width: 300px;
+    height: 100vh;
+    background: var(--sidebar-bg);
+    transition: right 0.3s ease-in-out;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    z-index: 1050;
+}
+
+.filter-sidebar.open {
+    right: 0; /* Відкривається */
+}
+
+.filter-toggle-btn {
+    position: fixed;
+    top: 70px;
+    right: 0;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    z-index: 1100;
+}
+
+.input-group {
+    width: 300px;
+}
+
+h2 {
+    white-space: nowrap;
+}
+
+.center-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}

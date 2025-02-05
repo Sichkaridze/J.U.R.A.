@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <br>
+  <h2>Are you sure you want to delete the responsibility <br> <br>"<span class="text-highlight">{{ responsibility.description }}</span>"?</h2>
+  <br>
+  <br>
+  <form action="" method="post">
+    {% csrf_token %}
+
+    <input type="button" value="Cancel" class="btn btn-primary" onclick="window.history.back();">
+    <input type="submit" value="Delete" class="btn btn-danger">
+  </form>
+{% endblock %}

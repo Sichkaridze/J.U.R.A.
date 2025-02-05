@@ -1,0 +1,96 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="{% static 'images/favicon.png' %}">
+  <title>J.U.R.A. Task Manager</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Кастомний CSS -->
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body class="theme-dark">
+  {% include "includes/navigation.html" %}
+
+  <header id="hero" class="hero">
+  <div class="container">
+    <h1>J.U.R.A. Task Manager</h1>
+    <p>Streamline your tasks with a playful touch</p>
+    <a href="#about" class="btn btn-playful">Discover More</a>
+  </div>
+  </header>
+
+  <section id="features" class="features">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="feature-card">
+            <br>
+            <p>📝 ✅📌 📅</p>
+            <br>
+            <br>
+            <h4>Task Management</h4>
+            <p>Easily create, assign, and monitor your tasks.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="feature-card">
+            <br>
+            <p>🤝 🏆 👥 💬</p>
+            <br>
+            <br>
+            <h4>Team Collaboration</h4>
+            <p>Work together seamlessly and boost productivity.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="feature-card">
+            <br>
+            <p>⏳ ⏰ 📊 ⏱</p>
+            <br>
+            <br>
+            <h4>Time Tracking</h4>
+            <p>Keep track of deadlines and manage your time efficiently.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <h2>About J.U.R.A.</h2>
+          <p>
+            J.U.R.A. is a modern, interactive task management tool designed for IT teams. With an emphasis on playfulness and efficiency, it helps you organize tasks, manage teams, and track progress in a fun and engaging way.
+          </p>
+          <ul class="tech-stack">
+            <li><span class="emoji">🛠</span> <strong>Back-end:</strong> Django (Python)</li>
+            <li><span class="emoji">🎨</span> <strong>Front-end:</strong> Bootstrap</li>
+            <li><span class="emoji">🗄</span> <strong>Database:</strong> SQLite / PostgreSQL</li>
+            <li><span class="emoji">📡</span> <strong>Deployment:</strong> Docker / AWS <em>(future)</em></li>
+          </ul>
+        </div>
+        <div class="col-md-6 text-center">
+          <a href="https://github.com/Sichkaridze/J.U.R.A." target="_blank" class="btn btn-playful">View on GitHub</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <br>
+  <br>
+
+  <div class="footer">
+    {% include "includes/footer.html" %}
+  </div>
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Підключення JavaScript із static/js -->
+  <script src="{% static 'js/theme-toggle.js' %}"></script>
+</body>
+</html>
