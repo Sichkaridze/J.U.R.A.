@@ -3,12 +3,12 @@ from .models import Worker, Position, Responsibility, Team, Task, Project, TaskT
 
 @admin.register(Worker)
 class WorkerAdmin(admin.ModelAdmin):
-    list_display = ("username", "email", "position", "experience")
-    list_filter = ("experience", "position")
+    list_display = ("username", "email", "position", "level")
+    list_filter = ("level", "position")
     search_fields = ("username", "email")
     ordering = ("last_name",)
     fieldsets = (
-        ("Personal Info", {"fields": ("username", "email", "position", "experience")} ),
+        ("Personal Info", {"fields": ("username", "email", "position", "level")}),
         ("Permissions", {"fields": ("is_staff", "is_active", "is_superuser")} ),
     )
 
@@ -55,7 +55,7 @@ class TaskAdmin(admin.ModelAdmin):
     search_fields = ("name", "project__name")
     ordering = ("-priority", "deadline")
     fieldsets = (
-        ("Task Info", {"fields": ("name", "description", "task_type", "priority", "deadline")} ),
+        ("Task Info", {"fields": ("name", "description", "tasktype", "priority", "deadline", "project")} ),
     )
     inlines = [
         type("WorkerTaskInline", (admin.TabularInline,), {"model": WorkerTask, "extra": 1}),
