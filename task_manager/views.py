@@ -198,7 +198,7 @@ class TaskDetailView(DetailView):
     model = Task
 
 
-class TaskCreateView(LoginRequiredMixin,CreateView):
+class TaskCreateView(LoginRequiredMixin, CreateView):
     model = Task
     form_class = TaskForm
     success_url = reverse_lazy("task-manager:tasks-list")

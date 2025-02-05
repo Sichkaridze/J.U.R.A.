@@ -1,2 +1,4 @@
 Django~=5.1.5
 python-decouple~=3.8
+crispy-bootstrap5
+django-crispy-forms
