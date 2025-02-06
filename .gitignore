@@ -2,6 +2,11 @@
 # Edit at https://www.toptal.com/developers/gitignore?templates=python,django,pycharm+all
 
 .DS_Store
+staticfiles/admin/
+staticfiles/css/
+staticfiles/images/
+staticfiles/js/
+
 
 ### Django ###
 *.log

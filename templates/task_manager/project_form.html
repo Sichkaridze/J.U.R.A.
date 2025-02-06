@@ -9,8 +9,6 @@
       <form class="col-6" action="" method="post" novalidate>
         {% csrf_token %}
         {{ form|crispy }}
-        {{ queryset.filter(project="Ai") }}
-
 
         <input type="submit" value="Submit" class="btn btn-primary">
       </form>
