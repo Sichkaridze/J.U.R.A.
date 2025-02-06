@@ -26,7 +26,7 @@ Before running the project, follow these steps:
 ### 2. Rename the Environment File
 Before starting, rename the `.env_sample` file to `.env`:
 ```sh
-  mv .env_sample .env
+  mv .env.sample .env
 ```
 
 ### 3. Create and Activate Virtual Environment

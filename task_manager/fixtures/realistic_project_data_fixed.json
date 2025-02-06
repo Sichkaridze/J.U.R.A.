@@ -1,0 +1,977 @@
+[
+    {
+        "model": "task_manager.worker",
+        "pk": 1,
+        "fields": {
+            "username": "Worker 1",
+            "position": "Product Manager"
+        }
+    },
+    {
+        "model": "task_manager.worker",
+        "pk": 2,
+        "fields": {
+            "username": "Worker 2",
+            "position": "Software Engineer"
+        }
+    },
+    {
+        "model": "task_manager.worker",
+        "pk": 3,
+        "fields": {
+            "username": "Worker 3",
+            "position": "Product Manager"
+        }
+    },
+    {
+        "model": "task_manager.worker",
+        "pk": 4,
+        "fields": {
+            "username": "Worker 4",
+            "position": "QA Engineer"
+        }
+    },
+    {
+        "model": "task_manager.worker",
+        "pk": 5,
+        "fields": {
+            "username": "Worker 5",
+            "position": "Software Engineer"
+        }
+    },
+    {
+        "model": "task_manager.worker",
+        "pk": 6,
+        "fields": {
+            "username": "Worker 6",
+            "position": "Data Scientist"
+        }
+    },
+    {
+        "model": "task_manager.worker",
+        "pk": 7,
+        "fields": {
+            "username": "Worker 7",
+            "position": "QA Engineer"
+        }
+    },
+    {
+        "model": "task_manager.worker",
+        "pk": 8,
+        "fields": {
+            "username": "Worker 8",
+            "position": "QA Engineer"
+        }
+    },
+    {
+        "model": "task_manager.worker",
+        "pk": 9,
+        "fields": {
+            "username": "Worker 9",
+            "position": "Product Manager"
+        }
+    },
+    {
+        "model": "task_manager.worker",
+        "pk": 10,
+        "fields": {
+            "username": "Worker 10",
+            "position": "DevOps Engineer"
+        }
+    },
+    {
+        "model": "task_manager.worker",
+        "pk": 11,
+        "fields": {
+            "username": "Worker 11",
+            "position": "Software Engineer"
+        }
+    },
+    {
+        "model": "task_manager.worker",
+        "pk": 12,
+        "fields": {
+            "username": "Worker 12",
+            "position": "QA Engineer"
+        }
+    },
+    {
+        "model": "task_manager.worker",
+        "pk": 13,
+        "fields": {
+            "username": "Worker 13",
+            "position": "Product Manager"
+        }
+    },
+    {
+        "model": "task_manager.worker",
+        "pk": 14,
+        "fields": {
+            "username": "Worker 14",
+            "position": "Product Manager"
+        }
+    },
+    {
+        "model": "task_manager.worker",
+        "pk": 15,
+        "fields": {
+            "username": "Worker 15",
+            "position": "Product Manager"
+        }
+    },
+    {
+        "model": "task_manager.worker",
+        "pk": 16,
+        "fields": {
+            "username": "Worker 16",
+            "position": "Software Engineer"
+        }
+    },
+    {
+        "model": "task_manager.worker",
+        "pk": 17,
+        "fields": {
+            "username": "Worker 17",
+            "position": "Data Scientist"
+        }
+    },
+    {
+        "model": "task_manager.worker",
+        "pk": 18,
+        "fields": {
+            "username": "Worker 18",
+            "position": "QA Engineer"
+        }
+    },
+    {
+        "model": "task_manager.worker",
+        "pk": 19,
+        "fields": {
+            "username": "Worker 19",
+            "position": "Product Manager"
+        }
+    },
+    {
+        "model": "task_manager.worker",
+        "pk": 20,
+        "fields": {
+            "username": "Worker 20",
+            "position": "Software Engineer"
+        }
+    },
+    {
+        "model": "task_manager.worker",
+        "pk": 21,
+        "fields": {
+            "username": "Worker 21",
+            "position": "Data Scientist"
+        }
+    },
+    {
+        "model": "task_manager.worker",
+        "pk": 22,
+        "fields": {
+            "username": "Worker 22",
+            "position": "Data Scientist"
+        }
+    },
+    {
+        "model": "task_manager.worker",
+        "pk": 23,
+        "fields": {
+            "username": "Worker 23",
+            "position": "DevOps Engineer"
+        }
+    },
+    {
+        "model": "task_manager.worker",
+        "pk": 24,
+        "fields": {
+            "username": "Worker 24",
+            "position": "Product Manager"
+        }
+    },
+    {
+        "model": "task_manager.worker",
+        "pk": 25,
+        "fields": {
+            "username": "Worker 25",
+            "position": "Software Engineer"
+        }
+    },
+    {
+        "model": "task_manager.worker",
+        "pk": 26,
+        "fields": {
+            "username": "Worker 26",
+            "position": "DevOps Engineer"
+        }
+    },
+    {
+        "model": "task_manager.worker",
+        "pk": 27,
+        "fields": {
+            "username": "Worker 27",
+            "position": "DevOps Engineer"
+        }
+    },
+    {
+        "model": "task_manager.worker",
+        "pk": 28,
+        "fields": {
+            "username": "Worker 28",
+            "position": "Data Scientist"
+        }
+    },
+    {
+        "model": "task_manager.worker",
+        "pk": 29,
+        "fields": {
+            "username": "Worker 29",
+            "position": "Product Manager"
+        }
+    },
+    {
+        "model": "task_manager.worker",
+        "pk": 30,
+        "fields": {
+            "username": "Worker 30",
+            "position": "QA Engineer"
+        }
+    },
+    {
+        "model": "task_manager.project",
+        "pk": 1,
+        "fields": {
+            "name": "AI Chatbot",
+            "description": "A key company project"
+        }
+    },
+    {
+        "model": "task_manager.project",
+        "pk": 2,
+        "fields": {
+            "name": "CRM System",
+            "description": "A key company project"
+        }
+    },
+    {
+        "model": "task_manager.project",
+        "pk": 3,
+        "fields": {
+            "name": "CRM System",
+            "description": "A key company project"
+        }
+    },
+    {
+        "model": "task_manager.project",
+        "pk": 4,
+        "fields": {
+            "name": "Mobile App Development",
+            "description": "A key company project"
+        }
+    },
+    {
+        "model": "task_manager.project",
+        "pk": 5,
+        "fields": {
+            "name": "E-commerce Platform",
+            "description": "A key company project"
+        }
+    },
+    {
+        "model": "task_manager.project",
+        "pk": 6,
+        "fields": {
+            "name": "CRM System",
+            "description": "A key company project"
+        }
+    },
+    {
+        "model": "task_manager.project",
+        "pk": 7,
+        "fields": {
+            "name": "E-commerce Platform",
+            "description": "A key company project"
+        }
+    },
+    {
+        "model": "task_manager.project",
+        "pk": 8,
+        "fields": {
+            "name": "Website Redesign",
+            "description": "A key company project"
+        }
+    },
+    {
+        "model": "task_manager.project",
+        "pk": 9,
+        "fields": {
+            "name": "Website Redesign",
+            "description": "A key company project"
+        }
+    },
+    {
+        "model": "task_manager.project",
+        "pk": 10,
+        "fields": {
+            "name": "Website Redesign",
+            "description": "A key company project"
+        }
+    },
+    {
+        "model": "task_manager.project",
+        "pk": 11,
+        "fields": {
+            "name": "Website Redesign",
+            "description": "A key company project"
+        }
+    },
+    {
+        "model": "task_manager.project",
+        "pk": 12,
+        "fields": {
+            "name": "AI Chatbot",
+            "description": "A key company project"
+        }
+    },
+    {
+        "model": "task_manager.project",
+        "pk": 13,
+        "fields": {
+            "name": "CRM System",
+            "description": "A key company project"
+        }
+    },
+    {
+        "model": "task_manager.project",
+        "pk": 14,
+        "fields": {
+            "name": "Website Redesign",
+            "description": "A key company project"
+        }
+    },
+    {
+        "model": "task_manager.project",
+        "pk": 15,
+        "fields": {
+            "name": "Website Redesign",
+            "description": "A key company project"
+        }
+    },
+    {
+        "model": "task_manager.project",
+        "pk": 16,
+        "fields": {
+            "name": "CRM System",
+            "description": "A key company project"
+        }
+    },
+    {
+        "model": "task_manager.project",
+        "pk": 17,
+        "fields": {
+            "name": "CRM System",
+            "description": "A key company project"
+        }
+    },
+    {
+        "model": "task_manager.project",
+        "pk": 18,
+        "fields": {
+            "name": "E-commerce Platform",
+            "description": "A key company project"
+        }
+    },
+    {
+        "model": "task_manager.project",
+        "pk": 19,
+        "fields": {
+            "name": "Mobile App Development",
+            "description": "A key company project"
+        }
+    },
+    {
+        "model": "task_manager.project",
+        "pk": 20,
+        "fields": {
+            "name": "E-commerce Platform",
+            "description": "A key company project"
+        }
+    },
+    {
+        "model": "task_manager.project",
+        "pk": 21,
+        "fields": {
+            "name": "Mobile App Development",
+            "description": "A key company project"
+        }
+    },
+    {
+        "model": "task_manager.project",
+        "pk": 22,
+        "fields": {
+            "name": "AI Chatbot",
+            "description": "A key company project"
+        }
+    },
+    {
+        "model": "task_manager.project",
+        "pk": 23,
+        "fields": {
+            "name": "CRM System",
+            "description": "A key company project"
+        }
+    },
+    {
+        "model": "task_manager.project",
+        "pk": 24,
+        "fields": {
+            "name": "Mobile App Development",
+            "description": "A key company project"
+        }
+    },
+    {
+        "model": "task_manager.project",
+        "pk": 25,
+        "fields": {
+            "name": "CRM System",
+            "description": "A key company project"
+        }
+    },
+    {
+        "model": "task_manager.project",
+        "pk": 26,
+        "fields": {
+            "name": "CRM System",
+            "description": "A key company project"
+        }
+    },
+    {
+        "model": "task_manager.project",
+        "pk": 27,
+        "fields": {
+            "name": "E-commerce Platform",
+            "description": "A key company project"
+        }
+    },
+    {
+        "model": "task_manager.project",
+        "pk": 28,
+        "fields": {
+            "name": "CRM System",
+            "description": "A key company project"
+        }
+    },
+    {
+        "model": "task_manager.project",
+        "pk": 29,
+        "fields": {
+            "name": "CRM System",
+            "description": "A key company project"
+        }
+    },
+    {
+        "model": "task_manager.project",
+        "pk": 30,
+        "fields": {
+            "name": "AI Chatbot",
+            "description": "A key company project"
+        }
+    },
+    {
+        "model": "task_manager.tasktype",
+        "pk": 1,
+        "fields": {
+            "name": "Feature Development"
+        }
+    },
+    {
+        "model": "task_manager.tasktype",
+        "pk": 2,
+        "fields": {
+            "name": "Testing"
+        }
+    },
+    {
+        "model": "task_manager.tasktype",
+        "pk": 3,
+        "fields": {
+            "name": "Feature Development"
+        }
+    },
+    {
+        "model": "task_manager.tasktype",
+        "pk": 4,
+        "fields": {
+            "name": "Testing"
+        }
+    },
+    {
+        "model": "task_manager.tasktype",
+        "pk": 5,
+        "fields": {
+            "name": "Testing"
+        }
+    },
+    {
+        "model": "task_manager.team",
+        "pk": 1,
+        "fields": {
+            "name": "DevOps",
+            "description": "Team working on specialized tasks"
+        }
+    },
+    {
+        "model": "task_manager.team",
+        "pk": 2,
+        "fields": {
+            "name": "Customer Support",
+            "description": "Team working on specialized tasks"
+        }
+    },
+    {
+        "model": "task_manager.team",
+        "pk": 3,
+        "fields": {
+            "name": "AI Research",
+            "description": "Team working on specialized tasks"
+        }
+    },
+    {
+        "model": "task_manager.team",
+        "pk": 4,
+        "fields": {
+            "name": "Customer Support",
+            "description": "Team working on specialized tasks"
+        }
+    },
+    {
+        "model": "task_manager.team",
+        "pk": 5,
+        "fields": {
+            "name": "DevOps",
+            "description": "Team working on specialized tasks"
+        }
+    },
+    {
+        "model": "task_manager.task",
+        "pk": 1,
+        "fields": {
+            "name": "Optimize Database Queries",
+            "description": "A detailed task description",
+            "priority": "Low",
+            "tasktype": 2,
+            "project": 22,
+            "created_by": 29,
+            "start_time": "2025-01-29T16:11:46.774355",
+            "deadline": "2025-02-22T16:11:46.774369"
+        }
+    },
+    {
+        "model": "task_manager.task",
+        "pk": 2,
+        "fields": {
+            "name": "Refactor Codebase",
+            "description": "A detailed task description",
+            "priority": "High",
+            "tasktype": 5,
+            "project": 14,
+            "created_by": 12,
+            "start_time": "2025-01-26T16:11:46.774377",
+            "deadline": "2025-02-22T16:11:46.774380"
+        }
+    },
+    {
+        "model": "task_manager.task",
+        "pk": 3,
+        "fields": {
+            "name": "Fix Login Bug",
+            "description": "A detailed task description",
+            "priority": "Medium",
+            "tasktype": 2,
+            "project": 18,
+            "created_by": 30,
+            "start_time": "2025-01-10T16:11:46.774388",
+            "deadline": "2025-02-20T16:11:46.774393"
+        }
+    },
+    {
+        "model": "task_manager.task",
+        "pk": 4,
+        "fields": {
+            "name": "Optimize Database Queries",
+            "description": "A detailed task description",
+            "priority": "High",
+            "tasktype": 4,
+            "project": 15,
+            "created_by": 10,
+            "start_time": "2025-01-20T16:11:46.774403",
+            "deadline": "2025-03-06T16:11:46.774408"
+        }
+    },
+    {
+        "model": "task_manager.task",
+        "pk": 5,
+        "fields": {
+            "name": "Optimize Database Queries",
+            "description": "A detailed task description",
+            "priority": "Medium",
+            "tasktype": 2,
+            "project": 22,
+            "created_by": 20,
+            "start_time": "2025-01-07T16:11:46.774415",
+            "deadline": "2025-02-25T16:11:46.774418"
+        }
+    },
+    {
+        "model": "task_manager.task",
+        "pk": 6,
+        "fields": {
+            "name": "Optimize Database Queries",
+            "description": "A detailed task description",
+            "priority": "High",
+            "tasktype": 2,
+            "project": 15,
+            "created_by": 17,
+            "start_time": "2025-01-14T16:11:46.774424",
+            "deadline": "2025-02-18T16:11:46.774427"
+        }
+    },
+    {
+        "model": "task_manager.task",
+        "pk": 7,
+        "fields": {
+            "name": "Fix Login Bug",
+            "description": "A detailed task description",
+            "priority": "Low",
+            "tasktype": 4,
+            "project": 3,
+            "created_by": 17,
+            "start_time": "2025-01-28T16:11:46.774432",
+            "deadline": "2025-02-23T16:11:46.774435"
+        }
+    },
+    {
+        "model": "task_manager.task",
+        "pk": 8,
+        "fields": {
+            "name": "Implement OAuth",
+            "description": "A detailed task description",
+            "priority": "High",
+            "tasktype": 3,
+            "project": 25,
+            "created_by": 5,
+            "start_time": "2025-01-23T16:11:46.774444",
+            "deadline": "2025-02-18T16:11:46.774447"
+        }
+    },
+    {
+        "model": "task_manager.task",
+        "pk": 9,
+        "fields": {
+            "name": "Optimize Database Queries",
+            "description": "A detailed task description",
+            "priority": "High",
+            "tasktype": 5,
+            "project": 6,
+            "created_by": 4,
+            "start_time": "2025-01-15T16:11:46.774453",
+            "deadline": "2025-02-06T16:11:46.774456"
+        }
+    },
+    {
+        "model": "task_manager.task",
+        "pk": 10,
+        "fields": {
+            "name": "Develop Checkout Page",
+            "description": "A detailed task description",
+            "priority": "Medium",
+            "tasktype": 2,
+            "project": 19,
+            "created_by": 15,
+            "start_time": "2025-01-27T16:11:46.774463",
+            "deadline": "2025-02-08T16:11:46.774466"
+        }
+    },
+    {
+        "model": "task_manager.task",
+        "pk": 11,
+        "fields": {
+            "name": "Fix Login Bug",
+            "description": "A detailed task description",
+            "priority": "High",
+            "tasktype": 4,
+            "project": 18,
+            "created_by": 13,
+            "start_time": "2025-01-12T16:11:46.774471",
+            "deadline": "2025-02-22T16:11:46.774474"
+        }
+    },
+    {
+        "model": "task_manager.task",
+        "pk": 12,
+        "fields": {
+            "name": "Develop Checkout Page",
+            "description": "A detailed task description",
+            "priority": "High",
+            "tasktype": 4,
+            "project": 6,
+            "created_by": 23,
+            "start_time": "2025-01-18T16:11:46.774479",
+            "deadline": "2025-02-22T16:11:46.774482"
+        }
+    },
+    {
+        "model": "task_manager.task",
+        "pk": 13,
+        "fields": {
+            "name": "Develop Checkout Page",
+            "description": "A detailed task description",
+            "priority": "Medium",
+            "tasktype": 2,
+            "project": 9,
+            "created_by": 14,
+            "start_time": "2025-01-10T16:11:46.774487",
+            "deadline": "2025-03-03T16:11:46.774490"
+        }
+    },
+    {
+        "model": "task_manager.task",
+        "pk": 14,
+        "fields": {
+            "name": "Fix Login Bug",
+            "description": "A detailed task description",
+            "priority": "Low",
+            "tasktype": 4,
+            "project": 20,
+            "created_by": 6,
+            "start_time": "2025-01-15T16:11:46.774495",
+            "deadline": "2025-02-15T16:11:46.774498"
+        }
+    },
+    {
+        "model": "task_manager.task",
+        "pk": 15,
+        "fields": {
+            "name": "Fix Login Bug",
+            "description": "A detailed task description",
+            "priority": "High",
+            "tasktype": 3,
+            "project": 15,
+            "created_by": 29,
+            "start_time": "2025-01-30T16:11:46.774503",
+            "deadline": "2025-02-12T16:11:46.774506"
+        }
+    },
+    {
+        "model": "task_manager.task",
+        "pk": 16,
+        "fields": {
+            "name": "Implement OAuth",
+            "description": "A detailed task description",
+            "priority": "High",
+            "tasktype": 5,
+            "project": 16,
+            "created_by": 9,
+            "start_time": "2025-01-16T16:11:46.774511",
+            "deadline": "2025-02-11T16:11:46.774515"
+        }
+    },
+    {
+        "model": "task_manager.task",
+        "pk": 17,
+        "fields": {
+            "name": "Fix Login Bug",
+            "description": "A detailed task description",
+            "priority": "Medium",
+            "tasktype": 2,
+            "project": 9,
+            "created_by": 18,
+            "start_time": "2025-01-25T16:11:46.774520",
+            "deadline": "2025-02-22T16:11:46.774523"
+        }
+    },
+    {
+        "model": "task_manager.task",
+        "pk": 18,
+        "fields": {
+            "name": "Refactor Codebase",
+            "description": "A detailed task description",
+            "priority": "Medium",
+            "tasktype": 4,
+            "project": 1,
+            "created_by": 5,
+            "start_time": "2025-01-11T16:11:46.774529",
+            "deadline": "2025-02-26T16:11:46.774532"
+        }
+    },
+    {
+        "model": "task_manager.task",
+        "pk": 19,
+        "fields": {
+            "name": "Implement OAuth",
+            "description": "A detailed task description",
+            "priority": "Medium",
+            "tasktype": 5,
+            "project": 15,
+            "created_by": 20,
+            "start_time": "2025-01-07T16:11:46.774537",
+            "deadline": "2025-02-18T16:11:46.774541"
+        }
+    },
+    {
+        "model": "task_manager.task",
+        "pk": 20,
+        "fields": {
+            "name": "Refactor Codebase",
+            "description": "A detailed task description",
+            "priority": "Medium",
+            "tasktype": 5,
+            "project": 13,
+            "created_by": 8,
+            "start_time": "2025-01-23T16:11:46.774550",
+            "deadline": "2025-02-14T16:11:46.774554"
+        }
+    },
+    {
+        "model": "task_manager.task",
+        "pk": 21,
+        "fields": {
+            "name": "Implement OAuth",
+            "description": "A detailed task description",
+            "priority": "Medium",
+            "tasktype": 2,
+            "project": 10,
+            "created_by": 23,
+            "start_time": "2025-01-29T16:11:46.774562",
+            "deadline": "2025-02-28T16:11:46.774566"
+        }
+    },
+    {
+        "model": "task_manager.task",
+        "pk": 22,
+        "fields": {
+            "name": "Refactor Codebase",
+            "description": "A detailed task description",
+            "priority": "Low",
+            "tasktype": 3,
+            "project": 15,
+            "created_by": 5,
+            "start_time": "2025-02-03T16:11:46.774575",
+            "deadline": "2025-02-08T16:11:46.774579"
+        }
+    },
+    {
+        "model": "task_manager.task",
+        "pk": 23,
+        "fields": {
+            "name": "Develop Checkout Page",
+            "description": "A detailed task description",
+            "priority": "Low",
+            "tasktype": 1,
+            "project": 18,
+            "created_by": 2,
+            "start_time": "2025-01-08T16:11:46.774585",
+            "deadline": "2025-02-20T16:11:46.774587"
+        }
+    },
+    {
+        "model": "task_manager.task",
+        "pk": 24,
+        "fields": {
+            "name": "Develop Checkout Page",
+            "description": "A detailed task description",
+            "priority": "High",
+            "tasktype": 5,
+            "project": 6,
+            "created_by": 8,
+            "start_time": "2025-01-10T16:11:46.774592",
+            "deadline": "2025-02-19T16:11:46.774595"
+        }
+    },
+    {
+        "model": "task_manager.task",
+        "pk": 25,
+        "fields": {
+            "name": "Fix Login Bug",
+            "description": "A detailed task description",
+            "priority": "High",
+            "tasktype": 4,
+            "project": 5,
+            "created_by": 20,
+            "start_time": "2025-02-02T16:11:46.774600",
+            "deadline": "2025-03-04T16:11:46.774603"
+        }
+    },
+    {
+        "model": "task_manager.task",
+        "pk": 26,
+        "fields": {
+            "name": "Optimize Database Queries",
+            "description": "A detailed task description",
+            "priority": "Low",
+            "tasktype": 1,
+            "project": 5,
+            "created_by": 23,
+            "start_time": "2025-01-12T16:11:46.774608",
+            "deadline": "2025-02-18T16:11:46.774611"
+        }
+    },
+    {
+        "model": "task_manager.task",
+        "pk": 27,
+        "fields": {
+            "name": "Fix Login Bug",
+            "description": "A detailed task description",
+            "priority": "High",
+            "tasktype": 3,
+            "project": 11,
+            "created_by": 26,
+            "start_time": "2025-02-03T16:11:46.774616",
+            "deadline": "2025-02-09T16:11:46.774619"
+        }
+    },
+    {
+        "model": "task_manager.task",
+        "pk": 28,
+        "fields": {
+            "name": "Develop Checkout Page",
+            "description": "A detailed task description",
+            "priority": "Low",
+            "tasktype": 5,
+            "project": 28,
+            "created_by": 20,
+            "start_time": "2025-01-14T16:11:46.774624",
+            "deadline": "2025-03-04T16:11:46.774627"
+        }
+    },
+    {
+        "model": "task_manager.task",
+        "pk": 29,
+        "fields": {
+            "name": "Fix Login Bug",
+            "description": "A detailed task description",
+            "priority": "High",
+            "tasktype": 3,
+            "project": 23,
+            "created_by": 26,
+            "start_time": "2025-02-02T16:11:46.774632",
+            "deadline": "2025-02-16T16:11:46.774635"
+        }
+    },
+    {
+        "model": "task_manager.task",
+        "pk": 30,
+        "fields": {
+            "name": "Fix Login Bug",
+            "description": "A detailed task description",
+            "priority": "Low",
+            "tasktype": 3,
+            "project": 8,
+            "created_by": 12,
+            "start_time": "2025-01-15T16:11:46.774640",
+            "deadline": "2025-02-06T16:11:46.774642"
+        }
+    }
+]

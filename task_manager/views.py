@@ -19,7 +19,7 @@ def home_view(request):
 
 class ResponsibilityListView(SearchMixin, ListView):
     model = Responsibility
-    paginate_by = 2
+    paginate_by = 8
     QUERY_FIELDS = ["description"]
 
 
@@ -50,6 +50,7 @@ class ResponsibilityDeleteView(DeleteView):
 class PositionListView(SearchMixin, ListView):
     model = Position
     QUERY_FIELDS = ["name", "responsibilities__description"]
+    paginate_by = 3
 
 
 class PositionDetailView(DetailView):
@@ -78,7 +79,7 @@ class PositionDeleteView(DeleteView):
 
 class TaskTypeListView(SearchMixin, ListView):
     model = TaskType
-    paginate_by = 2
+    paginate_by = 8
     QUERY_FIELDS = ["name"]
 
 # class TaskTypeDetailView(DetailView):

@@ -1,0 +1,1575 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="/static/images/favicon.png">
+  <title>J.U.R.A. Task Manager</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&amp;family=Open+Sans:wght@300;400;600&amp;display=swap" rel="stylesheet">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+
+<body class="theme-light">
+
+
+  <nav class="navbar navbar-expand-lg fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="/">J.U.R.A.</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="/home/">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="/admin/">⚙️ Admin Panel</a></li>
+
+
+
+        <li class="nav-item">
+          <button class="btn btn-outline-secondary" onclick="toggleTheme()">Toggle Theme</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+  <button class="filter-toggle-btn" onclick="toggleFilter()">☰</button>
+<div class="filter-sidebar" id="filterSidebar">
+    <h3>Filters</h3>
+    <h4>Awaiting...</h4>
+
+
+
+
+
+
+
+
+</div>
+
+
+
+  <div class="content-wrapper">
+    <aside class="sidebar">
+        <aside class="sidebar bg-light p-4 border rounded">
+
+      <li class="list-group-item"><a href="">Admin</a></li>
+      <li class="list-group-item">
+        <form method="post" action="/accounts/logout/?next=/task/create/">
+          <input type="hidden" name="csrfmiddlewaretoken" value="IUBSIT5NPBCAv9kK0LK08KbAwTuKZyqzRUMq5JSqsk7UAOHkA9TpEWickNGK0NpF">
+          <a><input class="list-group-item" type="submit" value="️Sign Out  🚪🚶‍♂️‍"></a>
+        </form>
+      </li>
+
+
+    <br>
+    <h3 class="mb-4">Quick Links</h3>
+    <ul class="list-unstyled">
+        <li><a href="/task-types/" class="d-block py-2">📌 Task Types</a></li>
+        <li><a href="/responsibilities/" class="d-block py-2">📎 Responsibilities</a></li>
+        <li><a href="/positions/" class="d-block py-2">🎭 Positions</a></li>
+        <li><a href="/workers/" class="d-block py-2">👨‍💻 Workers</a></li>
+        <li><a href="/teams/" class="d-block py-2">👥 Teams</a></li>
+        <li><a href="/projects/" class="d-block py-2">📂 Projects</a></li>
+        <li><a href="/tasks/" class="d-block py-2">📝 Tasks</a></li>
+        <li><a href="#/archive/" class="d-block py-2">🗄️️ Archive (Awaiting...)</a></li>
+    </ul>
+    <h3 class="mt-4">Resources</h3>
+    <ul class="list-unstyled">
+        <li><a href="https://github.com/Sichkaridze/J.U.R.A." target="_blank" class="d-block py-2">🔗 GitHub Repository</a></li>
+        <li><a href="#/docs/" class="d-block py-2">📖 Documentation (Awaiting...)</a></li>
+    </ul>
+</aside>
+    </aside>
+
+
+
+
+
+    <main class="main-content">
+    <input id="input" style="background-color: #F64C72" type="button" value="Input">
+
+  <h1>Create task</h1>
+  <br>
+  <form action="" method="post" novalidate="">
+    <input type="hidden" name="csrfmiddlewaretoken" value="IUBSIT5NPBCAv9kK0LK08KbAwTuKZyqzRUMq5JSqsk7UAOHkA9TpEWickNGK0NpF">
+
+
+<div id="div_id_name" class="mb-3"> <label for="id_name" class="form-label requiredField">
+                Name<span class="asteriskField">*</span> </label> <input type="text" name="name" maxlength="255" class="textinput form-control" required="" id="id_name"> </div> <div id="div_id_description" class="mb-3"> <label for="id_description" class="form-label">
+                Description
+            </label> <textarea name="description" cols="40" rows="10" class="textarea form-control" id="id_description"></textarea> </div> <div id="div_id_start_time" class="mb-3"> <label for="id_start_time" class="form-label">
+                Start time
+            </label> <input type="datetime-local" name="start_time" class="datetimeinput form-control" id="id_start_time"> </div> <div id="div_id_deadline" class="mb-3"> <label for="id_deadline" class="form-label">
+                Deadline
+            </label> <input type="datetime-local" name="deadline" class="datetimeinput form-control" id="id_deadline"> </div> <div id="div_id_priority" class="mb-3"> <label for="id_priority" class="form-label requiredField">
+                Priority<span class="asteriskField">*</span> </label> <select name="priority" class="select form-select" id="id_priority"> <option value="5">🔥 Urgent</option> <option value="4">🔴 High</option> <option value="3">🟡 Medium</option> <option value="2" selected="">🟢 Normal</option> <option value="1">🔵 Low</option> <option value="0">⚪ Optional</option>
+
+</select> </div> <div id="div_id_tasktype" class="mb-3"> <fieldset> <legend class="form-label">
+                Tasktype
+            </legend> <div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="1" id="id_tasktype_0"> <label for="id_tasktype_0" class="form-check-label">
+            Bug Fix
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="2" id="id_tasktype_1"> <label for="id_tasktype_1" class="form-check-label">
+            Feature Development
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="3" id="id_tasktype_2"> <label for="id_tasktype_2" class="form-check-label">
+            Code Review
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="4" id="id_tasktype_3"> <label for="id_tasktype_3" class="form-check-label">
+            Refactoring
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="5" id="id_tasktype_4"> <label for="id_tasktype_4" class="form-check-label">
+            Testing
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="6" id="id_tasktype_5"> <label for="id_tasktype_5" class="form-check-label">
+            Documentation
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="7" id="id_tasktype_6"> <label for="id_tasktype_6" class="form-check-label">
+            Deployment
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="8" id="id_tasktype_7"> <label for="id_tasktype_7" class="form-check-label">
+            Security Audit
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="9" id="id_tasktype_8"> <label for="id_tasktype_8" class="form-check-label">
+            Performance Optimization
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="10" id="id_tasktype_9"> <label for="id_tasktype_9" class="form-check-label">
+            Database Migration
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="11" id="id_tasktype_10"> <label for="id_tasktype_10" class="form-check-label">
+            API Development
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="12" id="id_tasktype_11"> <label for="id_tasktype_11" class="form-check-label">
+            UI/UX Improvement
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="13" id="id_tasktype_12"> <label for="id_tasktype_12" class="form-check-label">
+            User Feedback Handling
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="14" id="id_tasktype_13"> <label for="id_tasktype_13" class="form-check-label">
+            Server Maintenance
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="15" id="id_tasktype_14"> <label for="id_tasktype_14" class="form-check-label">
+            System Integration
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="16" id="id_tasktype_15"> <label for="id_tasktype_15" class="form-check-label">
+            Monitoring and Logging
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="17" id="id_tasktype_16"> <label for="id_tasktype_16" class="form-check-label">
+            Infrastructure Setup
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="18" id="id_tasktype_17"> <label for="id_tasktype_17" class="form-check-label">
+            Penetration Testing
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="19" id="id_tasktype_18"> <label for="id_tasktype_18" class="form-check-label">
+            Legal Compliance Check
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="20" id="id_tasktype_19"> <label for="id_tasktype_19" class="form-check-label">
+            Data Analysis
+        </label> </div> </div> </fieldset> </div> <div id="div_id_project" class="mb-3"> <label for="id_project" class="form-label requiredField">
+                Project<span class="asteriskField">*</span> </label> <select name="project" class="select form-select" required="" id="id_project"> <option value="" selected="">---------</option> <option value="2">AI Chatbot</option> <option value="1">E-commerce Platform</option> <option value="3">Financial Dashboard</option> <option value="5">Cybersecurity Suite</option> <option value="4">Social Media App</option>
+
+</select> </div> <div id="div_id_workers" class="mb-3"> <fieldset> <legend class="form-label">
+                Workers
+            </legend> <div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="workers" value="7" id="id_workers_0"> <label for="id_workers_0" class="form-check-label">
+            daemon
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="workers" value="1" id="id_workers_1"> <label for="id_workers_1" class="form-check-label">
+            Admin
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="workers" value="8" id="id_workers_2"> <label for="id_workers_2" class="form-check-label">
+            jdoe
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="workers" value="4" id="id_workers_3"> <label for="id_workers_3" class="form-check-label">
+            ckent
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="workers" value="6" id="id_workers_4"> <label for="id_workers_4" class="form-check-label">
+            robby
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="workers" value="5" id="id_workers_5"> <label for="id_workers_5" class="form-check-label">
+            dpeters
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="workers" value="2" id="id_workers_6"> <label for="id_workers_6" class="form-check-label">
+            asmith
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="workers" value="3" id="id_workers_7"> <label for="id_workers_7" class="form-check-label">
+            bwayne
+        </label> </div> </div> </fieldset> </div>
+
+
+    <input type="submit" value="Submit" class="btn btn-primary">
+  </form>
+
+    </main>
+  </div>
+
+  <div class="pagination-container">
+
+
+  </div>
+
+  <div class="footer">
+
+
+<footer id="contact">
+  <div class="container">
+    <p>© 2025 J.U.R.A. Task Manager. All rights reserved.</p>
+  </div>
+</footer>
+  </div>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JavaScript -->
+  <script src="/static/js/theme-toggle.js"></script>
+
+
+</body></html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="/static/images/favicon.png">
+  <title>J.U.R.A. Task Manager</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&amp;family=Open+Sans:wght@300;400;600&amp;display=swap" rel="stylesheet">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body class="theme-light">
+
+
+  <nav class="navbar navbar-expand-lg fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="/">J.U.R.A.</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="/home/">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="/admin/">⚙️ Admin Panel</a></li>
+
+
+
+        <li class="nav-item">
+          <button class="btn btn-outline-secondary" onclick="toggleTheme()">Toggle Theme</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+  <button class="filter-toggle-btn" onclick="toggleFilter()">☰</button>
+<div class="filter-sidebar" id="filterSidebar">
+    <h3>Filters</h3>
+    <h4>Awaiting...</h4>
+
+
+
+
+
+
+
+
+</div>
+
+
+
+  <div class="content-wrapper">
+    <aside class="sidebar">
+        <aside class="sidebar bg-light p-4 border rounded">
+
+      <li class="list-group-item"><a href="">Admin</a></li>
+      <li class="list-group-item">
+        <form method="post" action="/accounts/logout/?next=/task/create/">
+          <input type="hidden" name="csrfmiddlewaretoken" value="IUBSIT5NPBCAv9kK0LK08KbAwTuKZyqzRUMq5JSqsk7UAOHkA9TpEWickNGK0NpF">
+          <a><input class="list-group-item" type="submit" value="️Sign Out  🚪🚶‍♂️‍"></a>
+        </form>
+      </li>
+
+
+    <br>
+    <h3 class="mb-4">Quick Links</h3>
+    <ul class="list-unstyled">
+        <li><a href="/task-types/" class="d-block py-2">📌 Task Types</a></li>
+        <li><a href="/responsibilities/" class="d-block py-2">📎 Responsibilities</a></li>
+        <li><a href="/positions/" class="d-block py-2">🎭 Positions</a></li>
+        <li><a href="/workers/" class="d-block py-2">👨‍💻 Workers</a></li>
+        <li><a href="/teams/" class="d-block py-2">👥 Teams</a></li>
+        <li><a href="/projects/" class="d-block py-2">📂 Projects</a></li>
+        <li><a href="/tasks/" class="d-block py-2">📝 Tasks</a></li>
+        <li><a href="#/archive/" class="d-block py-2">🗄️️ Archive (Awaiting...)</a></li>
+    </ul>
+    <h3 class="mt-4">Resources</h3>
+    <ul class="list-unstyled">
+        <li><a href="https://github.com/Sichkaridze/J.U.R.A." target="_blank" class="d-block py-2">🔗 GitHub Repository</a></li>
+        <li><a href="#/docs/" class="d-block py-2">📖 Documentation (Awaiting...)</a></li>
+    </ul>
+</aside>
+    </aside>
+
+
+
+
+
+    <main class="main-content">
+    <input id="input" style="background-color: #F64C72" type="button" value="Input">
+
+  <h1>Create task</h1>
+  <br>
+  <form action="" method="post" novalidate="">
+    <input type="hidden" name="csrfmiddlewaretoken" value="IUBSIT5NPBCAv9kK0LK08KbAwTuKZyqzRUMq5JSqsk7UAOHkA9TpEWickNGK0NpF">
+
+
+<div id="div_id_name" class="mb-3"> <label for="id_name" class="form-label requiredField">
+                Name<span class="asteriskField">*</span> </label> <input type="text" name="name" maxlength="255" class="textinput form-control" required="" id="id_name"> </div> <div id="div_id_description" class="mb-3"> <label for="id_description" class="form-label">
+                Description
+            </label> <textarea name="description" cols="40" rows="10" class="textarea form-control" id="id_description"></textarea> </div> <div id="div_id_start_time" class="mb-3"> <label for="id_start_time" class="form-label">
+                Start time
+            </label> <input type="datetime-local" name="start_time" class="datetimeinput form-control" id="id_start_time"> </div> <div id="div_id_deadline" class="mb-3"> <label for="id_deadline" class="form-label">
+                Deadline
+            </label> <input type="datetime-local" name="deadline" class="datetimeinput form-control" id="id_deadline"> </div> <div id="div_id_priority" class="mb-3"> <label for="id_priority" class="form-label requiredField">
+                Priority<span class="asteriskField">*</span> </label> <select name="priority" class="select form-select" id="id_priority"> <option value="5">🔥 Urgent</option> <option value="4">🔴 High</option> <option value="3">🟡 Medium</option> <option value="2" selected="">🟢 Normal</option> <option value="1">🔵 Low</option> <option value="0">⚪ Optional</option>
+
+</select> </div> <div id="div_id_tasktype" class="mb-3"> <fieldset> <legend class="form-label">
+                Tasktype
+            </legend> <div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="1" id="id_tasktype_0"> <label for="id_tasktype_0" class="form-check-label">
+            Bug Fix
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="2" id="id_tasktype_1"> <label for="id_tasktype_1" class="form-check-label">
+            Feature Development
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="3" id="id_tasktype_2"> <label for="id_tasktype_2" class="form-check-label">
+            Code Review
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="4" id="id_tasktype_3"> <label for="id_tasktype_3" class="form-check-label">
+            Refactoring
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="5" id="id_tasktype_4"> <label for="id_tasktype_4" class="form-check-label">
+            Testing
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="6" id="id_tasktype_5"> <label for="id_tasktype_5" class="form-check-label">
+            Documentation
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="7" id="id_tasktype_6"> <label for="id_tasktype_6" class="form-check-label">
+            Deployment
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="8" id="id_tasktype_7"> <label for="id_tasktype_7" class="form-check-label">
+            Security Audit
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="9" id="id_tasktype_8"> <label for="id_tasktype_8" class="form-check-label">
+            Performance Optimization
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="10" id="id_tasktype_9"> <label for="id_tasktype_9" class="form-check-label">
+            Database Migration
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="11" id="id_tasktype_10"> <label for="id_tasktype_10" class="form-check-label">
+            API Development
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="12" id="id_tasktype_11"> <label for="id_tasktype_11" class="form-check-label">
+            UI/UX Improvement
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="13" id="id_tasktype_12"> <label for="id_tasktype_12" class="form-check-label">
+            User Feedback Handling
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="14" id="id_tasktype_13"> <label for="id_tasktype_13" class="form-check-label">
+            Server Maintenance
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="15" id="id_tasktype_14"> <label for="id_tasktype_14" class="form-check-label">
+            System Integration
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="16" id="id_tasktype_15"> <label for="id_tasktype_15" class="form-check-label">
+            Monitoring and Logging
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="17" id="id_tasktype_16"> <label for="id_tasktype_16" class="form-check-label">
+            Infrastructure Setup
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="18" id="id_tasktype_17"> <label for="id_tasktype_17" class="form-check-label">
+            Penetration Testing
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="19" id="id_tasktype_18"> <label for="id_tasktype_18" class="form-check-label">
+            Legal Compliance Check
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="20" id="id_tasktype_19"> <label for="id_tasktype_19" class="form-check-label">
+            Data Analysis
+        </label> </div> </div> </fieldset> </div> <div id="div_id_project" class="mb-3"> <label for="id_project" class="form-label requiredField">
+                Project<span class="asteriskField">*</span> </label> <select name="project" class="select form-select" required="" id="id_project"> <option value="" selected="">---------</option> <option value="2">AI Chatbot</option> <option value="1">E-commerce Platform</option> <option value="3">Financial Dashboard</option> <option value="5">Cybersecurity Suite</option> <option value="4">Social Media App</option>
+
+</select> </div> <div id="div_id_workers" class="mb-3"> <fieldset> <legend class="form-label">
+                Workers
+            </legend> <div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="workers" value="7" id="id_workers_0"> <label for="id_workers_0" class="form-check-label">
+            daemon
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="workers" value="1" id="id_workers_1"> <label for="id_workers_1" class="form-check-label">
+            Admin
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="workers" value="8" id="id_workers_2"> <label for="id_workers_2" class="form-check-label">
+            jdoe
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="workers" value="4" id="id_workers_3"> <label for="id_workers_3" class="form-check-label">
+            ckent
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="workers" value="6" id="id_workers_4"> <label for="id_workers_4" class="form-check-label">
+            robby
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="workers" value="5" id="id_workers_5"> <label for="id_workers_5" class="form-check-label">
+            dpeters
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="workers" value="2" id="id_workers_6"> <label for="id_workers_6" class="form-check-label">
+            asmith
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="workers" value="3" id="id_workers_7"> <label for="id_workers_7" class="form-check-label">
+            bwayne
+        </label> </div> </div> </fieldset> </div>
+
+
+    <input type="submit" value="Submit" class="btn btn-primary">
+  </form>
+
+    </main>
+  </div>
+
+  <div class="pagination-container">
+
+
+  </div>
+
+  <div class="footer">
+
+
+<footer id="contact">
+  <div class="container">
+    <p>© 2025 J.U.R.A. Task Manager. All rights reserved.</p>
+  </div>
+</footer>
+  </div>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JavaScript -->
+  <script src="/static/js/theme-toggle.js"></script>
+
+
+</body>
+<nav class="navbar navbar-expand-lg fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="/">J.U.R.A.</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="/home/">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="/admin/">⚙️ Admin Panel</a></li>
+
+
+
+        <li class="nav-item">
+          <button class="btn btn-outline-secondary" onclick="toggleTheme()">Toggle Theme</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<button class="filter-toggle-btn" onclick="toggleFilter()">☰</button>
+<div class="filter-sidebar" id="filterSidebar">
+    <h3>Filters</h3>
+    <h4>Awaiting...</h4>
+
+
+
+
+
+
+
+
+</div>
+<div class="content-wrapper">
+    <aside class="sidebar">
+        <aside class="sidebar bg-light p-4 border rounded">
+
+      <li class="list-group-item"><a href="">Admin</a></li>
+      <li class="list-group-item">
+        <form method="post" action="/accounts/logout/?next=/task/create/">
+          <input type="hidden" name="csrfmiddlewaretoken" value="IUBSIT5NPBCAv9kK0LK08KbAwTuKZyqzRUMq5JSqsk7UAOHkA9TpEWickNGK0NpF">
+          <a><input class="list-group-item" type="submit" value="️Sign Out  🚪🚶‍♂️‍"></a>
+        </form>
+      </li>
+
+
+    <br>
+    <h3 class="mb-4">Quick Links</h3>
+    <ul class="list-unstyled">
+        <li><a href="/task-types/" class="d-block py-2">📌 Task Types</a></li>
+        <li><a href="/responsibilities/" class="d-block py-2">📎 Responsibilities</a></li>
+        <li><a href="/positions/" class="d-block py-2">🎭 Positions</a></li>
+        <li><a href="/workers/" class="d-block py-2">👨‍💻 Workers</a></li>
+        <li><a href="/teams/" class="d-block py-2">👥 Teams</a></li>
+        <li><a href="/projects/" class="d-block py-2">📂 Projects</a></li>
+        <li><a href="/tasks/" class="d-block py-2">📝 Tasks</a></li>
+        <li><a href="#/archive/" class="d-block py-2">🗄️️ Archive (Awaiting...)</a></li>
+    </ul>
+    <h3 class="mt-4">Resources</h3>
+    <ul class="list-unstyled">
+        <li><a href="https://github.com/Sichkaridze/J.U.R.A." target="_blank" class="d-block py-2">🔗 GitHub Repository</a></li>
+        <li><a href="#/docs/" class="d-block py-2">📖 Documentation (Awaiting...)</a></li>
+    </ul>
+</aside>
+    </aside>
+
+
+
+
+
+    <main class="main-content">
+    <input id="input" style="background-color: #F64C72" type="button" value="Input">
+
+  <h1>Create task</h1>
+  <br>
+  <form action="" method="post" novalidate="">
+    <input type="hidden" name="csrfmiddlewaretoken" value="IUBSIT5NPBCAv9kK0LK08KbAwTuKZyqzRUMq5JSqsk7UAOHkA9TpEWickNGK0NpF">
+
+
+<div id="div_id_name" class="mb-3"> <label for="id_name" class="form-label requiredField">
+                Name<span class="asteriskField">*</span> </label> <input type="text" name="name" maxlength="255" class="textinput form-control" required="" id="id_name"> </div> <div id="div_id_description" class="mb-3"> <label for="id_description" class="form-label">
+                Description
+            </label> <textarea name="description" cols="40" rows="10" class="textarea form-control" id="id_description"></textarea> </div> <div id="div_id_start_time" class="mb-3"> <label for="id_start_time" class="form-label">
+                Start time
+            </label> <input type="datetime-local" name="start_time" class="datetimeinput form-control" id="id_start_time"> </div> <div id="div_id_deadline" class="mb-3"> <label for="id_deadline" class="form-label">
+                Deadline
+            </label> <input type="datetime-local" name="deadline" class="datetimeinput form-control" id="id_deadline"> </div> <div id="div_id_priority" class="mb-3"> <label for="id_priority" class="form-label requiredField">
+                Priority<span class="asteriskField">*</span> </label> <select name="priority" class="select form-select" id="id_priority"> <option value="5">🔥 Urgent</option> <option value="4">🔴 High</option> <option value="3">🟡 Medium</option> <option value="2" selected="">🟢 Normal</option> <option value="1">🔵 Low</option> <option value="0">⚪ Optional</option>
+
+</select> </div> <div id="div_id_tasktype" class="mb-3"> <fieldset> <legend class="form-label">
+                Tasktype
+            </legend> <div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="1" id="id_tasktype_0"> <label for="id_tasktype_0" class="form-check-label">
+            Bug Fix
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="2" id="id_tasktype_1"> <label for="id_tasktype_1" class="form-check-label">
+            Feature Development
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="3" id="id_tasktype_2"> <label for="id_tasktype_2" class="form-check-label">
+            Code Review
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="4" id="id_tasktype_3"> <label for="id_tasktype_3" class="form-check-label">
+            Refactoring
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="5" id="id_tasktype_4"> <label for="id_tasktype_4" class="form-check-label">
+            Testing
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="6" id="id_tasktype_5"> <label for="id_tasktype_5" class="form-check-label">
+            Documentation
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="7" id="id_tasktype_6"> <label for="id_tasktype_6" class="form-check-label">
+            Deployment
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="8" id="id_tasktype_7"> <label for="id_tasktype_7" class="form-check-label">
+            Security Audit
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="9" id="id_tasktype_8"> <label for="id_tasktype_8" class="form-check-label">
+            Performance Optimization
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="10" id="id_tasktype_9"> <label for="id_tasktype_9" class="form-check-label">
+            Database Migration
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="11" id="id_tasktype_10"> <label for="id_tasktype_10" class="form-check-label">
+            API Development
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="12" id="id_tasktype_11"> <label for="id_tasktype_11" class="form-check-label">
+            UI/UX Improvement
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="13" id="id_tasktype_12"> <label for="id_tasktype_12" class="form-check-label">
+            User Feedback Handling
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="14" id="id_tasktype_13"> <label for="id_tasktype_13" class="form-check-label">
+            Server Maintenance
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="15" id="id_tasktype_14"> <label for="id_tasktype_14" class="form-check-label">
+            System Integration
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="16" id="id_tasktype_15"> <label for="id_tasktype_15" class="form-check-label">
+            Monitoring and Logging
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="17" id="id_tasktype_16"> <label for="id_tasktype_16" class="form-check-label">
+            Infrastructure Setup
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="18" id="id_tasktype_17"> <label for="id_tasktype_17" class="form-check-label">
+            Penetration Testing
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="19" id="id_tasktype_18"> <label for="id_tasktype_18" class="form-check-label">
+            Legal Compliance Check
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="20" id="id_tasktype_19"> <label for="id_tasktype_19" class="form-check-label">
+            Data Analysis
+        </label> </div> </div> </fieldset> </div> <div id="div_id_project" class="mb-3"> <label for="id_project" class="form-label requiredField">
+                Project<span class="asteriskField">*</span> </label> <select name="project" class="select form-select" required="" id="id_project"> <option value="" selected="">---------</option> <option value="2">AI Chatbot</option> <option value="1">E-commerce Platform</option> <option value="3">Financial Dashboard</option> <option value="5">Cybersecurity Suite</option> <option value="4">Social Media App</option>
+
+</select> </div> <div id="div_id_workers" class="mb-3"> <fieldset> <legend class="form-label">
+                Workers
+            </legend> <div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="workers" value="7" id="id_workers_0"> <label for="id_workers_0" class="form-check-label">
+            daemon
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="workers" value="1" id="id_workers_1"> <label for="id_workers_1" class="form-check-label">
+            Admin
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="workers" value="8" id="id_workers_2"> <label for="id_workers_2" class="form-check-label">
+            jdoe
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="workers" value="4" id="id_workers_3"> <label for="id_workers_3" class="form-check-label">
+            ckent
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="workers" value="6" id="id_workers_4"> <label for="id_workers_4" class="form-check-label">
+            robby
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="workers" value="5" id="id_workers_5"> <label for="id_workers_5" class="form-check-label">
+            dpeters
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="workers" value="2" id="id_workers_6"> <label for="id_workers_6" class="form-check-label">
+            asmith
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="workers" value="3" id="id_workers_7"> <label for="id_workers_7" class="form-check-label">
+            bwayne
+        </label> </div> </div> </fieldset> </div>
+
+
+    <input type="submit" value="Submit" class="btn btn-primary">
+  </form>
+
+    </main>
+  </div>
+<aside class="sidebar">
+        <aside class="sidebar bg-light p-4 border rounded">
+
+      <li class="list-group-item"><a href="">Admin</a></li>
+      <li class="list-group-item">
+        <form method="post" action="/accounts/logout/?next=/task/create/">
+          <input type="hidden" name="csrfmiddlewaretoken" value="IUBSIT5NPBCAv9kK0LK08KbAwTuKZyqzRUMq5JSqsk7UAOHkA9TpEWickNGK0NpF">
+          <a><input class="list-group-item" type="submit" value="️Sign Out  🚪🚶‍♂️‍"></a>
+        </form>
+      </li>
+
+
+    <br>
+    <h3 class="mb-4">Quick Links</h3>
+    <ul class="list-unstyled">
+        <li><a href="/task-types/" class="d-block py-2">📌 Task Types</a></li>
+        <li><a href="/responsibilities/" class="d-block py-2">📎 Responsibilities</a></li>
+        <li><a href="/positions/" class="d-block py-2">🎭 Positions</a></li>
+        <li><a href="/workers/" class="d-block py-2">👨‍💻 Workers</a></li>
+        <li><a href="/teams/" class="d-block py-2">👥 Teams</a></li>
+        <li><a href="/projects/" class="d-block py-2">📂 Projects</a></li>
+        <li><a href="/tasks/" class="d-block py-2">📝 Tasks</a></li>
+        <li><a href="#/archive/" class="d-block py-2">🗄️️ Archive (Awaiting...)</a></li>
+    </ul>
+    <h3 class="mt-4">Resources</h3>
+    <ul class="list-unstyled">
+        <li><a href="https://github.com/Sichkaridze/J.U.R.A." target="_blank" class="d-block py-2">🔗 GitHub Repository</a></li>
+        <li><a href="#/docs/" class="d-block py-2">📖 Documentation (Awaiting...)</a></li>
+    </ul>
+</aside>
+    </aside>
+<main class="main-content">
+    <input id="input" style="background-color: #F64C72" type="button" value="Input">
+
+  <h1>Create task</h1>
+  <br>
+  <form action="" method="post" novalidate="">
+    <input type="hidden" name="csrfmiddlewaretoken" value="IUBSIT5NPBCAv9kK0LK08KbAwTuKZyqzRUMq5JSqsk7UAOHkA9TpEWickNGK0NpF">
+
+
+<div id="div_id_name" class="mb-3"> <label for="id_name" class="form-label requiredField">
+                Name<span class="asteriskField">*</span> </label> <input type="text" name="name" maxlength="255" class="textinput form-control" required="" id="id_name"> </div> <div id="div_id_description" class="mb-3"> <label for="id_description" class="form-label">
+                Description
+            </label> <textarea name="description" cols="40" rows="10" class="textarea form-control" id="id_description"></textarea> </div> <div id="div_id_start_time" class="mb-3"> <label for="id_start_time" class="form-label">
+                Start time
+            </label> <input type="datetime-local" name="start_time" class="datetimeinput form-control" id="id_start_time"> </div> <div id="div_id_deadline" class="mb-3"> <label for="id_deadline" class="form-label">
+                Deadline
+            </label> <input type="datetime-local" name="deadline" class="datetimeinput form-control" id="id_deadline"> </div> <div id="div_id_priority" class="mb-3"> <label for="id_priority" class="form-label requiredField">
+                Priority<span class="asteriskField">*</span> </label> <select name="priority" class="select form-select" id="id_priority"> <option value="5">🔥 Urgent</option> <option value="4">🔴 High</option> <option value="3">🟡 Medium</option> <option value="2" selected="">🟢 Normal</option> <option value="1">🔵 Low</option> <option value="0">⚪ Optional</option>
+
+</select> </div> <div id="div_id_tasktype" class="mb-3"> <fieldset> <legend class="form-label">
+                Tasktype
+            </legend> <div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="1" id="id_tasktype_0"> <label for="id_tasktype_0" class="form-check-label">
+            Bug Fix
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="2" id="id_tasktype_1"> <label for="id_tasktype_1" class="form-check-label">
+            Feature Development
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="3" id="id_tasktype_2"> <label for="id_tasktype_2" class="form-check-label">
+            Code Review
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="4" id="id_tasktype_3"> <label for="id_tasktype_3" class="form-check-label">
+            Refactoring
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="5" id="id_tasktype_4"> <label for="id_tasktype_4" class="form-check-label">
+            Testing
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="6" id="id_tasktype_5"> <label for="id_tasktype_5" class="form-check-label">
+            Documentation
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="7" id="id_tasktype_6"> <label for="id_tasktype_6" class="form-check-label">
+            Deployment
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="8" id="id_tasktype_7"> <label for="id_tasktype_7" class="form-check-label">
+            Security Audit
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="9" id="id_tasktype_8"> <label for="id_tasktype_8" class="form-check-label">
+            Performance Optimization
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="10" id="id_tasktype_9"> <label for="id_tasktype_9" class="form-check-label">
+            Database Migration
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="11" id="id_tasktype_10"> <label for="id_tasktype_10" class="form-check-label">
+            API Development
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="12" id="id_tasktype_11"> <label for="id_tasktype_11" class="form-check-label">
+            UI/UX Improvement
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="13" id="id_tasktype_12"> <label for="id_tasktype_12" class="form-check-label">
+            User Feedback Handling
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="14" id="id_tasktype_13"> <label for="id_tasktype_13" class="form-check-label">
+            Server Maintenance
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="15" id="id_tasktype_14"> <label for="id_tasktype_14" class="form-check-label">
+            System Integration
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="16" id="id_tasktype_15"> <label for="id_tasktype_15" class="form-check-label">
+            Monitoring and Logging
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="17" id="id_tasktype_16"> <label for="id_tasktype_16" class="form-check-label">
+            Infrastructure Setup
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="18" id="id_tasktype_17"> <label for="id_tasktype_17" class="form-check-label">
+            Penetration Testing
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="19" id="id_tasktype_18"> <label for="id_tasktype_18" class="form-check-label">
+            Legal Compliance Check
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="20" id="id_tasktype_19"> <label for="id_tasktype_19" class="form-check-label">
+            Data Analysis
+        </label> </div> </div> </fieldset> </div> <div id="div_id_project" class="mb-3"> <label for="id_project" class="form-label requiredField">
+                Project<span class="asteriskField">*</span> </label> <select name="project" class="select form-select" required="" id="id_project"> <option value="" selected="">---------</option> <option value="2">AI Chatbot</option> <option value="1">E-commerce Platform</option> <option value="3">Financial Dashboard</option> <option value="5">Cybersecurity Suite</option> <option value="4">Social Media App</option>
+
+</select> </div> <div id="div_id_workers" class="mb-3"> <fieldset> <legend class="form-label">
+                Workers
+            </legend> <div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="workers" value="7" id="id_workers_0"> <label for="id_workers_0" class="form-check-label">
+            daemon
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="workers" value="1" id="id_workers_1"> <label for="id_workers_1" class="form-check-label">
+            Admin
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="workers" value="8" id="id_workers_2"> <label for="id_workers_2" class="form-check-label">
+            jdoe
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="workers" value="4" id="id_workers_3"> <label for="id_workers_3" class="form-check-label">
+            ckent
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="workers" value="6" id="id_workers_4"> <label for="id_workers_4" class="form-check-label">
+            robby
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="workers" value="5" id="id_workers_5"> <label for="id_workers_5" class="form-check-label">
+            dpeters
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="workers" value="2" id="id_workers_6"> <label for="id_workers_6" class="form-check-label">
+            asmith
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="workers" value="3" id="id_workers_7"> <label for="id_workers_7" class="form-check-label">
+            bwayne
+        </label> </div> </div> </fieldset> </div>
+
+
+    <input type="submit" value="Submit" class="btn btn-primary">
+  </form>
+
+    </main>
+<input id="input" style="background-color: #F64C72" type="button" value="Input">
+<h1>Create task</h1>
+<br>
+<form action="" method="post" novalidate="">
+    <input type="hidden" name="csrfmiddlewaretoken" value="IUBSIT5NPBCAv9kK0LK08KbAwTuKZyqzRUMq5JSqsk7UAOHkA9TpEWickNGK0NpF">
+
+
+<div id="div_id_name" class="mb-3"> <label for="id_name" class="form-label requiredField">
+                Name<span class="asteriskField">*</span> </label> <input type="text" name="name" maxlength="255" class="textinput form-control" required="" id="id_name"> </div> <div id="div_id_description" class="mb-3"> <label for="id_description" class="form-label">
+                Description
+            </label> <textarea name="description" cols="40" rows="10" class="textarea form-control" id="id_description"></textarea> </div> <div id="div_id_start_time" class="mb-3"> <label for="id_start_time" class="form-label">
+                Start time
+            </label> <input type="datetime-local" name="start_time" class="datetimeinput form-control" id="id_start_time"> </div> <div id="div_id_deadline" class="mb-3"> <label for="id_deadline" class="form-label">
+                Deadline
+            </label> <input type="datetime-local" name="deadline" class="datetimeinput form-control" id="id_deadline"> </div> <div id="div_id_priority" class="mb-3"> <label for="id_priority" class="form-label requiredField">
+                Priority<span class="asteriskField">*</span> </label> <select name="priority" class="select form-select" id="id_priority"> <option value="5">🔥 Urgent</option> <option value="4">🔴 High</option> <option value="3">🟡 Medium</option> <option value="2" selected="">🟢 Normal</option> <option value="1">🔵 Low</option> <option value="0">⚪ Optional</option>
+
+</select> </div> <div id="div_id_tasktype" class="mb-3"> <fieldset> <legend class="form-label">
+                Tasktype
+            </legend> <div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="1" id="id_tasktype_0"> <label for="id_tasktype_0" class="form-check-label">
+            Bug Fix
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="2" id="id_tasktype_1"> <label for="id_tasktype_1" class="form-check-label">
+            Feature Development
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="3" id="id_tasktype_2"> <label for="id_tasktype_2" class="form-check-label">
+            Code Review
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="4" id="id_tasktype_3"> <label for="id_tasktype_3" class="form-check-label">
+            Refactoring
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="5" id="id_tasktype_4"> <label for="id_tasktype_4" class="form-check-label">
+            Testing
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="6" id="id_tasktype_5"> <label for="id_tasktype_5" class="form-check-label">
+            Documentation
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="7" id="id_tasktype_6"> <label for="id_tasktype_6" class="form-check-label">
+            Deployment
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="8" id="id_tasktype_7"> <label for="id_tasktype_7" class="form-check-label">
+            Security Audit
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="9" id="id_tasktype_8"> <label for="id_tasktype_8" class="form-check-label">
+            Performance Optimization
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="10" id="id_tasktype_9"> <label for="id_tasktype_9" class="form-check-label">
+            Database Migration
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="11" id="id_tasktype_10"> <label for="id_tasktype_10" class="form-check-label">
+            API Development
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="12" id="id_tasktype_11"> <label for="id_tasktype_11" class="form-check-label">
+            UI/UX Improvement
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="13" id="id_tasktype_12"> <label for="id_tasktype_12" class="form-check-label">
+            User Feedback Handling
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="14" id="id_tasktype_13"> <label for="id_tasktype_13" class="form-check-label">
+            Server Maintenance
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="15" id="id_tasktype_14"> <label for="id_tasktype_14" class="form-check-label">
+            System Integration
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="16" id="id_tasktype_15"> <label for="id_tasktype_15" class="form-check-label">
+            Monitoring and Logging
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="17" id="id_tasktype_16"> <label for="id_tasktype_16" class="form-check-label">
+            Infrastructure Setup
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="18" id="id_tasktype_17"> <label for="id_tasktype_17" class="form-check-label">
+            Penetration Testing
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="19" id="id_tasktype_18"> <label for="id_tasktype_18" class="form-check-label">
+            Legal Compliance Check
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="20" id="id_tasktype_19"> <label for="id_tasktype_19" class="form-check-label">
+            Data Analysis
+        </label> </div> </div> </fieldset> </div> <div id="div_id_project" class="mb-3"> <label for="id_project" class="form-label requiredField">
+                Project<span class="asteriskField">*</span> </label> <select name="project" class="select form-select" required="" id="id_project"> <option value="" selected="">---------</option> <option value="2">AI Chatbot</option> <option value="1">E-commerce Platform</option> <option value="3">Financial Dashboard</option> <option value="5">Cybersecurity Suite</option> <option value="4">Social Media App</option>
+
+</select> </div> <div id="div_id_workers" class="mb-3"> <fieldset> <legend class="form-label">
+                Workers
+            </legend> <div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="workers" value="7" id="id_workers_0"> <label for="id_workers_0" class="form-check-label">
+            daemon
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="workers" value="1" id="id_workers_1"> <label for="id_workers_1" class="form-check-label">
+            Admin
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="workers" value="8" id="id_workers_2"> <label for="id_workers_2" class="form-check-label">
+            jdoe
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="workers" value="4" id="id_workers_3"> <label for="id_workers_3" class="form-check-label">
+            ckent
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="workers" value="6" id="id_workers_4"> <label for="id_workers_4" class="form-check-label">
+            robby
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="workers" value="5" id="id_workers_5"> <label for="id_workers_5" class="form-check-label">
+            dpeters
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="workers" value="2" id="id_workers_6"> <label for="id_workers_6" class="form-check-label">
+            asmith
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="workers" value="3" id="id_workers_7"> <label for="id_workers_7" class="form-check-label">
+            bwayne
+        </label> </div> </div> </fieldset> </div>
+
+
+    <input type="submit" value="Submit" class="btn btn-primary">
+  </form>
+<input type="hidden" name="csrfmiddlewaretoken" value="IUBSIT5NPBCAv9kK0LK08KbAwTuKZyqzRUMq5JSqsk7UAOHkA9TpEWickNGK0NpF">
+<div id="div_id_name" class="mb-3"> <label for="id_name" class="form-label requiredField">
+                Name<span class="asteriskField">*</span> </label> <input type="text" name="name" maxlength="255" class="textinput form-control" required="" id="id_name"> </div>
+<div id="div_id_description" class="mb-3"> <label for="id_description" class="form-label">
+                Description
+            </label> <textarea name="description" cols="40" rows="10" class="textarea form-control" id="id_description"></textarea> </div>
+<div id="div_id_start_time" class="mb-3"> <label for="id_start_time" class="form-label">
+                Start time
+            </label> <input type="datetime-local" name="start_time" class="datetimeinput form-control" id="id_start_time"> </div>
+<div id="div_id_deadline" class="mb-3"> <label for="id_deadline" class="form-label">
+                Deadline
+            </label> <input type="datetime-local" name="deadline" class="datetimeinput form-control" id="id_deadline"> </div>
+<div id="div_id_priority" class="mb-3"> <label for="id_priority" class="form-label requiredField">
+                Priority<span class="asteriskField">*</span> </label> <select name="priority" class="select form-select" id="id_priority"> <option value="5">🔥 Urgent</option> <option value="4">🔴 High</option> <option value="3">🟡 Medium</option> <option value="2" selected="">🟢 Normal</option> <option value="1">🔵 Low</option> <option value="0">⚪ Optional</option>
+
+</select> </div>
+<div id="div_id_tasktype" class="mb-3"> <fieldset> <legend class="form-label">
+                Tasktype
+            </legend> <div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="1" id="id_tasktype_0"> <label for="id_tasktype_0" class="form-check-label">
+            Bug Fix
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="2" id="id_tasktype_1"> <label for="id_tasktype_1" class="form-check-label">
+            Feature Development
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="3" id="id_tasktype_2"> <label for="id_tasktype_2" class="form-check-label">
+            Code Review
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="4" id="id_tasktype_3"> <label for="id_tasktype_3" class="form-check-label">
+            Refactoring
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="5" id="id_tasktype_4"> <label for="id_tasktype_4" class="form-check-label">
+            Testing
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="6" id="id_tasktype_5"> <label for="id_tasktype_5" class="form-check-label">
+            Documentation
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="7" id="id_tasktype_6"> <label for="id_tasktype_6" class="form-check-label">
+            Deployment
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="8" id="id_tasktype_7"> <label for="id_tasktype_7" class="form-check-label">
+            Security Audit
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="9" id="id_tasktype_8"> <label for="id_tasktype_8" class="form-check-label">
+            Performance Optimization
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="10" id="id_tasktype_9"> <label for="id_tasktype_9" class="form-check-label">
+            Database Migration
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="11" id="id_tasktype_10"> <label for="id_tasktype_10" class="form-check-label">
+            API Development
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="12" id="id_tasktype_11"> <label for="id_tasktype_11" class="form-check-label">
+            UI/UX Improvement
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="13" id="id_tasktype_12"> <label for="id_tasktype_12" class="form-check-label">
+            User Feedback Handling
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="14" id="id_tasktype_13"> <label for="id_tasktype_13" class="form-check-label">
+            Server Maintenance
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="15" id="id_tasktype_14"> <label for="id_tasktype_14" class="form-check-label">
+            System Integration
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="16" id="id_tasktype_15"> <label for="id_tasktype_15" class="form-check-label">
+            Monitoring and Logging
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="17" id="id_tasktype_16"> <label for="id_tasktype_16" class="form-check-label">
+            Infrastructure Setup
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="18" id="id_tasktype_17"> <label for="id_tasktype_17" class="form-check-label">
+            Penetration Testing
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="19" id="id_tasktype_18"> <label for="id_tasktype_18" class="form-check-label">
+            Legal Compliance Check
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="20" id="id_tasktype_19"> <label for="id_tasktype_19" class="form-check-label">
+            Data Analysis
+        </label> </div> </div> </fieldset> </div>
+<div id="div_id_project" class="mb-3"> <label for="id_project" class="form-label requiredField">
+                Project<span class="asteriskField">*</span> </label> <select name="project" class="select form-select" required="" id="id_project"> <option value="" selected="">---------</option> <option value="2">AI Chatbot</option> <option value="1">E-commerce Platform</option> <option value="3">Financial Dashboard</option> <option value="5">Cybersecurity Suite</option> <option value="4">Social Media App</option>
+
+</select> </div>
+<div id="div_id_workers" class="mb-3"> <fieldset> <legend class="form-label">
+                Workers
+            </legend> <div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="workers" value="7" id="id_workers_0"> <label for="id_workers_0" class="form-check-label">
+            daemon
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="workers" value="1" id="id_workers_1"> <label for="id_workers_1" class="form-check-label">
+            Admin
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="workers" value="8" id="id_workers_2"> <label for="id_workers_2" class="form-check-label">
+            jdoe
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="workers" value="4" id="id_workers_3"> <label for="id_workers_3" class="form-check-label">
+            ckent
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="workers" value="6" id="id_workers_4"> <label for="id_workers_4" class="form-check-label">
+            robby
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="workers" value="5" id="id_workers_5"> <label for="id_workers_5" class="form-check-label">
+            dpeters
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="workers" value="2" id="id_workers_6"> <label for="id_workers_6" class="form-check-label">
+            asmith
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="workers" value="3" id="id_workers_7"> <label for="id_workers_7" class="form-check-label">
+            bwayne
+        </label> </div> </div> </fieldset> </div>
+<input type="submit" value="Submit" class="btn btn-primary">
+<form action="" method="post" novalidate="">
+    <input type="hidden" name="csrfmiddlewaretoken" value="IUBSIT5NPBCAv9kK0LK08KbAwTuKZyqzRUMq5JSqsk7UAOHkA9TpEWickNGK0NpF">
+
+
+<div id="div_id_name" class="mb-3"> <label for="id_name" class="form-label requiredField">
+                Name<span class="asteriskField">*</span> </label> <input type="text" name="name" maxlength="255" class="textinput form-control" required="" id="id_name"> </div> <div id="div_id_description" class="mb-3"> <label for="id_description" class="form-label">
+                Description
+            </label> <textarea name="description" cols="40" rows="10" class="textarea form-control" id="id_description"></textarea> </div> <div id="div_id_start_time" class="mb-3"> <label for="id_start_time" class="form-label">
+                Start time
+            </label> <input type="datetime-local" name="start_time" class="datetimeinput form-control" id="id_start_time"> </div> <div id="div_id_deadline" class="mb-3"> <label for="id_deadline" class="form-label">
+                Deadline
+            </label> <input type="datetime-local" name="deadline" class="datetimeinput form-control" id="id_deadline"> </div> <div id="div_id_priority" class="mb-3"> <label for="id_priority" class="form-label requiredField">
+                Priority<span class="asteriskField">*</span> </label> <select name="priority" class="select form-select" id="id_priority"> <option value="5">🔥 Urgent</option> <option value="4">🔴 High</option> <option value="3">🟡 Medium</option> <option value="2" selected="">🟢 Normal</option> <option value="1">🔵 Low</option> <option value="0">⚪ Optional</option>
+
+</select> </div> <div id="div_id_tasktype" class="mb-3"> <fieldset> <legend class="form-label">
+                Tasktype
+            </legend> <div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="1" id="id_tasktype_0"> <label for="id_tasktype_0" class="form-check-label">
+            Bug Fix
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="2" id="id_tasktype_1"> <label for="id_tasktype_1" class="form-check-label">
+            Feature Development
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="3" id="id_tasktype_2"> <label for="id_tasktype_2" class="form-check-label">
+            Code Review
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="4" id="id_tasktype_3"> <label for="id_tasktype_3" class="form-check-label">
+            Refactoring
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="5" id="id_tasktype_4"> <label for="id_tasktype_4" class="form-check-label">
+            Testing
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="6" id="id_tasktype_5"> <label for="id_tasktype_5" class="form-check-label">
+            Documentation
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="7" id="id_tasktype_6"> <label for="id_tasktype_6" class="form-check-label">
+            Deployment
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="8" id="id_tasktype_7"> <label for="id_tasktype_7" class="form-check-label">
+            Security Audit
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="9" id="id_tasktype_8"> <label for="id_tasktype_8" class="form-check-label">
+            Performance Optimization
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="10" id="id_tasktype_9"> <label for="id_tasktype_9" class="form-check-label">
+            Database Migration
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="11" id="id_tasktype_10"> <label for="id_tasktype_10" class="form-check-label">
+            API Development
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="12" id="id_tasktype_11"> <label for="id_tasktype_11" class="form-check-label">
+            UI/UX Improvement
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="13" id="id_tasktype_12"> <label for="id_tasktype_12" class="form-check-label">
+            User Feedback Handling
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="14" id="id_tasktype_13"> <label for="id_tasktype_13" class="form-check-label">
+            Server Maintenance
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="15" id="id_tasktype_14"> <label for="id_tasktype_14" class="form-check-label">
+            System Integration
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="16" id="id_tasktype_15"> <label for="id_tasktype_15" class="form-check-label">
+            Monitoring and Logging
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="17" id="id_tasktype_16"> <label for="id_tasktype_16" class="form-check-label">
+            Infrastructure Setup
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="18" id="id_tasktype_17"> <label for="id_tasktype_17" class="form-check-label">
+            Penetration Testing
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="19" id="id_tasktype_18"> <label for="id_tasktype_18" class="form-check-label">
+            Legal Compliance Check
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="20" id="id_tasktype_19"> <label for="id_tasktype_19" class="form-check-label">
+            Data Analysis
+        </label> </div> </div> </fieldset> </div> <div id="div_id_project" class="mb-3"> <label for="id_project" class="form-label requiredField">
+                Project<span class="asteriskField">*</span> </label> <select name="project" class="select form-select" required="" id="id_project"> <option value="" selected="">---------</option> <option value="2">AI Chatbot</option> <option value="1">E-commerce Platform</option> <option value="3">Financial Dashboard</option> <option value="5">Cybersecurity Suite</option> <option value="4">Social Media App</option>
+
+</select> </div> <div id="div_id_workers" class="mb-3"> <fieldset> <legend class="form-label">
+                Workers
+            </legend> <div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="workers" value="7" id="id_workers_0"> <label for="id_workers_0" class="form-check-label">
+            daemon
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="workers" value="1" id="id_workers_1"> <label for="id_workers_1" class="form-check-label">
+            Admin
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="workers" value="8" id="id_workers_2"> <label for="id_workers_2" class="form-check-label">
+            jdoe
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="workers" value="4" id="id_workers_3"> <label for="id_workers_3" class="form-check-label">
+            ckent
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="workers" value="6" id="id_workers_4"> <label for="id_workers_4" class="form-check-label">
+            robby
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="workers" value="5" id="id_workers_5"> <label for="id_workers_5" class="form-check-label">
+            dpeters
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="workers" value="2" id="id_workers_6"> <label for="id_workers_6" class="form-check-label">
+            asmith
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="workers" value="3" id="id_workers_7"> <label for="id_workers_7" class="form-check-label">
+            bwayne
+        </label> </div> </div> </fieldset> </div>
+
+
+    <input type="submit" value="Submit" class="btn btn-primary">
+  </form>
+<main class="main-content">
+    <input id="input" style="background-color: #F64C72" type="button" value="Input">
+
+  <h1>Create task</h1>
+  <br>
+  <form action="" method="post" novalidate="">
+    <input type="hidden" name="csrfmiddlewaretoken" value="IUBSIT5NPBCAv9kK0LK08KbAwTuKZyqzRUMq5JSqsk7UAOHkA9TpEWickNGK0NpF">
+
+
+<div id="div_id_name" class="mb-3"> <label for="id_name" class="form-label requiredField">
+                Name<span class="asteriskField">*</span> </label> <input type="text" name="name" maxlength="255" class="textinput form-control" required="" id="id_name"> </div> <div id="div_id_description" class="mb-3"> <label for="id_description" class="form-label">
+                Description
+            </label> <textarea name="description" cols="40" rows="10" class="textarea form-control" id="id_description"></textarea> </div> <div id="div_id_start_time" class="mb-3"> <label for="id_start_time" class="form-label">
+                Start time
+            </label> <input type="datetime-local" name="start_time" class="datetimeinput form-control" id="id_start_time"> </div> <div id="div_id_deadline" class="mb-3"> <label for="id_deadline" class="form-label">
+                Deadline
+            </label> <input type="datetime-local" name="deadline" class="datetimeinput form-control" id="id_deadline"> </div> <div id="div_id_priority" class="mb-3"> <label for="id_priority" class="form-label requiredField">
+                Priority<span class="asteriskField">*</span> </label> <select name="priority" class="select form-select" id="id_priority"> <option value="5">🔥 Urgent</option> <option value="4">🔴 High</option> <option value="3">🟡 Medium</option> <option value="2" selected="">🟢 Normal</option> <option value="1">🔵 Low</option> <option value="0">⚪ Optional</option>
+
+</select> </div> <div id="div_id_tasktype" class="mb-3"> <fieldset> <legend class="form-label">
+                Tasktype
+            </legend> <div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="1" id="id_tasktype_0"> <label for="id_tasktype_0" class="form-check-label">
+            Bug Fix
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="2" id="id_tasktype_1"> <label for="id_tasktype_1" class="form-check-label">
+            Feature Development
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="3" id="id_tasktype_2"> <label for="id_tasktype_2" class="form-check-label">
+            Code Review
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="4" id="id_tasktype_3"> <label for="id_tasktype_3" class="form-check-label">
+            Refactoring
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="5" id="id_tasktype_4"> <label for="id_tasktype_4" class="form-check-label">
+            Testing
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="6" id="id_tasktype_5"> <label for="id_tasktype_5" class="form-check-label">
+            Documentation
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="7" id="id_tasktype_6"> <label for="id_tasktype_6" class="form-check-label">
+            Deployment
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="8" id="id_tasktype_7"> <label for="id_tasktype_7" class="form-check-label">
+            Security Audit
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="9" id="id_tasktype_8"> <label for="id_tasktype_8" class="form-check-label">
+            Performance Optimization
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="10" id="id_tasktype_9"> <label for="id_tasktype_9" class="form-check-label">
+            Database Migration
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="11" id="id_tasktype_10"> <label for="id_tasktype_10" class="form-check-label">
+            API Development
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="12" id="id_tasktype_11"> <label for="id_tasktype_11" class="form-check-label">
+            UI/UX Improvement
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="13" id="id_tasktype_12"> <label for="id_tasktype_12" class="form-check-label">
+            User Feedback Handling
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="14" id="id_tasktype_13"> <label for="id_tasktype_13" class="form-check-label">
+            Server Maintenance
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="15" id="id_tasktype_14"> <label for="id_tasktype_14" class="form-check-label">
+            System Integration
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="16" id="id_tasktype_15"> <label for="id_tasktype_15" class="form-check-label">
+            Monitoring and Logging
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="17" id="id_tasktype_16"> <label for="id_tasktype_16" class="form-check-label">
+            Infrastructure Setup
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="18" id="id_tasktype_17"> <label for="id_tasktype_17" class="form-check-label">
+            Penetration Testing
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="19" id="id_tasktype_18"> <label for="id_tasktype_18" class="form-check-label">
+            Legal Compliance Check
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="20" id="id_tasktype_19"> <label for="id_tasktype_19" class="form-check-label">
+            Data Analysis
+        </label> </div> </div> </fieldset> </div> <div id="div_id_project" class="mb-3"> <label for="id_project" class="form-label requiredField">
+                Project<span class="asteriskField">*</span> </label> <select name="project" class="select form-select" required="" id="id_project"> <option value="" selected="">---------</option> <option value="2">AI Chatbot</option> <option value="1">E-commerce Platform</option> <option value="3">Financial Dashboard</option> <option value="5">Cybersecurity Suite</option> <option value="4">Social Media App</option>
+
+</select> </div> <div id="div_id_workers" class="mb-3"> <fieldset> <legend class="form-label">
+                Workers
+            </legend> <div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="workers" value="7" id="id_workers_0"> <label for="id_workers_0" class="form-check-label">
+            daemon
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="workers" value="1" id="id_workers_1"> <label for="id_workers_1" class="form-check-label">
+            Admin
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="workers" value="8" id="id_workers_2"> <label for="id_workers_2" class="form-check-label">
+            jdoe
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="workers" value="4" id="id_workers_3"> <label for="id_workers_3" class="form-check-label">
+            ckent
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="workers" value="6" id="id_workers_4"> <label for="id_workers_4" class="form-check-label">
+            robby
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="workers" value="5" id="id_workers_5"> <label for="id_workers_5" class="form-check-label">
+            dpeters
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="workers" value="2" id="id_workers_6"> <label for="id_workers_6" class="form-check-label">
+            asmith
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="workers" value="3" id="id_workers_7"> <label for="id_workers_7" class="form-check-label">
+            bwayne
+        </label> </div> </div> </fieldset> </div>
+
+
+    <input type="submit" value="Submit" class="btn btn-primary">
+  </form>
+
+    </main>
+<div class="content-wrapper">
+    <aside class="sidebar">
+        <aside class="sidebar bg-light p-4 border rounded">
+
+      <li class="list-group-item"><a href="">Admin</a></li>
+      <li class="list-group-item">
+        <form method="post" action="/accounts/logout/?next=/task/create/">
+          <input type="hidden" name="csrfmiddlewaretoken" value="IUBSIT5NPBCAv9kK0LK08KbAwTuKZyqzRUMq5JSqsk7UAOHkA9TpEWickNGK0NpF">
+          <a><input class="list-group-item" type="submit" value="️Sign Out  🚪🚶‍♂️‍"></a>
+        </form>
+      </li>
+
+
+    <br>
+    <h3 class="mb-4">Quick Links</h3>
+    <ul class="list-unstyled">
+        <li><a href="/task-types/" class="d-block py-2">📌 Task Types</a></li>
+        <li><a href="/responsibilities/" class="d-block py-2">📎 Responsibilities</a></li>
+        <li><a href="/positions/" class="d-block py-2">🎭 Positions</a></li>
+        <li><a href="/workers/" class="d-block py-2">👨‍💻 Workers</a></li>
+        <li><a href="/teams/" class="d-block py-2">👥 Teams</a></li>
+        <li><a href="/projects/" class="d-block py-2">📂 Projects</a></li>
+        <li><a href="/tasks/" class="d-block py-2">📝 Tasks</a></li>
+        <li><a href="#/archive/" class="d-block py-2">🗄️️ Archive (Awaiting...)</a></li>
+    </ul>
+    <h3 class="mt-4">Resources</h3>
+    <ul class="list-unstyled">
+        <li><a href="https://github.com/Sichkaridze/J.U.R.A." target="_blank" class="d-block py-2">🔗 GitHub Repository</a></li>
+        <li><a href="#/docs/" class="d-block py-2">📖 Documentation (Awaiting...)</a></li>
+    </ul>
+</aside>
+    </aside>
+
+
+
+
+
+    <main class="main-content">
+    <input id="input" style="background-color: #F64C72" type="button" value="Input">
+
+  <h1>Create task</h1>
+  <br>
+  <form action="" method="post" novalidate="">
+    <input type="hidden" name="csrfmiddlewaretoken" value="IUBSIT5NPBCAv9kK0LK08KbAwTuKZyqzRUMq5JSqsk7UAOHkA9TpEWickNGK0NpF">
+
+
+<div id="div_id_name" class="mb-3"> <label for="id_name" class="form-label requiredField">
+                Name<span class="asteriskField">*</span> </label> <input type="text" name="name" maxlength="255" class="textinput form-control" required="" id="id_name"> </div> <div id="div_id_description" class="mb-3"> <label for="id_description" class="form-label">
+                Description
+            </label> <textarea name="description" cols="40" rows="10" class="textarea form-control" id="id_description"></textarea> </div> <div id="div_id_start_time" class="mb-3"> <label for="id_start_time" class="form-label">
+                Start time
+            </label> <input type="datetime-local" name="start_time" class="datetimeinput form-control" id="id_start_time"> </div> <div id="div_id_deadline" class="mb-3"> <label for="id_deadline" class="form-label">
+                Deadline
+            </label> <input type="datetime-local" name="deadline" class="datetimeinput form-control" id="id_deadline"> </div> <div id="div_id_priority" class="mb-3"> <label for="id_priority" class="form-label requiredField">
+                Priority<span class="asteriskField">*</span> </label> <select name="priority" class="select form-select" id="id_priority"> <option value="5">🔥 Urgent</option> <option value="4">🔴 High</option> <option value="3">🟡 Medium</option> <option value="2" selected="">🟢 Normal</option> <option value="1">🔵 Low</option> <option value="0">⚪ Optional</option>
+
+</select> </div> <div id="div_id_tasktype" class="mb-3"> <fieldset> <legend class="form-label">
+                Tasktype
+            </legend> <div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="1" id="id_tasktype_0"> <label for="id_tasktype_0" class="form-check-label">
+            Bug Fix
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="2" id="id_tasktype_1"> <label for="id_tasktype_1" class="form-check-label">
+            Feature Development
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="3" id="id_tasktype_2"> <label for="id_tasktype_2" class="form-check-label">
+            Code Review
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="4" id="id_tasktype_3"> <label for="id_tasktype_3" class="form-check-label">
+            Refactoring
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="5" id="id_tasktype_4"> <label for="id_tasktype_4" class="form-check-label">
+            Testing
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="6" id="id_tasktype_5"> <label for="id_tasktype_5" class="form-check-label">
+            Documentation
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="7" id="id_tasktype_6"> <label for="id_tasktype_6" class="form-check-label">
+            Deployment
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="8" id="id_tasktype_7"> <label for="id_tasktype_7" class="form-check-label">
+            Security Audit
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="9" id="id_tasktype_8"> <label for="id_tasktype_8" class="form-check-label">
+            Performance Optimization
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="10" id="id_tasktype_9"> <label for="id_tasktype_9" class="form-check-label">
+            Database Migration
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="11" id="id_tasktype_10"> <label for="id_tasktype_10" class="form-check-label">
+            API Development
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="12" id="id_tasktype_11"> <label for="id_tasktype_11" class="form-check-label">
+            UI/UX Improvement
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="13" id="id_tasktype_12"> <label for="id_tasktype_12" class="form-check-label">
+            User Feedback Handling
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="14" id="id_tasktype_13"> <label for="id_tasktype_13" class="form-check-label">
+            Server Maintenance
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="15" id="id_tasktype_14"> <label for="id_tasktype_14" class="form-check-label">
+            System Integration
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="16" id="id_tasktype_15"> <label for="id_tasktype_15" class="form-check-label">
+            Monitoring and Logging
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="17" id="id_tasktype_16"> <label for="id_tasktype_16" class="form-check-label">
+            Infrastructure Setup
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="18" id="id_tasktype_17"> <label for="id_tasktype_17" class="form-check-label">
+            Penetration Testing
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="19" id="id_tasktype_18"> <label for="id_tasktype_18" class="form-check-label">
+            Legal Compliance Check
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="20" id="id_tasktype_19"> <label for="id_tasktype_19" class="form-check-label">
+            Data Analysis
+        </label> </div> </div> </fieldset> </div> <div id="div_id_project" class="mb-3"> <label for="id_project" class="form-label requiredField">
+                Project<span class="asteriskField">*</span> </label> <select name="project" class="select form-select" required="" id="id_project"> <option value="" selected="">---------</option> <option value="2">AI Chatbot</option> <option value="1">E-commerce Platform</option> <option value="3">Financial Dashboard</option> <option value="5">Cybersecurity Suite</option> <option value="4">Social Media App</option>
+
+</select> </div> <div id="div_id_workers" class="mb-3"> <fieldset> <legend class="form-label">
+                Workers
+            </legend> <div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="workers" value="7" id="id_workers_0"> <label for="id_workers_0" class="form-check-label">
+            daemon
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="workers" value="1" id="id_workers_1"> <label for="id_workers_1" class="form-check-label">
+            Admin
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="workers" value="8" id="id_workers_2"> <label for="id_workers_2" class="form-check-label">
+            jdoe
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="workers" value="4" id="id_workers_3"> <label for="id_workers_3" class="form-check-label">
+            ckent
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="workers" value="6" id="id_workers_4"> <label for="id_workers_4" class="form-check-label">
+            robby
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="workers" value="5" id="id_workers_5"> <label for="id_workers_5" class="form-check-label">
+            dpeters
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="workers" value="2" id="id_workers_6"> <label for="id_workers_6" class="form-check-label">
+            asmith
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="workers" value="3" id="id_workers_7"> <label for="id_workers_7" class="form-check-label">
+            bwayne
+        </label> </div> </div> </fieldset> </div>
+
+
+    <input type="submit" value="Submit" class="btn btn-primary">
+  </form>
+
+    </main>
+  </div>
+<div class="pagination-container">
+
+
+  </div>
+<div class="footer">
+
+
+<footer id="contact">
+  <div class="container">
+    <p>© 2025 J.U.R.A. Task Manager. All rights reserved.</p>
+  </div>
+</footer>
+  </div>
+<!-- Bootstrap JS Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Custom JavaScript -->
+<script src="/static/js/theme-toggle.js"></script>
+<body class="theme-light">
+
+
+  <nav class="navbar navbar-expand-lg fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="/">J.U.R.A.</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="/home/">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="/admin/">⚙️ Admin Panel</a></li>
+
+
+
+        <li class="nav-item">
+          <button class="btn btn-outline-secondary" onclick="toggleTheme()">Toggle Theme</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+  <button class="filter-toggle-btn" onclick="toggleFilter()">☰</button>
+<div class="filter-sidebar" id="filterSidebar">
+    <h3>Filters</h3>
+    <h4>Awaiting...</h4>
+
+
+
+
+
+
+
+
+</div>
+
+
+
+  <div class="content-wrapper">
+    <aside class="sidebar">
+        <aside class="sidebar bg-light p-4 border rounded">
+
+      <li class="list-group-item"><a href="">Admin</a></li>
+      <li class="list-group-item">
+        <form method="post" action="/accounts/logout/?next=/task/create/">
+          <input type="hidden" name="csrfmiddlewaretoken" value="IUBSIT5NPBCAv9kK0LK08KbAwTuKZyqzRUMq5JSqsk7UAOHkA9TpEWickNGK0NpF">
+          <a><input class="list-group-item" type="submit" value="️Sign Out  🚪🚶‍♂️‍"></a>
+        </form>
+      </li>
+
+
+    <br>
+    <h3 class="mb-4">Quick Links</h3>
+    <ul class="list-unstyled">
+        <li><a href="/task-types/" class="d-block py-2">📌 Task Types</a></li>
+        <li><a href="/responsibilities/" class="d-block py-2">📎 Responsibilities</a></li>
+        <li><a href="/positions/" class="d-block py-2">🎭 Positions</a></li>
+        <li><a href="/workers/" class="d-block py-2">👨‍💻 Workers</a></li>
+        <li><a href="/teams/" class="d-block py-2">👥 Teams</a></li>
+        <li><a href="/projects/" class="d-block py-2">📂 Projects</a></li>
+        <li><a href="/tasks/" class="d-block py-2">📝 Tasks</a></li>
+        <li><a href="#/archive/" class="d-block py-2">🗄️️ Archive (Awaiting...)</a></li>
+    </ul>
+    <h3 class="mt-4">Resources</h3>
+    <ul class="list-unstyled">
+        <li><a href="https://github.com/Sichkaridze/J.U.R.A." target="_blank" class="d-block py-2">🔗 GitHub Repository</a></li>
+        <li><a href="#/docs/" class="d-block py-2">📖 Documentation (Awaiting...)</a></li>
+    </ul>
+</aside>
+    </aside>
+
+
+
+
+
+    <main class="main-content">
+
+  <h1>Create task</h1>
+  <br>
+  <form action="" method="post" novalidate="">
+    <input type="hidden" name="csrfmiddlewaretoken" value="IUBSIT5NPBCAv9kK0LK08KbAwTuKZyqzRUMq5JSqsk7UAOHkA9TpEWickNGK0NpF">
+
+
+<div id="div_id_name" class="mb-3"> <label for="id_name" class="form-label requiredField">
+                Name<span class="asteriskField">*</span> </label> <input type="text" name="name" maxlength="255" class="textinput form-control" required="" id="id_name"> </div> <div id="div_id_description" class="mb-3"> <label for="id_description" class="form-label">
+                Description
+            </label> <textarea name="description" cols="40" rows="10" class="textarea form-control" id="id_description"></textarea> </div> <div id="div_id_start_time" class="mb-3"> <label for="id_start_time" class="form-label">
+                Start time
+            </label> <input type="datetime-local" name="start_time" class="datetimeinput form-control" id="id_start_time"> </div> <div id="div_id_deadline" class="mb-3"> <label for="id_deadline" class="form-label">
+                Deadline
+            </label> <input type="datetime-local" name="deadline" class="datetimeinput form-control" id="id_deadline"> </div> <div id="div_id_priority" class="mb-3"> <label for="id_priority" class="form-label requiredField">
+                Priority<span class="asteriskField">*</span> </label> <select name="priority" class="select form-select" id="id_priority"> <option value="5">🔥 Urgent</option> <option value="4">🔴 High</option> <option value="3">🟡 Medium</option> <option value="2" selected="">🟢 Normal</option> <option value="1">🔵 Low</option> <option value="0">⚪ Optional</option>
+
+</select> </div> <div id="div_id_tasktype" class="mb-3"> <fieldset> <legend class="form-label">
+                Tasktype
+            </legend> <div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="1" id="id_tasktype_0"> <label for="id_tasktype_0" class="form-check-label">
+            Bug Fix
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="2" id="id_tasktype_1"> <label for="id_tasktype_1" class="form-check-label">
+            Feature Development
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="3" id="id_tasktype_2"> <label for="id_tasktype_2" class="form-check-label">
+            Code Review
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="4" id="id_tasktype_3"> <label for="id_tasktype_3" class="form-check-label">
+            Refactoring
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="5" id="id_tasktype_4"> <label for="id_tasktype_4" class="form-check-label">
+            Testing
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="6" id="id_tasktype_5"> <label for="id_tasktype_5" class="form-check-label">
+            Documentation
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="7" id="id_tasktype_6"> <label for="id_tasktype_6" class="form-check-label">
+            Deployment
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="8" id="id_tasktype_7"> <label for="id_tasktype_7" class="form-check-label">
+            Security Audit
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="9" id="id_tasktype_8"> <label for="id_tasktype_8" class="form-check-label">
+            Performance Optimization
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="10" id="id_tasktype_9"> <label for="id_tasktype_9" class="form-check-label">
+            Database Migration
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="11" id="id_tasktype_10"> <label for="id_tasktype_10" class="form-check-label">
+            API Development
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="12" id="id_tasktype_11"> <label for="id_tasktype_11" class="form-check-label">
+            UI/UX Improvement
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="13" id="id_tasktype_12"> <label for="id_tasktype_12" class="form-check-label">
+            User Feedback Handling
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="14" id="id_tasktype_13"> <label for="id_tasktype_13" class="form-check-label">
+            Server Maintenance
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="15" id="id_tasktype_14"> <label for="id_tasktype_14" class="form-check-label">
+            System Integration
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="16" id="id_tasktype_15"> <label for="id_tasktype_15" class="form-check-label">
+            Monitoring and Logging
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="17" id="id_tasktype_16"> <label for="id_tasktype_16" class="form-check-label">
+            Infrastructure Setup
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="18" id="id_tasktype_17"> <label for="id_tasktype_17" class="form-check-label">
+            Penetration Testing
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="19" id="id_tasktype_18"> <label for="id_tasktype_18" class="form-check-label">
+            Legal Compliance Check
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="20" id="id_tasktype_19"> <label for="id_tasktype_19" class="form-check-label">
+            Data Analysis
+        </label> </div> </div> </fieldset> </div> <div id="div_id_project" class="mb-3"> <label for="id_project" class="form-label requiredField">
+                Project<span class="asteriskField">*</span> </label> <select name="project" class="select form-select" required="" id="id_project">
+    <option value="" selected="">---------</option>
+    <option value="2">AI Chatbot</option>
+    <option value="1">E-commerce Platform</option>
+    <option value="3">Financial Dashboard</option>
+    <option value="5">Cybersecurity Suite</option>
+    <option value="4">Social Media App</option>
+
+</select> </div> <div id="div_id_workers" class="mb-3"> <fieldset> <legend class="form-label">
+                Workers
+            </legend> <div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="workers" value="7" id="id_workers_0"> <label for="id_workers_0" class="form-check-label">
+            daemon
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="workers" value="1" id="id_workers_1"> <label for="id_workers_1" class="form-check-label">
+            Admin
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="workers" value="8" id="id_workers_2"> <label for="id_workers_2" class="form-check-label">
+            jdoe
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="workers" value="4" id="id_workers_3"> <label for="id_workers_3" class="form-check-label">
+            ckent
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="workers" value="6" id="id_workers_4"> <label for="id_workers_4" class="form-check-label">
+            robby
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="workers" value="5" id="id_workers_5"> <label for="id_workers_5" class="form-check-label">
+            dpeters
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="workers" value="2" id="id_workers_6"> <label for="id_workers_6" class="form-check-label">
+            asmith
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="workers" value="3" id="id_workers_7"> <label for="id_workers_7" class="form-check-label">
+            bwayne
+        </label> </div> </div> </fieldset> </div>
+
+
+    <input type="submit" value="Submit" class="btn btn-primary">
+  </form>
+
+    </main>
+  </div>
+
+  <div class="pagination-container">
+
+
+  </div>
+
+  <div class="footer">
+
+
+<footer id="contact">
+  <div class="container">
+    <p>© 2025 J.U.R.A. Task Manager. All rights reserved.</p>
+  </div>
+</footer>
+  </div>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JavaScript -->
+  <script src="/static/js/theme-toggle.js"></script>
+
+
+</body>
+<html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="/static/images/favicon.png">
+  <title>J.U.R.A. Task Manager</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&amp;family=Open+Sans:wght@300;400;600&amp;display=swap" rel="stylesheet">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+
+<body class="theme-light">
+
+
+  <nav class="navbar navbar-expand-lg fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="/">J.U.R.A.</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="/home/">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="/admin/">⚙️ Admin Panel</a></li>
+
+
+
+        <li class="nav-item">
+          <button class="btn btn-outline-secondary" onclick="toggleTheme()">Toggle Theme</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+  <button class="filter-toggle-btn" onclick="toggleFilter()">☰</button>
+<div class="filter-sidebar" id="filterSidebar">
+    <h3>Filters</h3>
+    <h4>Awaiting...</h4>
+
+
+
+
+
+
+
+
+</div>
+
+
+
+  <div class="content-wrapper">
+    <aside class="sidebar">
+        <aside class="sidebar bg-light p-4 border rounded">
+
+      <li class="list-group-item"><a href="">Admin</a></li>
+      <li class="list-group-item">
+        <form method="post" action="/accounts/logout/?next=/task/create/">
+          <input type="hidden" name="csrfmiddlewaretoken" value="IUBSIT5NPBCAv9kK0LK08KbAwTuKZyqzRUMq5JSqsk7UAOHkA9TpEWickNGK0NpF">
+          <a><input class="list-group-item" type="submit" value="️Sign Out  🚪🚶‍♂️‍"></a>
+        </form>
+      </li>
+
+
+    <br>
+    <h3 class="mb-4">Quick Links</h3>
+    <ul class="list-unstyled">
+        <li><a href="/task-types/" class="d-block py-2">📌 Task Types</a></li>
+        <li><a href="/responsibilities/" class="d-block py-2">📎 Responsibilities</a></li>
+        <li><a href="/positions/" class="d-block py-2">🎭 Positions</a></li>
+        <li><a href="/workers/" class="d-block py-2">👨‍💻 Workers</a></li>
+        <li><a href="/teams/" class="d-block py-2">👥 Teams</a></li>
+        <li><a href="/projects/" class="d-block py-2">📂 Projects</a></li>
+        <li><a href="/tasks/" class="d-block py-2">📝 Tasks</a></li>
+        <li><a href="#/archive/" class="d-block py-2">🗄️️ Archive (Awaiting...)</a></li>
+    </ul>
+    <h3 class="mt-4">Resources</h3>
+    <ul class="list-unstyled">
+        <li><a href="https://github.com/Sichkaridze/J.U.R.A." target="_blank" class="d-block py-2">🔗 GitHub Repository</a></li>
+        <li><a href="#/docs/" class="d-block py-2">📖 Documentation (Awaiting...)</a></li>
+    </ul>
+</aside>
+    </aside>
+
+
+
+
+
+    <main class="main-content">
+    <input id="input" style="background-color: #F64C72" type="button" value="Input">
+
+  <h1>Create task</h1>
+  <br>
+  <form action="" method="post" novalidate="">
+    <input type="hidden" name="csrfmiddlewaretoken" value="IUBSIT5NPBCAv9kK0LK08KbAwTuKZyqzRUMq5JSqsk7UAOHkA9TpEWickNGK0NpF">
+
+
+<div id="div_id_name" class="mb-3"> <label for="id_name" class="form-label requiredField">
+                Name<span class="asteriskField">*</span> </label> <input type="text" name="name" maxlength="255" class="textinput form-control" required="" id="id_name"> </div> <div id="div_id_description" class="mb-3"> <label for="id_description" class="form-label">
+                Description
+            </label> <textarea name="description" cols="40" rows="10" class="textarea form-control" id="id_description"></textarea> </div> <div id="div_id_start_time" class="mb-3"> <label for="id_start_time" class="form-label">
+                Start time
+            </label> <input type="datetime-local" name="start_time" class="datetimeinput form-control" id="id_start_time"> </div> <div id="div_id_deadline" class="mb-3"> <label for="id_deadline" class="form-label">
+                Deadline
+            </label> <input type="datetime-local" name="deadline" class="datetimeinput form-control" id="id_deadline"> </div> <div id="div_id_priority" class="mb-3"> <label for="id_priority" class="form-label requiredField">
+                Priority<span class="asteriskField">*</span> </label> <select name="priority" class="select form-select" id="id_priority"> <option value="5">🔥 Urgent</option> <option value="4">🔴 High</option> <option value="3">🟡 Medium</option> <option value="2" selected="">🟢 Normal</option> <option value="1">🔵 Low</option> <option value="0">⚪ Optional</option>
+
+</select> </div> <div id="div_id_tasktype" class="mb-3"> <fieldset> <legend class="form-label">
+                Tasktype
+            </legend> <div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="1" id="id_tasktype_0"> <label for="id_tasktype_0" class="form-check-label">
+            Bug Fix
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="2" id="id_tasktype_1"> <label for="id_tasktype_1" class="form-check-label">
+            Feature Development
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="3" id="id_tasktype_2"> <label for="id_tasktype_2" class="form-check-label">
+            Code Review
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="4" id="id_tasktype_3"> <label for="id_tasktype_3" class="form-check-label">
+            Refactoring
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="5" id="id_tasktype_4"> <label for="id_tasktype_4" class="form-check-label">
+            Testing
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="6" id="id_tasktype_5"> <label for="id_tasktype_5" class="form-check-label">
+            Documentation
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="7" id="id_tasktype_6"> <label for="id_tasktype_6" class="form-check-label">
+            Deployment
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="8" id="id_tasktype_7"> <label for="id_tasktype_7" class="form-check-label">
+            Security Audit
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="9" id="id_tasktype_8"> <label for="id_tasktype_8" class="form-check-label">
+            Performance Optimization
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="10" id="id_tasktype_9"> <label for="id_tasktype_9" class="form-check-label">
+            Database Migration
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="11" id="id_tasktype_10"> <label for="id_tasktype_10" class="form-check-label">
+            API Development
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="12" id="id_tasktype_11"> <label for="id_tasktype_11" class="form-check-label">
+            UI/UX Improvement
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="13" id="id_tasktype_12"> <label for="id_tasktype_12" class="form-check-label">
+            User Feedback Handling
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="14" id="id_tasktype_13"> <label for="id_tasktype_13" class="form-check-label">
+            Server Maintenance
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="15" id="id_tasktype_14"> <label for="id_tasktype_14" class="form-check-label">
+            System Integration
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="16" id="id_tasktype_15"> <label for="id_tasktype_15" class="form-check-label">
+            Monitoring and Logging
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="17" id="id_tasktype_16"> <label for="id_tasktype_16" class="form-check-label">
+            Infrastructure Setup
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="18" id="id_tasktype_17"> <label for="id_tasktype_17" class="form-check-label">
+            Penetration Testing
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="19" id="id_tasktype_18"> <label for="id_tasktype_18" class="form-check-label">
+            Legal Compliance Check
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="tasktype" value="20" id="id_tasktype_19"> <label for="id_tasktype_19" class="form-check-label">
+            Data Analysis
+        </label> </div> </div> </fieldset> </div> <div id="div_id_project" class="mb-3"> <label for="id_project" class="form-label requiredField">
+                Project<span class="asteriskField">*</span> </label> <select name="project" class="select form-select" required="" id="id_project"> <option value="" selected="">---------</option> <option value="2">AI Chatbot</option> <option value="1">E-commerce Platform</option> <option value="3">Financial Dashboard</option> <option value="5">Cybersecurity Suite</option> <option value="4">Social Media App</option>
+
+</select> </div> <div id="div_id_workers" class="mb-3"> <fieldset> <legend class="form-label">
+                Workers
+            </legend> <div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="workers" value="7" id="id_workers_0"> <label for="id_workers_0" class="form-check-label">
+            daemon
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="workers" value="1" id="id_workers_1"> <label for="id_workers_1" class="form-check-label">
+            Admin
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="workers" value="8" id="id_workers_2"> <label for="id_workers_2" class="form-check-label">
+            jdoe
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="workers" value="4" id="id_workers_3"> <label for="id_workers_3" class="form-check-label">
+            ckent
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="workers" value="6" id="id_workers_4"> <label for="id_workers_4" class="form-check-label">
+            robby
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="workers" value="5" id="id_workers_5"> <label for="id_workers_5" class="form-check-label">
+            dpeters
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="workers" value="2" id="id_workers_6"> <label for="id_workers_6" class="form-check-label">
+            asmith
+        </label> </div> <div class="form-check"> <input type="checkbox" class="form-check-input" name="workers" value="3" id="id_workers_7"> <label for="id_workers_7" class="form-check-label">
+            bwayne
+        </label> </div> </div> </fieldset> </div>
+
+
+    <input type="submit" value="Submit" class="btn btn-primary">
+  </form>
+
+    </main>
+  </div>
+
+  <div class="pagination-container">
+
+
+  </div>
+
+  <div class="footer">
+
+
+<footer id="contact">
+  <div class="container">
+    <p>© 2025 J.U.R.A. Task Manager. All rights reserved.</p>
+  </div>
+</footer>
+  </div>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JavaScript -->
+  <script src="/static/js/theme-toggle.js"></script>
+
+
+</body></html>
