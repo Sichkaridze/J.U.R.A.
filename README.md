@@ -1,6 +1,17 @@
 # J.U.R.A. – Job Utility & Responsibility Automator
 (Автоматизація роботи та відповідальностей)
 
+## Live Demo
+
+The project is deployed on Render:
+
+🔗 [J.U.R.A. Live Demo](https://j-u-r-a.onrender.com/)
+
+🕒 Please note: Since the application is hosted on a free-tier service,
+it may take about a minute to start if it’s been inactive.
+The server automatically shuts down after 15 minutes of inactivity.
+
+
 ## Overview
 J.U.R.A. is a task management system designed for IT companies, built with Django and Bootstrap. The project provides efficient task tracking, team management, and project organization features.  
 ## Features
@@ -117,16 +128,6 @@ J.U.R.A/
 - **Backend:** Django
 - **Frontend:** Bootstrap, Crispy Forms and Custom Styles
 - **Database:** SQLite (default, can be switched to PostgreSQL)
-
-## Live Demo
-
-The project is deployed on Render:
-
-🔗 [J.U.R.A. Live Demo](https://j-u-r-a.onrender.com/)
-
-🕒 Please note: Since the application is hosted on a free-tier service,
-it may take about a minute to start if it’s been inactive.
-The server automatically shuts down after 15 minutes of inactivity.
 
 ---
 **Author:** Dmytro Sichkar  
