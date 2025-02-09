@@ -8,6 +8,12 @@ staticfiles/images/
 staticfiles/js/
 
 
+static/themes/
+
+
+morning_tasks.py
+
+
 ### Django ###
 *.log
 *.pot

@@ -31,7 +31,7 @@ Before starting, rename the `.env_sample` file to `.env`:
 
 ### 3. Create and Activate Virtual Environment
 ```sh
-  python -m venv venv
+  python3 -m venv venv # On Windows: python -m venv venv
 ```
 ```sh
   source venv/bin/activate  # On Windows: venv\Scripts\activate
@@ -47,7 +47,14 @@ Before starting, rename the `.env_sample` file to `.env`:
   python manage.py migrate
 ```
 
-### 6. Create a Superuser (Optional)
+### 6. Collect Static Files
+
+Before running the project in a production-like environment, collect static files:
+```sh
+  python manage.py collectstatic --noinput
+```
+This will gather all static files into the directory staticfiles/.
+### 7. Create a Superuser (Optional)
 ```sh
   python manage.py createsuperuser
 ```
@@ -58,7 +65,31 @@ Or use the existing one:
 #### Username: Admin
 #### Password: SampleAdmin
 
-### 7. Run the Development Server
+### 8. Enable Django Support in PyCharm (Optional)
+
+If you are using PyCharm, follow these steps to enable Django framework support:
+
+1. Open **Settings** (*File → Settings*).
+2. Navigate to **Languages & Frameworks → Django**.
+3. Check **Enable Django Support**.
+4. Set the following paths:
+   - **Django project root** → `J.U.R.A/`
+   - **Settings** → `JuraDjangoProject.settings`
+   - **Manage script** → `J.U.R.A/manage.py`
+5. Click **Apply** → **OK**.
+
+To run the Django server directly from PyCharm:
+
+1. Go to **Run → Edit Configurations...**.
+2. Click `+` → Select **Django Server**.
+3. In **Host**, enter `127.0.0.1`, and in **Port**, enter `8000`.
+4. In **Environment Variables**, add:
+```DJANGO_SETTINGS_MODULE=JuraDjangoProject.settings.dev```
+5. Click **Apply** → **OK**.
+
+Now you can run the server directly from PyCharm.
+
+### 9. Run the Development Server
 ```sh
   python manage.py runserver
 ```
@@ -84,9 +115,18 @@ J.U.R.A/
 
 ## Technologies Used
 - **Backend:** Django
-- **Frontend:** Bootstrap, Crispy Forms
+- **Frontend:** Bootstrap, Crispy Forms and Custom Styles
 - **Database:** SQLite (default, can be switched to PostgreSQL)
 
+## Live Demo
+
+The project is deployed on Render:
+
+🔗 [J.U.R.A. Live Demo](https://j-u-r-a.onrender.com/)
+
+🕒 Please note: Since the application is hosted on a free-tier service,
+it may take about a minute to start if it’s been inactive.
+The server automatically shuts down after 15 minutes of inactivity.
 
 ---
 **Author:** Dmytro Sichkar  
