@@ -26,9 +26,12 @@ J.U.R.A. is a task management system designed for IT companies, built with Djang
 - **Database:** SQLite (default, can be switched to PostgreSQL)
 
 ---
+
 **Author:** Dmytro Sichkar  
 **Contact:** dima.sichkar2003@gmail.com 
+
 ---
+
 ## Project Structure
 ```
 J.U.R.A/
