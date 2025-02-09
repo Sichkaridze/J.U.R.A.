@@ -20,6 +20,30 @@ J.U.R.A. is a task management system designed for IT companies, built with Djang
 - Search and filtering functionality
 - Responsive Bootstrap UI
 
+## Technologies Used
+- **Backend:** Django
+- **Frontend:** Bootstrap, Crispy Forms and Custom Styles
+- **Database:** SQLite (default, can be switched to PostgreSQL)
+
+---
+**Author:** Dmytro Sichkar  
+**Contact:** dima.sichkar2003@gmail.com 
+---
+## Project Structure
+```
+J.U.R.A/
+│── JuraDjangoProject/       # Django project settings
+│── static/                  # Global static files
+│── task_manager/            # Main application
+│   ├── mixins.py            # Custom mixins
+│   ├── models.py            # Database models
+│   ├── views.py             # Views for different modules
+│── templates/               # Global templates
+│── .env_sample              # Sample environment configuration
+│── manage.py                # Django management script
+│── requirements.txt         # Dependencies
+```
+
 ## Installation and Setup
 
 Before running the project, follow these steps:
@@ -107,28 +131,6 @@ Now you can run the server directly from PyCharm.
 
 Now, open `http://127.0.0.1:8000/` in your browser to access the application.
 
-## Project Structure
-```
-J.U.R.A/
-│── JuraDjangoProject/       # Django project settings
-│── static/                  # Global static files
-│── task_manager/            # Main application
-│   ├── mixins.py            # Custom mixins
-│   ├── models.py            # Database models
-│   ├── views.py             # Views for different modules
-│── templates/               # Global templates
-│── .env_sample              # Sample environment configuration
-│── manage.py                # Django management script
-│── requirements.txt         # Dependencies
-```
-
-
-
-## Technologies Used
-- **Backend:** Django
-- **Frontend:** Bootstrap, Crispy Forms and Custom Styles
-- **Database:** SQLite (default, can be switched to PostgreSQL)
-
 ---
-**Author:** Dmytro Sichkar  
-**Contact:** dima.sichkar2003@gmail.com 
+
+And here we go! 🧙✨ The magic is happening! 🪄🔮
