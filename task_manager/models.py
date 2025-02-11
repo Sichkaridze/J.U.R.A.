@@ -46,7 +46,7 @@ class Worker(AbstractUser):
         SENIOR = 3, 'Senior'
         LEAD = 4, 'Lead'
 
-    position = models.ForeignKey(Position, on_delete=models.SET_NULL, null=True)
+    position = models.ForeignKey(Position, on_delete=models.SET_NULL, null=True, related_name="workers")
     level = models.IntegerField(choices=Level.choices, default=Level.INTERN)
 
     class Meta:

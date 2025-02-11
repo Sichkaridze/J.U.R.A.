@@ -1,11 +1,12 @@
 {% extends "base.html" %}
 
-{% block title %}Task: {{ task.title }}{% endblock %}
+{% block title %}Task: {{ task.name }}{% endblock %}
 
 {% block content %}
 <div class="container mt-5">
     <div class="detail-card">
         <h2 class="fw-bold">{{ task.name }}</h2>
+        <h3 class="fw-bold">{{ task.description }}</h3><br>
         <p class="text-muted">Assigned to:</p>
           {% for worker in task.workers.all %}
           {% if worker.pk %}
@@ -17,10 +18,20 @@
       <br>
       <br>
         <p>Project: <a href="{% url 'task-manager:project-detail' task.project.pk %}" class="text-highlight">{{ task.project.name }}</a></p>
-        <p>Task Type: {{ task.tasktype.name }}</p>
+        <p>Task Types:</p>
+          {% for task_type in task.task_types.all %}
+          {% if task_type.pk %}
+          <a href="{% url 'task-manager:task-type-update' task_type.pk %}" class="text-highlight">{{ task_type.name }}</a>{% if not forloop.last %}, {% endif %}
+          {% else %}
+          <span class="text-muted">{{ task_type.name }}</span>{% if not forloop.last %}, {% endif %}
+          {% endif %}
+          {% endfor %}
+      <br>
+      <br>
         <p>Created: {{ task.start_time|date:"F j, Y" }}</p>
         <p>Due Date: {{ task.deadline|date:"F j, Y" }}</p>
         <p>Priority: <strong>{{ task.priority }}</strong></p>
+
 
         <a href="{% url 'task-manager:task-update' task.pk %}" class="btn btn-edit">✏️ Edit</a>
         <a href="{% url 'task-manager:task-delete' task.pk %}" class="btn btn-danger">❌ Delete</a>

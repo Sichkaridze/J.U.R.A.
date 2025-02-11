@@ -21,7 +21,7 @@
     {% for task in task_list %}
       <tr>
         <td><a class="text-highlight" href="{% url 'task-manager:task-detail' pk=task.id %}">{{ task.name }}</a></td>
-        <td> {% for res in task.tasktype.all %} {{ res }}<br> {% endfor %}</td>
+        <td> {% for res in task.task_types.all %} {{ res }}<br> {% endfor %}</td>
         <td>{{ task.deadline }}</td>
         <td>{{ task.priority }}</td>
         <td style="width: 1%;">

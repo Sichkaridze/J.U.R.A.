@@ -25,8 +25,8 @@ class SearchFormTest(TestCase):
 
 class TaskFormTest(TestCase):
     def setUp(self):
-        self.tasktype = TaskType.objects.create(name="Bug Fix")
-        self.tasktype2 = TaskType.objects.create(name="Refactoring")
+        self.task_type = TaskType.objects.create(name="Bug Fix")
+        self.task_type2 = TaskType.objects.create(name="Refactoring")
 
         self.project = Project.objects.create(name="Project X")
 
@@ -34,11 +34,11 @@ class TaskFormTest(TestCase):
         form = TaskForm(data={
             'name': 'Test Task',
             'priority': Task.Priority.NORMAL,
-            'tasktype': [self.tasktype.id, 2],
+            'task_type': [self.task_type.id, 2],
             'project': self.project.id
         })
         self.assertTrue(form.is_valid())
 
     def test_invalid_task_form(self):
-        form = TaskForm(data={'name': '', 'tasktype': self.tasktype.id})
+        form = TaskForm(data={'name': '', 'task_type': self.task_type.id})
         self.assertFalse(form.is_valid())

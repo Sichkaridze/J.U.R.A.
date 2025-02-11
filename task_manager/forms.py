@@ -40,6 +40,7 @@ class WorkerUpdateForm(UserChangeForm):
         model = Worker
         fields = (
             "username",
+            "email",
             "first_name",
             "last_name",
             "position",
@@ -91,7 +92,7 @@ class TaskForm(forms.ModelForm):
     )
     start_time = forms.DateTimeField(widget=forms.DateTimeInput(attrs={'type': 'datetime-local'}), required=False)
     deadline = forms.DateTimeField(widget=forms.DateTimeInput(attrs={'type': 'datetime-local'}), required=False)
-    tasktype = forms.ModelMultipleChoiceField(
+    task_types = forms.ModelMultipleChoiceField(
         queryset=TaskType.objects.all(),
         widget=forms.CheckboxSelectMultiple,
         required=False
@@ -99,7 +100,7 @@ class TaskForm(forms.ModelForm):
 
     class Meta:
         model = Task
-        fields = ('name', 'description', 'start_time', 'deadline', 'priority', 'tasktype', 'project', 'workers')
+        fields = ('name', 'description', 'start_time', 'deadline', 'priority', 'task_types', 'project', 'workers')
 
     def clean_start_time(self):
         if self.cleaned_data.get("start_time") is None and self.instance:

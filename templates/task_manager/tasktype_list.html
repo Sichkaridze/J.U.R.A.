@@ -4,7 +4,7 @@
   <br>
   <div class="d-flex align-items-center">
     <h2 class="me-2">Task types:</h2>
-    <a href="/task-type/create/" class="btn link-to-page me-5">➕</a>
+    <a href="{% url 'task-manager:task-type-create' %}" class="btn link-to-page me-5">➕</a>
     {% include 'includes/search.html' %}
   </div>
   <br>
@@ -15,10 +15,10 @@
         <th></th>
       </tr>
       <br>
-      {% for tasktype in tasktype_list %}
+      {% for task_type in tasktype_list %}
       <tr>
-        <td><a class="text-highlight" href="{% url 'task-manager:task-type-update' pk=tasktype.id %}">{{ tasktype.name }}</a></td>
-        <td style="width: 1%;"><a class="btn float-end me-5" href="{% url 'task-manager:task-type-delete' pk=tasktype.id %}">❌</a></td>
+        <td><a class="text-highlight" href="{% url 'task-manager:task-type-update' pk=task_type.id %}">{{ task_type.name }}</a></td>
+        <td style="width: 1%;"><a class="btn float-end me-5" href="{% url 'task-manager:task-type-delete' pk=task_type.id %}">❌</a></td>
       </tr>
       {% endfor %}
 
