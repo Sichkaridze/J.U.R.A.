@@ -6,6 +6,9 @@ staticfiles/admin/
 staticfiles/css/
 staticfiles/images/
 staticfiles/js/
+staticfiles/debug_toolbar/
+staticfiles/themes/
+
 
 
 static/themes/

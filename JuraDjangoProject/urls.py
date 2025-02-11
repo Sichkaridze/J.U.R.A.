@@ -14,6 +14,8 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+import os
+
 from django.contrib import admin
 from django.urls import path, include
 
@@ -22,3 +24,7 @@ urlpatterns = [
     path("", include("task_manager.urls", namespace="task-manager")),
     path("accounts/", include("django.contrib.auth.urls")),
 ]
+
+if os.getenv('DJANGO_SETTINGS_MODULE') == "JuraDjangoProject.settings.dev":
+    from debug_toolbar.toolbar import debug_toolbar_urls
+    urlpatterns += debug_toolbar_urls()

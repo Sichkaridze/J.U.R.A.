@@ -1,4 +1,7 @@
+import os
+
 from django.urls import path
+
 from task_manager.views import *
 
 
@@ -57,5 +60,10 @@ urlpatterns = [
     path("task/<int:pk>/delete/", TaskDeleteView.as_view(), name="task-delete"),
     path("task/<int:pk>/done/", TaskDeleteView.as_view(), name="task-done"),
 ]
+
+if os.getenv('DJANGO_SETTINGS_MODULE') == "JuraDjangoProject.settings.dev":
+    from debug_toolbar.toolbar import debug_toolbar_urls
+    urlpatterns += debug_toolbar_urls()
+
 
 app_name = 'task-manager'
