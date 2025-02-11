@@ -170,7 +170,7 @@ body.theme-dark .text-muted {
 
 /* Світла тема (за замовчуванням) */
 .text-muted {
-  color: var(--text-muted-light, #6c757d) !important; /* Встановлюємо пріоритет */
+  color: var(--text-muted-light, #ffffff) !important; /* Встановлюємо пріоритет */
 }
 
 /* Темна тема */
@@ -480,4 +480,45 @@ h2 {
 
 .text-muted {
   color: var(--text-muted-light);
+}
+
+
+.signup-card {
+  background: var(--card-bg);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  width: 400px;
+}
+
+.signup-form input {
+  background: var(--bg-color);
+  color: var(--text-color);
+  border: 1px solid var(--table-border);
+  padding: 10px;
+  border-radius: 8px;
+  width: 100%;
+}
+
+.signup-form input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+.btn-signup {
+  background: var(--primary-color);
+  color: white;
+  font-weight: bold;
+  padding: 12px;
+  border-radius: 8px;
+  transition: 0.3s ease;
+}
+
+.btn-signup:hover {
+  background: #ff8f80;
+}
+
+body.theme-dark .signup-card {
+  background: var(--table-bg-dark);
+  color: var(--text-color);
 }

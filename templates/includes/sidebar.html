@@ -9,7 +9,7 @@
       </li>
     {% else %}
       <li class="list-group-item"><a class="nav-link" href="{% url 'login'%}?next={{request.path}}">👉 Sign In</a></li>
-      <li class="list-group-item"><a class="nav-link" href="#soon?next={{request.path}}">🔐 Sign Up</a></li>
+      <li class="list-group-item"><a class="nav-link" href="{% url 'task-manager:sign-up' %}?next={{request.path}}">🔐 Sign Up</a></li>
     {% endif %}
 
     <br>

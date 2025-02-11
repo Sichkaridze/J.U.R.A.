@@ -1,9 +1,12 @@
+from django.contrib.auth import login
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
+from django.views import generic, View
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 
-from task_manager.forms import WorkerCreateForm, WorkerUpdateForm, TeamForm, ProjectForm, TaskForm, PositionForm
+from task_manager.forms import WorkerCreateForm, WorkerUpdateForm, TeamForm, ProjectForm, TaskForm, PositionForm, \
+    WorkerSignUpForm
 from task_manager.mixins import SearchMixin
 from task_manager.models import Worker, Project, Task, Position, Team, TaskType, Responsibility
 
@@ -13,6 +16,19 @@ def main_view(request):
 
 def home_view(request):
     return render(request, 'home.html')
+
+class SignUpView(View):
+    def get(self, request):
+        form = WorkerSignUpForm()
+        return render(request, "registration/sign-up.html", {"form": form})
+
+    def post(self, request):
+        form = WorkerSignUpForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+            return redirect("task-manager:home")
+        return render(request, "registration/sign-up.html", {"form": form})
 
 
 # Responsibility views:

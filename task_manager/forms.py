@@ -6,6 +6,11 @@ from django.db.models import Q
 
 from task_manager.models import Worker, Team, Project, Task, TaskType, Responsibility, Position
 
+class WorkerSignUpForm(UserCreationForm):
+    class Meta:
+        model = Worker
+        fields = ["username", "email", "first_name", "last_name", "position", "level", "password1", "password2"]
+
 
 class PositionForm(forms.ModelForm):
     responsibilities = forms.ModelMultipleChoiceField(
