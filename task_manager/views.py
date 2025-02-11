@@ -22,11 +22,6 @@ class ResponsibilityListView(SearchMixin, ListView):
     paginate_by = 8
     QUERY_FIELDS = ["description"]
 
-
-# class ResponsibilityDetailView(DetailView):
-#     model = Responsibility
-
-
 class ResponsibilityCreateView(CreateView):
     model = Responsibility
     fields = '__all__'
@@ -81,9 +76,6 @@ class TaskTypeListView(SearchMixin, ListView):
     model = TaskType
     paginate_by = 8
     QUERY_FIELDS = ["name"]
-
-# class TaskTypeDetailView(DetailView):
-#     model = TaskType
 
 
 class TaskTypeCreateView(CreateView):

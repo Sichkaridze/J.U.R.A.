@@ -10,9 +10,6 @@ urlpatterns = [
 
 
     path("responsibilities/", ResponsibilityListView.as_view(), name="responsibilities-list"),
-
-    # path("responsibility/<int:pk>/", ResponsibilityDetailView.as_view(), name="responsibility-detail"),
-
     path("responsibility/create/", ResponsibilityCreateView.as_view(), name="responsibility-create"),
     path("responsibility/<int:pk>/update/", ResponsibilityUpdateView.as_view(), name="responsibility-update"),
     path("responsibility/<int:pk>/delete/", ResponsibilityDeleteView.as_view(), name="responsibility-delete"),
@@ -26,9 +23,6 @@ urlpatterns = [
 
 
     path("task-types/", TaskTypeListView.as_view(), name="task-types-list"),
-
-    # path("task-type/<int:pk>/", TaskTypeDetailView.as_view(), name="task-type-detail"),
-
     path("task-type/create/", TaskTypeCreateView.as_view(), name="task-type-create"),
     path("task-type/<int:pk>/update/", TaskTypeUpdateView.as_view(), name="task-type-update"),
     path("task-type/<int:pk>/delete/", TaskTypeDeleteView.as_view(), name="task-type-delete"),
