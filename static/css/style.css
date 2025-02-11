@@ -1,0 +1,524 @@
+:root {
+  --primary-color: #F64C72;
+  --secondary-color: #FDBB2D;
+  --light-bg: #fff;
+  --light-text: #333;
+  --text-muted-light: #6c757d;
+}
+
+body.theme-dark {
+  --bg-color: #121212;
+  --nav-bg: #1e1e1e;
+  --hero-bg: linear-gradient(135deg, #1e1e1e, #2a2a2a);
+  --card-bg: #2a2a2a;
+  --text-color: #e0e0e0;
+  --nav-text: #cccccc;
+  --footer-bg: #1e1e1e;
+  --footer-text: #999;
+  --bubble-color: rgba(246, 76, 114, 0.3);
+  --sidebar-bg: #1e1e1e;
+  --footer-box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+  --text-muted-dark: #ffffff; !important;
+}
+
+body.theme-light {
+  --bg-color: var(--light-bg);
+  --nav-bg: rgba(255, 255, 255, 0.95);
+  --hero-bg: linear-gradient(135deg, #F64C72, #FDBB2D);
+  --card-bg: #fff;
+  --text-color: var(--light-text);
+  --nav-text: #333;
+  --footer-bg: #ffffff;
+  --footer-text: #333;
+  --bubble-color: rgba(255, 255, 255, 0.3);
+  --sidebar-bg: rgba(255, 255, 255, 0.95);
+  --text-muted-light: #6c757d; !important;
+}
+
+:root {
+  --primary-color: #F64C72;
+  --secondary-color: #FDBB2D;
+  --light-bg: #fff;
+  --light-text: #333;
+  --text-muted-light: #6c757d;
+
+  /* Світла тема для таблиць */
+  --table-bg: #fff;
+  --table-text: #333;
+  --table-header-bg: #f8f9fa;
+  --table-header-text: #333;
+  --table-border: #ddd;
+  --table-row-even: #f8f9fa;
+
+  /* Темна тема */
+  --table-bg-dark: #1e1e1e;
+  --table-text-dark: #e0e0e0;
+  --table-header-bg-dark: #2a2a2a;
+  --table-header-text-dark: #ffffff;
+  --table-border-dark: #444;
+  --table-row-even-dark: #252525;
+}
+
+body.theme-dark {
+  --bg-color: #121212;
+  --nav-bg: #1e1e1e;
+  --hero-bg: linear-gradient(135deg, #1e1e1e, #2a2a2a);
+  --card-bg: #2a2a2a;
+  --text-color: #e0e0e0;
+  --nav-text: #cccccc;
+  --footer-bg: #1e1e1e;
+  --footer-text: #999;
+  --bubble-color: rgba(246, 76, 114, 0.3);
+  --sidebar-bg: #1e1e1e;
+  --footer-box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+  --text-muted-dark: #ffffff;
+}
+
+body.theme-light {
+  --bg-color: var(--light-bg);
+  --nav-bg: rgba(255, 255, 255, 0.95);
+  --hero-bg: linear-gradient(135deg, #F64C72, #FDBB2D);
+  --card-bg: #fff;
+  --text-color: var(--light-text);
+  --nav-text: #333;
+  --footer-bg: #ffffff;
+  --footer-text: #333;
+  --bubble-color: rgba(255, 255, 255, 0.3);
+  --sidebar-bg: rgba(255, 255, 255, 0.95);
+  --text-muted-light: #6c757d;
+}
+/* === БАЗОВІ СТИЛІ ТАБЛИЦІ === */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--table-bg);
+  color: var(--table-text);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Заголовки */
+.table th {
+  background-color: var(--table-header-bg);
+  color: var(--table-header-text);
+  font-weight: bold;
+  padding: 12px;
+  text-align: left;
+}
+
+/* Рядки */
+.table td {
+  padding: 12px;
+  border-bottom: 1px solid var(--table-border);
+}
+
+/* Чергування рядків */
+.table tr:nth-child(even) {
+  background-color: var(--table-row-even);
+}
+
+/* === ФОРСОВАНА ТЕМНА ТЕМА === */
+body.theme-dark .table {
+  background-color: var(--table-bg-dark) !important;
+  color: var(--table-text-dark) !important;
+}
+
+body.theme-dark .table th {
+  background-color: var(--table-header-bg-dark) !important;
+  color: var(--table-header-text-dark) !important;
+}
+
+body.theme-dark .table td {
+  border-bottom: 1px solid var(--table-border-dark) !important;
+}
+
+/* Чергування рядків у темній темі */
+body.theme-dark .table tr:nth-child(even) {
+  background-color: var(--table-row-even-dark) !important;
+}
+
+/* ДЛЯ ГАРАНТОВАНОЇ ПРАЦІ (якщо ще не працює) */
+body.theme-dark table,
+body.theme-dark table th,
+body.theme-dark table td {
+  background-color: var(--table-bg-dark) !important;
+  color: var(--table-text-dark) !important;
+  border-color: var(--table-border-dark) !important;
+}
+
+/* ВИМИКАННЯ ПІДСВІЧУВАННЯ КНОПОК */
+.table .btn {
+  color: var(--primary-color) !important;
+  background: none !important;
+  border: none !important;
+  font-size: 1.2rem !important;
+  cursor: pointer !important;
+}
+
+.table .btn:hover {
+  color: var(--primary-color) !important; /* Забороняємо зміну кольору */
+}
+
+/* === СТИЛІ ДЛЯ TEXT-MUTED === */
+.text-muted {
+  color: var(--text-muted-light) !important;
+}
+
+body.theme-dark .text-muted {
+  color: var(--text-muted-dark) !important;
+}
+
+/* Світла тема (за замовчуванням) */
+.text-muted {
+  color: var(--text-muted-light, #ffffff) !important; /* Встановлюємо пріоритет */
+}
+
+/* Темна тема */
+body.theme-dark .text-muted {
+  color: var(--text-muted-dark, #ffffff) !important; /* Важливий пріоритет */
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.text-highlight, .text-highlight a {
+  color: var(--primary-color) !important;
+  text-decoration: none !important;
+}
+
+.text-highlight:hover, .text-highlight a:hover {
+  color: black !important;
+}
+
+.navbar {
+  background: var(--nav-bg);
+  box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+}
+.navbar-brand {
+  font-family: 'Fredoka One', cursive;
+  font-size: 1.8rem;
+  color: var(--primary-color);
+}
+.nav-link {
+  font-weight: 600;
+  color: var(--nav-text);
+  margin-right: 15px;
+  transition: color 0.3s;
+}
+.nav-link:hover {
+  color: var(--primary-color);
+}
+
+.hero {
+  position: relative;
+  background: var(--hero-bg);
+  color: #fff;
+  padding: 150px 0;
+  text-align: center;
+  overflow: hidden;
+}
+.hero h1 {
+  font-family: 'Fredoka One', cursive;
+  font-size: 4rem;
+  margin-bottom: 20px;
+}
+.hero p {
+  font-size: 1.5rem;
+  margin-bottom: 40px;
+}
+.btn-playful {
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: transform 0.3s, background-color 0.3s;
+}
+.btn-playful:hover {
+  transform: scale(1.1);
+  background-color: #ff8f80;
+}
+
+.hero::before,
+.hero::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  background: var(--bubble-color);
+  animation: float 6s ease-in-out infinite;
+}
+.hero::before {
+  width: 100px;
+  height: 100px;
+  top: 20%;
+  left: 10%;
+}
+.hero::after {
+  width: 150px;
+  height: 150px;
+  bottom: 15%;
+  right: 15%;
+  animation-duration: 8s;
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+.features {
+  padding: 80px 0;
+  background-color: var(--nav-bg);
+}
+.feature-card {
+  background: var(--card-bg);
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: center;
+  min-height: 350px;
+}
+.feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+}
+.feature-card img {
+  width: 80px;
+  margin-bottom: 20px;
+}
+.feature-card h4 {
+  font-family: 'Fredoka One', cursive;
+  margin-bottom: 15px;
+  color: var(--primary-color);
+}
+.feature-card p {
+  color: var(--nav-text);
+}
+
+.about {
+  padding: 80px 0;
+  background-color: var(--bg-color);
+}
+.about h2 {
+  font-family: 'Fredoka One', cursive;
+  margin-bottom: 30px;
+  color: var(--primary-color);
+}
+.about p {
+  font-size: 1.1rem;
+  color: var(--nav-text);
+}
+
+
+.pagination-container {
+    position: fixed;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.content-wrapper {
+      display: flex;
+      flex: 1;
+      margin-top: 56px;
+    }
+
+.sidebar {
+      border: none !important;
+      box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+      position: fixed;
+      top: 56px;
+      left: 0;
+      height: calc(100vh - 56px);
+      width: 250px;
+      background: var(--sidebar-bg) !important;
+      padding-top: 20px;
+      overflow-y: auto;
+      color: var(--primary-color);
+    }
+
+.sidebar a {
+      color: var(--primary-color);
+      text-decoration: none;
+      padding: 10px 20px;
+      display: block;
+      transition: background 0.3s;
+    }
+
+.sidebar a:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+.main-content {
+      margin-left: 250px;
+      padding: 20px;
+      width: calc(100% - 250px);
+      flex-grow: 1;
+    }
+
+
+.footer {
+  box-shadow: var(--footer-box-shadow);
+  background-color: var(--footer-bg);
+  color: var(--footer-text);
+  padding: 15px 0;
+  margin-top: auto;
+  text-align: center;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+
+.filter-sidebar {
+    position: fixed;
+    top: 70px;
+    right: -300px;
+    width: 300px;
+    height: 100vh;
+    background: var(--sidebar-bg);
+    transition: right 0.3s ease-in-out;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    z-index: 1050;
+}
+
+.filter-sidebar.open {
+    right: 0;
+}
+
+.filter-toggle-btn {
+    position: fixed;
+    top: 70px;
+    right: 0;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    z-index: 1100;
+}
+
+.input-group {
+    width: 300px;
+}
+
+h2 {
+    white-space: nowrap;
+}
+
+.center-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.how-it-works-card {
+  background: var(--card-bg);
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: center;
+  min-height: 200px; /* Фіксована висота для однакового розміру */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.how-it-works-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.how-it-works-card p {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.how-it-works-card h4 {
+  font-family: 'Fredoka One', cursive;
+  font-size: 1.2rem;
+  color: var(--primary-color);
+  margin-bottom: 5px;
+}
+
+/* Вирівнювання контейнера */
+.container-fluid-how-it-works {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Вирівнювання блоків у рядках */
+.row-how-it-works {
+  justify-content: center;
+  gap: 10px;
+}
+
+/* Адаптивність для мобільних пристроїв */
+@media (max-width: 768px) {
+  .how-it-works-card {
+    min-height: 220px;
+  }
+}
+
+
+.text-muted {
+  color: var(--text-muted-light);
+}
+
+
+.signup-card {
+  background: var(--card-bg);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  width: 400px;
+}
+
+.signup-form input {
+  background: var(--bg-color);
+  color: var(--text-color);
+  border: 1px solid var(--table-border);
+  padding: 10px;
+  border-radius: 8px;
+  width: 100%;
+}
+
+.signup-form input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+.btn-signup {
+  background: var(--primary-color);
+  color: white;
+  font-weight: bold;
+  padding: 12px;
+  border-radius: 8px;
+  transition: 0.3s ease;
+}
+
+.btn-signup:hover {
+  background: #ff8f80;
+}
+
+body.theme-dark .signup-card {
+  background: var(--table-bg-dark);
+  color: var(--text-color);
+}

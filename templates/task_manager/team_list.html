@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block content %}
+    <br>
+  <div class="d-flex align-items-center">
+    <h2>Teams:
+      <a href="{% url 'task-manager:team-create' %}" class="btn link-to-page">➕</a>
+    </h2>
+    {% include 'includes/search_form_with_params.html' %}
+  </div>
+    <br>
+    {% if team_list %}
+    <table class="table">
+      <tr>
+        <th>Team</th>
+        <th>Members</th>
+        <th>Description</th>
+        <th></th>
+      </tr>
+      <br>
+    {% for team in team_list %}
+      <tr>
+        <td><a class="text-highlight" href="{% url 'task-manager:team-detail' pk=team.id %}">{{ team.name }}</a></td>
+        <td> {% for member in team.members.all %} {{ member }}<br> {% endfor %}</td>
+        <td>{{ team.description }}</td>
+        <td style="width: 1%;">
+          <div class="btn-group float-end me-5">
+            <a class="btn" href="{% url 'task-manager:team-update' pk=team.id %}">✏️</a>
+            <a class="btn" href="{% url 'task-manager:team-delete' pk=team.id %}">❌</a>
+          </div>
+        </td>
+
+      </tr>
+    {% endfor %}
+
+    </table>
+    {% else %}
+      <p>There are no teams yet!</p>
+    {% endif %}
+{% endblock %}

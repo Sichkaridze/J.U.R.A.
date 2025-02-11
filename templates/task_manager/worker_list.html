@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block content %}
+    <br>
+  <div class="d-flex align-items-center">
+    <h2>Workers:
+      <a href="{% url 'task-manager:worker-create' %}" class="btn link-to-page">➕</a>
+    </h2>
+    {% include 'includes/search_form_with_params.html' %}
+  </div>
+    <br>
+    {% if worker_list %}
+    <table class="table">
+      <tr>
+        <th>Username</th>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Position</th>
+        <th>Level</th>
+        <th></th>
+      </tr>
+      <br>
+    {% for worker in worker_list %}
+      <tr>
+        <td><a class="text-highlight" href="{% url 'task-manager:worker-detail' pk=worker.id %}">{{ worker.username }}</a></td>
+        <td>{{ worker.first_name }}</td>
+        <td>{{ worker.last_name }}</td>
+        <td>{{ worker.position }}</td>
+        <td>{{ worker.level }}</td>
+        <td style="width: 1%;">
+          <div class="btn-group float-end me-5">
+            <a class="btn" href="{% url 'task-manager:worker-update' pk=worker.id %}">✏️</a>
+            <a class="btn" href="{% url 'task-manager:worker-delete' pk=worker.id %}">❌</a>
+          </div>
+        </td>
+      </tr>
+    {% endfor %}
+
+    </table>
+    {% else %}
+      <p>There are no positions yet!</p>
+    {% endif %}
+{% endblock %}

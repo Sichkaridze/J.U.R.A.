@@ -1,0 +1,1577 @@
+[
+    {
+        "model": "auth.permission",
+        "pk": 1,
+        "fields": {
+            "name": "Can add log entry",
+            "content_type": 1,
+            "codename": "add_logentry"}},
+    {
+        "model": "auth.permission",
+        "pk": 2,
+        "fields": {
+            "name": "Can change log entry",
+            "content_type": 1,
+            "codename": "change_logentry"}},
+    {
+        "model": "auth.permission",
+        "pk": 3,
+        "fields": {
+            "name": "Can delete log entry",
+            "content_type": 1,
+            "codename": "delete_logentry"}},
+    {
+        "model": "auth.permission",
+        "pk": 4,
+        "fields": {
+            "name": "Can view log entry",
+            "content_type": 1,
+            "codename": "view_logentry"}},
+    {
+        "model": "auth.permission",
+        "pk": 5,
+        "fields": {
+            "name": "Can add permission",
+            "content_type": 2,
+            "codename": "add_permission"}},
+    {
+        "model": "auth.permission",
+        "pk": 6,
+        "fields": {
+            "name": "Can change permission",
+            "content_type": 2,
+            "codename": "change_permission"}},
+    {
+        "model": "auth.permission",
+        "pk": 7,
+        "fields": {
+            "name": "Can delete permission",
+            "content_type": 2,
+            "codename": "delete_permission"}},
+    {
+        "model": "auth.permission",
+        "pk": 8,
+        "fields": {
+            "name": "Can view permission",
+            "content_type": 2,
+            "codename": "view_permission"}},
+    {
+        "model": "auth.permission",
+        "pk": 9,
+        "fields": {"name": "Can add group", "content_type": 3, "codename": "add_group"}},
+    {
+        "model": "auth.permission",
+        "pk": 10,
+        "fields": {
+            "name": "Can change group",
+            "content_type": 3,
+            "codename": "change_group"}},
+    {
+        "model": "auth.permission",
+        "pk": 11,
+        "fields": {
+            "name": "Can delete group",
+            "content_type": 3,
+            "codename": "delete_group"}},
+    {
+        "model": "auth.permission",
+        "pk": 12,
+        "fields": {
+            "name": "Can view group",
+            "content_type": 3,
+            "codename": "view_group"}},
+    {
+        "model": "auth.permission",
+        "pk": 13,
+        "fields": {
+            "name": "Can add content type",
+            "content_type": 4,
+            "codename": "add_contenttype"}},
+    {
+        "model": "auth.permission",
+        "pk": 14,
+        "fields": {
+            "name": "Can change content type",
+            "content_type": 4,
+            "codename": "change_contenttype"}},
+    {
+        "model": "auth.permission",
+        "pk": 15,
+        "fields": {
+            "name": "Can delete content type",
+            "content_type": 4,
+            "codename": "delete_contenttype"}},
+    {
+        "model": "auth.permission",
+        "pk": 16,
+        "fields": {
+            "name": "Can view content type",
+            "content_type": 4,
+            "codename": "view_contenttype"}},
+    {
+        "model": "auth.permission",
+        "pk": 17,
+        "fields": {
+            "name": "Can add session",
+            "content_type": 5,
+            "codename": "add_session"}},
+    {
+        "model": "auth.permission",
+        "pk": 18,
+        "fields": {
+            "name": "Can change session",
+            "content_type": 5,
+            "codename": "change_session"}},
+    {
+        "model": "auth.permission",
+        "pk": 19,
+        "fields": {
+            "name": "Can delete session",
+            "content_type": 5,
+            "codename": "delete_session"}},
+    {
+        "model": "auth.permission",
+        "pk": 20,
+        "fields": {
+            "name": "Can view session",
+            "content_type": 5,
+            "codename": "view_session"}},
+    {
+        "model": "auth.permission",
+        "pk": 21,
+        "fields": {
+            "name": "Can add position",
+            "content_type": 6,
+            "codename": "add_position"}},
+    {
+        "model": "auth.permission",
+        "pk": 22,
+        "fields": {
+            "name": "Can change position",
+            "content_type": 6,
+            "codename": "change_position"}},
+    {
+        "model": "auth.permission",
+        "pk": 23,
+        "fields": {
+            "name": "Can delete position",
+            "content_type": 6,
+            "codename": "delete_position"}},
+    {
+        "model": "auth.permission",
+        "pk": 24,
+        "fields": {
+            "name": "Can view position",
+            "content_type": 6,
+            "codename": "view_position"}},
+    {
+        "model": "auth.permission",
+        "pk": 25,
+        "fields": {
+            "name": "Can add project",
+            "content_type": 7,
+            "codename": "add_project"}},
+    {
+        "model": "auth.permission",
+        "pk": 26,
+        "fields": {
+            "name": "Can change project",
+            "content_type": 7,
+            "codename": "change_project"}},
+    {
+        "model": "auth.permission",
+        "pk": 27,
+        "fields": {
+            "name": "Can delete project",
+            "content_type": 7,
+            "codename": "delete_project"}},
+    {
+        "model": "auth.permission",
+        "pk": 28,
+        "fields": {
+            "name": "Can view project",
+            "content_type": 7,
+            "codename": "view_project"}},
+    {
+        "model": "auth.permission",
+        "pk": 29,
+        "fields": {
+            "name": "Can add responsibility",
+            "content_type": 8,
+            "codename": "add_responsibility"}},
+    {
+        "model": "auth.permission",
+        "pk": 30,
+        "fields": {
+            "name": "Can change responsibility",
+            "content_type": 8,
+            "codename": "change_responsibility"}},
+    {
+        "model": "auth.permission",
+        "pk": 31,
+        "fields": {
+            "name": "Can delete responsibility",
+            "content_type": 8,
+            "codename": "delete_responsibility"}},
+    {
+        "model": "auth.permission",
+        "pk": 32,
+        "fields": {
+            "name": "Can view responsibility",
+            "content_type": 8,
+            "codename": "view_responsibility"}},
+    {
+        "model": "auth.permission",
+        "pk": 33,
+        "fields": {
+            "name": "Can add task type",
+            "content_type": 9,
+            "codename": "add_tasktype"}},
+    {
+        "model": "auth.permission",
+        "pk": 34,
+        "fields": {
+            "name": "Can change task type",
+            "content_type": 9,
+            "codename": "change_tasktype"}},
+    {
+        "model": "auth.permission",
+        "pk": 35,
+        "fields": {
+            "name": "Can delete task type",
+            "content_type": 9,
+            "codename": "delete_tasktype"}},
+    {
+        "model": "auth.permission",
+        "pk": 36,
+        "fields": {
+            "name": "Can view task type",
+            "content_type": 9,
+            "codename": "view_tasktype"}},
+    {
+        "model": "auth.permission",
+        "pk": 37,
+        "fields": {"name": "Can add team", "content_type": 10, "codename": "add_team"}},
+    {
+        "model": "auth.permission",
+        "pk": 38,
+        "fields": {
+            "name": "Can change team",
+            "content_type": 10,
+            "codename": "change_team"}},
+    {
+        "model": "auth.permission",
+        "pk": 39,
+        "fields": {
+            "name": "Can delete team",
+            "content_type": 10,
+            "codename": "delete_team"}},
+    {
+        "model": "auth.permission",
+        "pk": 40,
+        "fields": {
+            "name": "Can view team",
+            "content_type": 10,
+            "codename": "view_team"}},
+    {
+        "model": "auth.permission",
+        "pk": 41,
+        "fields": {
+            "name": "Can add worker",
+            "content_type": 11,
+            "codename": "add_worker"}},
+    {
+        "model": "auth.permission",
+        "pk": 42,
+        "fields": {
+            "name": "Can change worker",
+            "content_type": 11,
+            "codename": "change_worker"}},
+    {
+        "model": "auth.permission",
+        "pk": 43,
+        "fields": {
+            "name": "Can delete worker",
+            "content_type": 11,
+            "codename": "delete_worker"}},
+    {
+        "model": "auth.permission",
+        "pk": 44,
+        "fields": {
+            "name": "Can view worker",
+            "content_type": 11,
+            "codename": "view_worker"}},
+    {
+        "model": "auth.permission",
+        "pk": 45,
+        "fields": {
+            "name": "Can add position responsibility",
+            "content_type": 12,
+            "codename": "add_positionresponsibility"}},
+    {
+        "model": "auth.permission",
+        "pk": 46,
+        "fields": {
+            "name": "Can change position responsibility",
+            "content_type": 12,
+            "codename": "change_positionresponsibility"}},
+    {
+        "model": "auth.permission",
+        "pk": 47,
+        "fields": {
+            "name": "Can delete position responsibility",
+            "content_type": 12,
+            "codename": "delete_positionresponsibility"}},
+    {
+        "model": "auth.permission",
+        "pk": 48,
+        "fields": {
+            "name": "Can view position responsibility",
+            "content_type": 12,
+            "codename": "view_positionresponsibility"}},
+    {
+        "model": "auth.permission",
+        "pk": 49,
+        "fields": {
+            "name": "Can add solo worker on project",
+            "content_type": 13,
+            "codename": "add_soloworkeronproject"}},
+    {
+        "model": "auth.permission",
+        "pk": 50,
+        "fields": {
+            "name": "Can change solo worker on project",
+            "content_type": 13,
+            "codename": "change_soloworkeronproject"}},
+    {
+        "model": "auth.permission",
+        "pk": 51,
+        "fields": {
+            "name": "Can delete solo worker on project",
+            "content_type": 13,
+            "codename": "delete_soloworkeronproject"}},
+    {
+        "model": "auth.permission",
+        "pk": 52,
+        "fields": {
+            "name": "Can view solo worker on project",
+            "content_type": 13,
+            "codename": "view_soloworkeronproject"}},
+    {
+        "model": "auth.permission",
+        "pk": 53,
+        "fields": {"name": "Can add task", "content_type": 14, "codename": "add_task"}},
+    {
+        "model": "auth.permission",
+        "pk": 54,
+        "fields": {
+            "name": "Can change task",
+            "content_type": 14,
+            "codename": "change_task"}},
+    {
+        "model": "auth.permission",
+        "pk": 55,
+        "fields": {
+            "name": "Can delete task",
+            "content_type": 14,
+            "codename": "delete_task"}},
+    {
+        "model": "auth.permission",
+        "pk": 56,
+        "fields": {
+            "name": "Can view task",
+            "content_type": 14,
+            "codename": "view_task"}},
+    {
+        "model": "auth.permission",
+        "pk": 57,
+        "fields": {
+            "name": "Can add team on project",
+            "content_type": 15,
+            "codename": "add_teamonproject"}},
+    {
+        "model": "auth.permission",
+        "pk": 58,
+        "fields": {
+            "name": "Can change team on project",
+            "content_type": 15,
+            "codename": "change_teamonproject"}},
+    {
+        "model": "auth.permission",
+        "pk": 59,
+        "fields": {
+            "name": "Can delete team on project",
+            "content_type": 15,
+            "codename": "delete_teamonproject"}},
+    {
+        "model": "auth.permission",
+        "pk": 60,
+        "fields": {
+            "name": "Can view team on project",
+            "content_type": 15,
+            "codename": "view_teamonproject"}},
+    {
+        "model": "auth.permission",
+        "pk": 61,
+        "fields": {
+            "name": "Can add team worker",
+            "content_type": 16,
+            "codename": "add_teamworker"}},
+    {
+        "model": "auth.permission",
+        "pk": 62,
+        "fields": {
+            "name": "Can change team worker",
+            "content_type": 16,
+            "codename": "change_teamworker"}},
+    {
+        "model": "auth.permission",
+        "pk": 63,
+        "fields": {
+            "name": "Can delete team worker",
+            "content_type": 16,
+            "codename": "delete_teamworker"}},
+    {
+        "model": "auth.permission",
+        "pk": 64,
+        "fields": {
+            "name": "Can view team worker",
+            "content_type": 16,
+            "codename": "view_teamworker"}},
+    {
+        "model": "auth.permission",
+        "pk": 65,
+        "fields": {
+            "name": "Can add worker task",
+            "content_type": 17,
+            "codename": "add_workertask"}},
+    {
+        "model": "auth.permission",
+        "pk": 66,
+        "fields": {
+            "name": "Can change worker task",
+            "content_type": 17,
+            "codename": "change_workertask"}},
+    {
+        "model": "auth.permission",
+        "pk": 67,
+        "fields": {
+            "name": "Can delete worker task",
+            "content_type": 17,
+            "codename": "delete_workertask"}},
+    {
+        "model": "auth.permission",
+        "pk": 68,
+        "fields": {
+            "name": "Can view worker task",
+            "content_type": 17,
+            "codename": "view_workertask"}},
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 1,
+        "fields": {"app_label": "admin", "model": "logentry"}},
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 2,
+        "fields": {"app_label": "auth", "model": "permission"}},
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 3,
+        "fields": {"app_label": "auth", "model": "group"}},
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 4,
+        "fields": {"app_label": "contenttypes", "model": "contenttype"}},
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 5,
+        "fields": {"app_label": "sessions", "model": "session"}},
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 6,
+        "fields": {"app_label": "task_manager", "model": "position"}},
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 7,
+        "fields": {"app_label": "task_manager", "model": "project"}},
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 8,
+        "fields": {"app_label": "task_manager", "model": "responsibility"}},
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 9,
+        "fields": {"app_label": "task_manager", "model": "tasktype"}},
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 10,
+        "fields": {"app_label": "task_manager", "model": "team"}},
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 11,
+        "fields": {"app_label": "task_manager", "model": "worker"}},
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 12,
+        "fields": {"app_label": "task_manager", "model": "positionresponsibility"}},
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 13,
+        "fields": {"app_label": "task_manager", "model": "soloworkeronproject"}},
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 14,
+        "fields": {"app_label": "task_manager", "model": "task"}},
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 15,
+        "fields": {"app_label": "task_manager", "model": "teamonproject"}},
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 16,
+        "fields": {"app_label": "task_manager", "model": "teamworker"}},
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 17,
+        "fields": {"app_label": "task_manager", "model": "workertask"}},
+    {
+        "model": "task_manager.responsibility",
+        "pk": 1,
+        "fields": {"description": "Develop and maintain backend services"}},
+    {
+        "model": "task_manager.responsibility",
+        "pk": 2,
+        "fields": {"description": "Lead the product development team"}},
+    {
+        "model": "task_manager.responsibility",
+        "pk": 3,
+        "fields": {"description": "Ensure database security and optimization"}},
+    {
+        "model": "task_manager.responsibility",
+        "pk": 4,
+        "fields": {"description": "Manage cloud infrastructure"}},
+    {
+        "model": "task_manager.responsibility",
+        "pk": 5,
+        "fields": {"description": "Conduct code reviews and mentoring"}},
+    {
+        "model": "task_manager.responsibility",
+        "pk": 6,
+        "fields": {"description": "Develop UI components"}},
+    {
+        "model": "task_manager.responsibility",
+        "pk": 7,
+        "fields": {"description": "Handle customer support inquiries"}},
+    {
+        "model": "task_manager.responsibility",
+        "pk": 8,
+        "fields": {"description": "Manage project timelines and deliverables"}},
+    {
+        "model": "task_manager.responsibility",
+        "pk": 9,
+        "fields": {"description": "Write and maintain technical documentation"}},
+    {
+        "model": "task_manager.responsibility",
+        "pk": 10,
+        "fields": {"description": "Optimize website performance and SEO"}},
+    {
+        "model": "task_manager.responsibility",
+        "pk": 11,
+        "fields": {"description": "Implement security best practices"}},
+    {
+        "model": "task_manager.responsibility",
+        "pk": 12,
+        "fields": {"description": "Oversee software deployment and CI/CD processes"}},
+    {
+        "model": "task_manager.responsibility",
+        "pk": 13,
+        "fields": {"description": "Develop and execute marketing strategies"}},
+    {
+        "model": "task_manager.responsibility",
+        "pk": 14,
+        "fields": {"description": "Conduct user experience research"}},
+    {
+        "model": "task_manager.responsibility",
+        "pk": 15,
+        "fields": {"description": "Create wireframes and prototypes"}},
+    {
+        "model": "task_manager.responsibility",
+        "pk": 16,
+        "fields": {"description": "Perform penetration testing"}},
+    {
+        "model": "task_manager.responsibility",
+        "pk": 17,
+        "fields": {"description": "Optimize database queries for performance"}},
+    {
+        "model": "task_manager.responsibility",
+        "pk": 18,
+        "fields": {"description": "Develop and test mobile applications"}},
+    {
+        "model": "task_manager.responsibility",
+        "pk": 19,
+        "fields": {"description": "Analyze and interpret data insights"}},
+    {
+        "model": "task_manager.responsibility",
+        "pk": 20,
+        "fields": {"description": "Manage customer relationships and feedback"}},
+    {
+        "model": "task_manager.responsibility",
+        "pk": 21,
+        "fields": {"description": "Write automated tests for software applications"}},
+    {
+        "model": "task_manager.responsibility",
+        "pk": 22,
+        "fields": {"description": "Monitor system uptime and performance"}},
+    {
+        "model": "task_manager.responsibility",
+        "pk": 23,
+        "fields": {"description": "Maintain corporate IT infrastructure"}},
+    {
+        "model": "task_manager.responsibility",
+        "pk": 24,
+        "fields": {"description": "Provide technical support for employees"}},
+    {
+        "model": "task_manager.responsibility",
+        "pk": 25,
+        "fields": {"description": "Collaborate with external vendors and partners"}},
+    {
+        "model": "task_manager.responsibility",
+        "pk": 26,
+        "fields": {"description": "Develop company-wide technology policies"}},
+    {
+        "model": "task_manager.responsibility",
+        "pk": 27,
+        "fields": {"description": "Manage data privacy compliance (e.g., GDPR)"}},
+    {
+        "model": "task_manager.responsibility",
+        "pk": 28,
+        "fields": {"description": "Ensure compliance with accessibility standards"}},
+    {
+        "model": "task_manager.responsibility",
+        "pk": 29,
+        "fields": {"description": "Develop and execute content strategies"}},
+    {
+        "model": "task_manager.responsibility",
+        "pk": 30,
+        "fields": {"description": "Evaluate and integrate new technologies"}},
+    {
+        "model": "task_manager.responsibility",
+        "pk": 31,
+        "fields": {"description": "Oversee employee training and skill development"}},
+    {
+        "model": "task_manager.responsibility",
+        "pk": 32,
+        "fields": {"description": "Manage software licensing and procurement"}},
+    {
+        "model": "task_manager.responsibility",
+        "pk": 33,
+        "fields": {"description": "Perform risk assessment and mitigation planning"}},
+    {
+        "model": "task_manager.responsibility",
+        "pk": 34,
+        "fields": {"description": "Coordinate cross-team communication"}},
+    {
+        "model": "task_manager.responsibility",
+        "pk": 35,
+        "fields": {"description": "Ensure regulatory compliance for software products"}},
+    {
+        "model": "task_manager.responsibility",
+        "pk": 36,
+        "fields": {"description": "Develop API documentation and integration guides"}},
+    {
+        "model": "task_manager.responsibility",
+        "pk": 37,
+        "fields": {"description": "Monitor and prevent cybersecurity threats"}},
+    {
+        "model": "task_manager.responsibility",
+        "pk": 38,
+        "fields": {"description": "Facilitate Agile and Scrum processes"}},
+    {
+        "model": "task_manager.position",
+        "pk": 1,
+        "fields": {"name": "Software Engineer"}},
+    {
+        "model": "task_manager.position",
+        "pk": 2,
+        "fields": {"name": "Backend Developer"}},
+    {
+        "model": "task_manager.position",
+        "pk": 3,
+        "fields": {"name": "Frontend Developer"}},
+    {
+        "model": "task_manager.position",
+        "pk": 4,
+        "fields": {"name": "Full Stack Developer"}},
+    {"model": "task_manager.position", "pk": 5, "fields": {"name": "DevOps Engineer"}},
+    {"model": "task_manager.position", "pk": 6, "fields": {"name": "QA Engineer"}},
+    {"model": "task_manager.position", "pk": 7, "fields": {"name": "Product Manager"}},
+    {"model": "task_manager.position", "pk": 8, "fields": {"name": "Project Manager"}},
+    {"model": "task_manager.position", "pk": 9, "fields": {"name": "Data Scientist"}},
+    {
+        "model": "task_manager.position",
+        "pk": 10,
+        "fields": {"name": "Business Analyst"}},
+    {"model": "task_manager.position", "pk": 11, "fields": {"name": "UI/UX Designer"}},
+    {
+        "model": "task_manager.position",
+        "pk": 12,
+        "fields": {"name": "Cybersecurity Specialist"}},
+    {"model": "task_manager.position", "pk": 13, "fields": {"name": "Cloud Engineer"}},
+    {"model": "task_manager.position", "pk": 14, "fields": {"name": "AI/ML Engineer"}},
+    {
+        "model": "task_manager.position",
+        "pk": 15,
+        "fields": {"name": "System Administrator"}},
+    {
+        "model": "task_manager.position",
+        "pk": 16,
+        "fields": {"name": "Technical Support Specialist"}},
+    {
+        "model": "task_manager.position",
+        "pk": 17,
+        "fields": {"name": "Database Administrator"}},
+    {
+        "model": "task_manager.position",
+        "pk": 18,
+        "fields": {"name": "Mobile Developer"}},
+    {
+        "model": "task_manager.position",
+        "pk": 19,
+        "fields": {"name": "Embedded Systems Engineer"}},
+    {"model": "task_manager.position", "pk": 20, "fields": {"name": "Scrum Master"}},
+    {
+        "model": "task_manager.position",
+        "pk": 21,
+        "fields": {"name": "Chief Technology Officer"}},
+    {"model": "task_manager.tasktype", "pk": 1, "fields": {"name": "Bug Fix"}},
+    {
+        "model": "task_manager.tasktype",
+        "pk": 2,
+        "fields": {"name": "Feature Development"}},
+    {"model": "task_manager.tasktype", "pk": 3, "fields": {"name": "Code Review"}},
+    {"model": "task_manager.tasktype", "pk": 4, "fields": {"name": "Refactoring"}},
+    {"model": "task_manager.tasktype", "pk": 5, "fields": {"name": "Testing"}},
+    {"model": "task_manager.tasktype", "pk": 6, "fields": {"name": "Documentation"}},
+    {"model": "task_manager.tasktype", "pk": 7, "fields": {"name": "Deployment"}},
+    {"model": "task_manager.tasktype", "pk": 8, "fields": {"name": "Security Audit"}},
+    {
+        "model": "task_manager.tasktype",
+        "pk": 9,
+        "fields": {"name": "Performance Optimization"}},
+    {
+        "model": "task_manager.tasktype",
+        "pk": 10,
+        "fields": {"name": "Database Migration"}},
+    {"model": "task_manager.tasktype", "pk": 11, "fields": {"name": "API Development"}},
+    {
+        "model": "task_manager.tasktype",
+        "pk": 12,
+        "fields": {"name": "UI/UX Improvement"}},
+    {
+        "model": "task_manager.tasktype",
+        "pk": 13,
+        "fields": {"name": "User Feedback Handling"}},
+    {
+        "model": "task_manager.tasktype",
+        "pk": 14,
+        "fields": {"name": "Server Maintenance"}},
+    {
+        "model": "task_manager.tasktype",
+        "pk": 15,
+        "fields": {"name": "System Integration"}},
+    {
+        "model": "task_manager.tasktype",
+        "pk": 16,
+        "fields": {"name": "Monitoring and Logging"}},
+    {
+        "model": "task_manager.tasktype",
+        "pk": 17,
+        "fields": {"name": "Infrastructure Setup"}},
+    {
+        "model": "task_manager.tasktype",
+        "pk": 18,
+        "fields": {"name": "Penetration Testing"}},
+    {
+        "model": "task_manager.tasktype",
+        "pk": 19,
+        "fields": {"name": "Legal Compliance Check"}},
+    {"model": "task_manager.tasktype", "pk": 20, "fields": {"name": "Data Analysis"}},
+    {
+        "model": "task_manager.worker",
+        "pk": 1,
+        "fields": {
+            "password": "pbkdf2_sha256$870000$Xfjm3hFaEbvXUc48o0vTKX$/LJv+r6jkeQvcSfXqaDt4kuqkTYV2lVeyhwOGOo4i84=",
+            "last_login": null,
+            "is_superuser": true,
+            "username": "Admin",
+            "first_name": "Victor",
+            "last_name": "Derek",
+            "email": "admin@gmail.com",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2025-02-11T09:50:25.817Z",
+            "position": 21,
+            "level": 4,
+            "groups": [],
+            "user_permissions": []}},
+    {
+        "model": "task_manager.worker",
+        "pk": 2,
+        "fields": {
+            "password": "",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "asmith",
+            "first_name": "Alice",
+            "last_name": "Smith",
+            "email": "asmith@yahoo.com",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2025-02-11T09:50:25.818Z",
+            "position": 5,
+            "level": 2,
+            "groups": [],
+            "user_permissions": []}},
+    {
+        "model": "task_manager.worker",
+        "pk": 3,
+        "fields": {
+            "password": "",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "bwayne",
+            "first_name": "Bruce",
+            "last_name": "Wayne",
+            "email": "bwayne@wayneenterprises.com",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2025-02-11T09:50:25.818Z",
+            "position": 3,
+            "level": 3,
+            "groups": [],
+            "user_permissions": []}},
+    {
+        "model": "task_manager.worker",
+        "pk": 4,
+        "fields": {
+            "password": "",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "ckent",
+            "first_name": "Clark",
+            "last_name": "Kent",
+            "email": "ckent@dailyplanet.com",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2025-02-11T09:50:25.818Z",
+            "position": 6,
+            "level": 1,
+            "groups": [],
+            "user_permissions": []}},
+    {
+        "model": "task_manager.worker",
+        "pk": 5,
+        "fields": {
+            "password": "",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "dpeters",
+            "first_name": "Diana",
+            "last_name": "Peters",
+            "email": "dpeters@amazon.com",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2025-02-11T09:50:25.819Z",
+            "position": 5,
+            "level": 4,
+            "groups": [],
+            "user_permissions": []}},
+    {
+        "model": "task_manager.worker",
+        "pk": 6,
+        "fields": {
+            "password": "",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "robby",
+            "first_name": "Robert",
+            "last_name": "Martinez",
+            "email": "marty221@company.com",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2025-02-11T09:50:25.819Z",
+            "position": 12,
+            "level": 2,
+            "groups": [],
+            "user_permissions": []}},
+    {
+        "model": "task_manager.worker",
+        "pk": 7,
+        "fields": {
+            "password": "",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "daemon",
+            "first_name": "David",
+            "last_name": "Brown",
+            "email": "david_brown@company.com",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2025-02-11T09:50:25.819Z",
+            "position": 19,
+            "level": 0,
+            "groups": [],
+            "user_permissions": []}},
+    {
+        "model": "task_manager.worker",
+        "pk": 8,
+        "fields": {
+            "password": "",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "jdoe",
+            "first_name": "John",
+            "last_name": "Doe",
+            "email": "jdoe@gmail.com",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2025-02-11T09:50:25.819Z",
+            "position": 7,
+            "level": 3,
+            "groups": [],
+            "user_permissions": []}},
+    {
+        "model": "task_manager.team",
+        "pk": 1,
+        "fields": {
+            "name": "DevOps",
+            "description": "Team working on specialized tasks"}},
+    {
+        "model": "task_manager.team",
+        "pk": 2,
+        "fields": {
+            "name": "Customer Support",
+            "description": "Team working on specialized tasks"}},
+    {
+        "model": "task_manager.team",
+        "pk": 3,
+        "fields": {
+            "name": "AI Research",
+            "description": "Team working on specialized tasks"}},
+    {
+        "model": "task_manager.team",
+        "pk": 4,
+        "fields": {"name": "Bravo", "description": "Team working on specialized tasks"}},
+    {
+        "model": "task_manager.project",
+        "pk": 1,
+        "fields": {
+            "name": "E-commerce Platform",
+            "description": "An online store with multiple vendors and payment integrations.",
+            "start_date": "2024-12-24",
+            "deadline": "2023-11-09",
+            "completion_date": null,
+            "is_completed_in_time": 0,
+            "is_completed": false,
+            "duration": null}},
+    {
+        "model": "task_manager.project",
+        "pk": 2,
+        "fields": {
+            "name": "AI Chatbot",
+            "description": "A chatbot that uses NLP to interact with customers.",
+            "start_date": "2025-11-18",
+            "deadline": "2025-07-31",
+            "completion_date": null,
+            "is_completed_in_time": -1,
+            "is_completed": false,
+            "duration": null}},
+    {
+        "model": "task_manager.project",
+        "pk": 3,
+        "fields": {
+            "name": "Financial Dashboard",
+            "description": "A dashboard for real-time financial analytics.",
+            "start_date": "2024-03-28",
+            "deadline": "2023-09-19",
+            "completion_date": null,
+            "is_completed_in_time": 1,
+            "is_completed": true,
+            "duration": null}},
+    {
+        "model": "task_manager.project",
+        "pk": 4,
+        "fields": {
+            "name": "Social Media App",
+            "description": "A mobile app that connects people based on shared interests.",
+            "start_date": "2022-01-11",
+            "deadline": "2024-12-15",
+            "completion_date": null,
+            "is_completed_in_time": -1,
+            "is_completed": true,
+            "duration": null}},
+    {
+        "model": "task_manager.project",
+        "pk": 5,
+        "fields": {
+            "name": "Cybersecurity Suite",
+            "description": "An enterprise security software with real-time threat detection.",
+            "start_date": "2022-02-28",
+            "deadline": "2024-05-10",
+            "completion_date": null,
+            "is_completed_in_time": 1,
+            "is_completed": false,
+            "duration": null}},
+    {
+        "model": "task_manager.task",
+        "pk": 1,
+        "fields": {
+            "name": "Implement User Authentication",
+            "description": "Set up OAuth2 and JWT authentication.",
+            "start_time": "2024-07-27T21:00:00Z",
+            "completion_time": null,
+            "deadline": "2025-04-12T21:00:00Z",
+            "is_completed": true,
+            "is_completed_in_time": null,
+            "priority": 3,
+            "project": 4,
+            "created_by": 4,
+            "tasktype": [5, 6, 11, 13, 17, 19]}},
+    {
+        "model": "task_manager.task",
+        "pk": 2,
+        "fields": {
+            "name": "Design Landing Page",
+            "description": "Create a responsive landing page for the website.",
+            "start_time": "2023-09-21T21:00:00Z",
+            "completion_time": null,
+            "deadline": "2024-02-04T22:00:00Z",
+            "is_completed": true,
+            "is_completed_in_time": null,
+            "priority": 4,
+            "project": 1,
+            "created_by": 5,
+            "tasktype": [4, 10, 16]}},
+    {
+        "model": "task_manager.task",
+        "pk": 3,
+        "fields": {
+            "name": "Deploy Application",
+            "description": "Automate CI/CD pipeline for deployment.",
+            "start_time": "2024-12-30T22:00:00Z",
+            "completion_time": null,
+            "deadline": "2024-06-07T21:00:00Z",
+            "is_completed": false,
+            "is_completed_in_time": null,
+            "priority": 5,
+            "project": 5,
+            "created_by": 4,
+            "tasktype": [2, 5, 7, 14, 15]}},
+    {
+        "model": "task_manager.task",
+        "pk": 4,
+        "fields": {
+            "name": "Optimize Database Queries",
+            "description": "Improve SQL queries for faster response times.",
+            "start_time": "2025-01-05T22:00:00Z",
+            "completion_time": null,
+            "deadline": "2025-01-29T22:00:00Z",
+            "is_completed": false,
+            "is_completed_in_time": null,
+            "priority": 2,
+            "project": 4,
+            "created_by": 5,
+            "tasktype": [1, 2, 3, 4, 5, 6, 7]}},
+    {
+        "model": "task_manager.task",
+        "pk": 5,
+        "fields": {
+            "name": "Write Unit Tests",
+            "description": "Ensure code coverage with automated tests.",
+            "start_time": "2023-07-07T21:00:00Z",
+            "completion_time": null,
+            "deadline": "2023-11-08T22:00:00Z",
+            "is_completed": true,
+            "is_completed_in_time": null,
+            "priority": 3,
+            "project": 1,
+            "created_by": 3,
+            "tasktype": [1, 5, 9, 12, 14, 18]}},
+    {
+        "model": "task_manager.positionresponsibility",
+        "pk": 1,
+        "fields": {"position": 1, "responsibility": 1}},
+    {
+        "model": "task_manager.positionresponsibility",
+        "pk": 2,
+        "fields": {"position": 1, "responsibility": 17}},
+    {
+        "model": "task_manager.positionresponsibility",
+        "pk": 3,
+        "fields": {"position": 1, "responsibility": 3}},
+    {
+        "model": "task_manager.positionresponsibility",
+        "pk": 4,
+        "fields": {"position": 1, "responsibility": 12}},
+    {
+        "model": "task_manager.positionresponsibility",
+        "pk": 5,
+        "fields": {"position": 1, "responsibility": 5}},
+    {
+        "model": "task_manager.positionresponsibility",
+        "pk": 6,
+        "fields": {"position": 2, "responsibility": 2}},
+    {
+        "model": "task_manager.positionresponsibility",
+        "pk": 7,
+        "fields": {"position": 2, "responsibility": 20}},
+    {
+        "model": "task_manager.positionresponsibility",
+        "pk": 8,
+        "fields": {"position": 2, "responsibility": 30}},
+    {
+        "model": "task_manager.positionresponsibility",
+        "pk": 9,
+        "fields": {"position": 2, "responsibility": 23}},
+    {
+        "model": "task_manager.positionresponsibility",
+        "pk": 10,
+        "fields": {"position": 2, "responsibility": 8}},
+    {
+        "model": "task_manager.positionresponsibility",
+        "pk": 11,
+        "fields": {"position": 2, "responsibility": 14}},
+    {
+        "model": "task_manager.positionresponsibility",
+        "pk": 12,
+        "fields": {"position": 3, "responsibility": 18}},
+    {
+        "model": "task_manager.positionresponsibility",
+        "pk": 13,
+        "fields": {"position": 3, "responsibility": 6}},
+    {
+        "model": "task_manager.positionresponsibility",
+        "pk": 14,
+        "fields": {"position": 3, "responsibility": 9}},
+    {
+        "model": "task_manager.positionresponsibility",
+        "pk": 15,
+        "fields": {"position": 3, "responsibility": 13}},
+    {
+        "model": "task_manager.positionresponsibility",
+        "pk": 16,
+        "fields": {"position": 3, "responsibility": 25}},
+    {
+        "model": "task_manager.positionresponsibility",
+        "pk": 17,
+        "fields": {"position": 4, "responsibility": 16}},
+    {
+        "model": "task_manager.positionresponsibility",
+        "pk": 18,
+        "fields": {"position": 4, "responsibility": 4}},
+    {
+        "model": "task_manager.positionresponsibility",
+        "pk": 19,
+        "fields": {"position": 4, "responsibility": 22}},
+    {
+        "model": "task_manager.positionresponsibility",
+        "pk": 20,
+        "fields": {"position": 4, "responsibility": 7}},
+    {
+        "model": "task_manager.positionresponsibility",
+        "pk": 21,
+        "fields": {"position": 4, "responsibility": 27}},
+    {
+        "model": "task_manager.positionresponsibility",
+        "pk": 22,
+        "fields": {"position": 4, "responsibility": 11}},
+    {
+        "model": "task_manager.positionresponsibility",
+        "pk": 23,
+        "fields": {"position": 5, "responsibility": 19}},
+    {
+        "model": "task_manager.positionresponsibility",
+        "pk": 24,
+        "fields": {"position": 5, "responsibility": 21}},
+    {
+        "model": "task_manager.positionresponsibility",
+        "pk": 25,
+        "fields": {"position": 5, "responsibility": 7}},
+    {
+        "model": "task_manager.positionresponsibility",
+        "pk": 26,
+        "fields": {"position": 5, "responsibility": 26}},
+    {
+        "model": "task_manager.positionresponsibility",
+        "pk": 27,
+        "fields": {"position": 5, "responsibility": 15}},
+    {
+        "model": "task_manager.positionresponsibility",
+        "pk": 28,
+        "fields": {"position": 6, "responsibility": 28}},
+    {
+        "model": "task_manager.positionresponsibility",
+        "pk": 29,
+        "fields": {"position": 6, "responsibility": 12}},
+    {
+        "model": "task_manager.positionresponsibility",
+        "pk": 30,
+        "fields": {"position": 6, "responsibility": 5}},
+    {
+        "model": "task_manager.positionresponsibility",
+        "pk": 31,
+        "fields": {"position": 6, "responsibility": 31}},
+    {
+        "model": "task_manager.positionresponsibility",
+        "pk": 32,
+        "fields": {"position": 7, "responsibility": 32}},
+    {
+        "model": "task_manager.positionresponsibility",
+        "pk": 33,
+        "fields": {"position": 7, "responsibility": 29}},
+    {
+        "model": "task_manager.positionresponsibility",
+        "pk": 34,
+        "fields": {"position": 7, "responsibility": 13}},
+    {
+        "model": "task_manager.positionresponsibility",
+        "pk": 35,
+        "fields": {"position": 7, "responsibility": 6}},
+    {
+        "model": "task_manager.positionresponsibility",
+        "pk": 36,
+        "fields": {"position": 8, "responsibility": 20}},
+    {
+        "model": "task_manager.positionresponsibility",
+        "pk": 37,
+        "fields": {"position": 8, "responsibility": 14}},
+    {
+        "model": "task_manager.positionresponsibility",
+        "pk": 38,
+        "fields": {"position": 9, "responsibility": 33}},
+    {
+        "model": "task_manager.positionresponsibility",
+        "pk": 39,
+        "fields": {"position": 10, "responsibility": 16}},
+    {
+        "model": "task_manager.positionresponsibility",
+        "pk": 40,
+        "fields": {"position": 10, "responsibility": 35}},
+    {
+        "model": "task_manager.positionresponsibility",
+        "pk": 41,
+        "fields": {"position": 10, "responsibility": 4}},
+    {
+        "model": "task_manager.positionresponsibility",
+        "pk": 42,
+        "fields": {"position": 10, "responsibility": 22}},
+    {
+        "model": "task_manager.positionresponsibility",
+        "pk": 43,
+        "fields": {"position": 10, "responsibility": 11}},
+    {
+        "model": "task_manager.positionresponsibility",
+        "pk": 44,
+        "fields": {"position": 11, "responsibility": 19}},
+    {
+        "model": "task_manager.positionresponsibility",
+        "pk": 45,
+        "fields": {"position": 11, "responsibility": 36}},
+    {
+        "model": "task_manager.positionresponsibility",
+        "pk": 46,
+        "fields": {"position": 11, "responsibility": 7}},
+    {
+        "model": "task_manager.positionresponsibility",
+        "pk": 47,
+        "fields": {"position": 11, "responsibility": 26}},
+    {
+        "model": "task_manager.positionresponsibility",
+        "pk": 48,
+        "fields": {"position": 11, "responsibility": 15}},
+    {
+        "model": "task_manager.positionresponsibility",
+        "pk": 49,
+        "fields": {"position": 13, "responsibility": 26}},
+    {
+        "model": "task_manager.positionresponsibility",
+        "pk": 50,
+        "fields": {"position": 13, "responsibility": 21}},
+    {
+        "model": "task_manager.positionresponsibility",
+        "pk": 51,
+        "fields": {"position": 13, "responsibility": 7}},
+    {
+        "model": "task_manager.positionresponsibility",
+        "pk": 52,
+        "fields": {"position": 13, "responsibility": 10}},
+    {
+        "model": "task_manager.positionresponsibility",
+        "pk": 53,
+        "fields": {"position": 13, "responsibility": 15}},
+    {
+        "model": "task_manager.positionresponsibility",
+        "pk": 54,
+        "fields": {"position": 14, "responsibility": 2}},
+    {
+        "model": "task_manager.positionresponsibility",
+        "pk": 55,
+        "fields": {"position": 14, "responsibility": 20}},
+    {
+        "model": "task_manager.positionresponsibility",
+        "pk": 56,
+        "fields": {"position": 14, "responsibility": 30}},
+    {
+        "model": "task_manager.positionresponsibility",
+        "pk": 57,
+        "fields": {"position": 14, "responsibility": 8}},
+    {
+        "model": "task_manager.positionresponsibility",
+        "pk": 58,
+        "fields": {"position": 14, "responsibility": 14}},
+    {
+        "model": "task_manager.positionresponsibility",
+        "pk": 59,
+        "fields": {"position": 15, "responsibility": 16}},
+    {
+        "model": "task_manager.positionresponsibility",
+        "pk": 60,
+        "fields": {"position": 15, "responsibility": 3}},
+    {
+        "model": "task_manager.positionresponsibility",
+        "pk": 61,
+        "fields": {"position": 15, "responsibility": 38}},
+    {
+        "model": "task_manager.positionresponsibility",
+        "pk": 62,
+        "fields": {"position": 15, "responsibility": 22}},
+    {
+        "model": "task_manager.positionresponsibility",
+        "pk": 63,
+        "fields": {"position": 15, "responsibility": 11}},
+    {
+        "model": "task_manager.positionresponsibility",
+        "pk": 64,
+        "fields": {"position": 16, "responsibility": 1}},
+    {
+        "model": "task_manager.positionresponsibility",
+        "pk": 65,
+        "fields": {"position": 16, "responsibility": 17}},
+    {
+        "model": "task_manager.positionresponsibility",
+        "pk": 66,
+        "fields": {"position": 16, "responsibility": 3}},
+    {
+        "model": "task_manager.positionresponsibility",
+        "pk": 67,
+        "fields": {"position": 16, "responsibility": 5}},
+    {
+        "model": "task_manager.positionresponsibility",
+        "pk": 68,
+        "fields": {"position": 16, "responsibility": 24}},
+    {
+        "model": "task_manager.positionresponsibility",
+        "pk": 69,
+        "fields": {"position": 16, "responsibility": 12}},
+    {
+        "model": "task_manager.positionresponsibility",
+        "pk": 70,
+        "fields": {"position": 17, "responsibility": 33}},
+    {
+        "model": "task_manager.positionresponsibility",
+        "pk": 71,
+        "fields": {"position": 17, "responsibility": 10}},
+    {
+        "model": "task_manager.positionresponsibility",
+        "pk": 72,
+        "fields": {"position": 17, "responsibility": 18}},
+    {
+        "model": "task_manager.positionresponsibility",
+        "pk": 73,
+        "fields": {"position": 17, "responsibility": 21}},
+    {
+        "model": "task_manager.positionresponsibility",
+        "pk": 74,
+        "fields": {"position": 18, "responsibility": 16}},
+    {
+        "model": "task_manager.positionresponsibility",
+        "pk": 75,
+        "fields": {"position": 18, "responsibility": 4}},
+    {
+        "model": "task_manager.positionresponsibility",
+        "pk": 76,
+        "fields": {"position": 18, "responsibility": 22}},
+    {
+        "model": "task_manager.positionresponsibility",
+        "pk": 77,
+        "fields": {"position": 18, "responsibility": 27}},
+    {
+        "model": "task_manager.positionresponsibility",
+        "pk": 78,
+        "fields": {"position": 18, "responsibility": 11}},
+    {
+        "model": "task_manager.positionresponsibility",
+        "pk": 79,
+        "fields": {"position": 19, "responsibility": 8}},
+    {
+        "model": "task_manager.positionresponsibility",
+        "pk": 80,
+        "fields": {"position": 19, "responsibility": 2}},
+    {
+        "model": "task_manager.positionresponsibility",
+        "pk": 81,
+        "fields": {"position": 19, "responsibility": 14}},
+    {
+        "model": "task_manager.positionresponsibility",
+        "pk": 82,
+        "fields": {"position": 19, "responsibility": 23}},
+    {
+        "model": "task_manager.positionresponsibility",
+        "pk": 83,
+        "fields": {"position": 20, "responsibility": 25}},
+    {
+        "model": "task_manager.positionresponsibility",
+        "pk": 84,
+        "fields": {"position": 20, "responsibility": 18}},
+    {
+        "model": "task_manager.positionresponsibility",
+        "pk": 85,
+        "fields": {"position": 20, "responsibility": 6}},
+    {
+        "model": "task_manager.positionresponsibility",
+        "pk": 86,
+        "fields": {"position": 21, "responsibility": 1}},
+    {
+        "model": "task_manager.positionresponsibility",
+        "pk": 87,
+        "fields": {"position": 21, "responsibility": 2}},
+    {
+        "model": "task_manager.positionresponsibility",
+        "pk": 88,
+        "fields": {"position": 21, "responsibility": 20}},
+    {
+        "model": "task_manager.positionresponsibility",
+        "pk": 89,
+        "fields": {"position": 21, "responsibility": 23}},
+    {
+        "model": "task_manager.positionresponsibility",
+        "pk": 90,
+        "fields": {"position": 21, "responsibility": 8}},
+    {
+        "model": "task_manager.positionresponsibility",
+        "pk": 91,
+        "fields": {"position": 21, "responsibility": 14}},
+    {"model": "task_manager.teamworker", "pk": 1, "fields": {"team": 1, "worker": 2}},
+    {"model": "task_manager.teamworker", "pk": 2, "fields": {"team": 1, "worker": 5}},
+    {"model": "task_manager.teamworker", "pk": 3, "fields": {"team": 2, "worker": 8}},
+    {"model": "task_manager.teamworker", "pk": 4, "fields": {"team": 2, "worker": 6}},
+    {"model": "task_manager.teamworker", "pk": 5, "fields": {"team": 3, "worker": 1}},
+    {"model": "task_manager.teamworker", "pk": 6, "fields": {"team": 3, "worker": 6}},
+    {"model": "task_manager.teamworker", "pk": 7, "fields": {"team": 4, "worker": 3}},
+    {"model": "task_manager.teamworker", "pk": 8, "fields": {"team": 4, "worker": 4}},
+    {"model": "task_manager.teamworker", "pk": 9, "fields": {"team": 4, "worker": 7}},
+    {
+        "model": "task_manager.soloworkeronproject",
+        "pk": 1,
+        "fields": {"project": 4, "worker": 8}},
+    {
+        "model": "task_manager.soloworkeronproject",
+        "pk": 2,
+        "fields": {"project": 4, "worker": 5}},
+    {
+        "model": "task_manager.soloworkeronproject",
+        "pk": 3,
+        "fields": {"project": 1, "worker": 2}},
+    {
+        "model": "task_manager.soloworkeronproject",
+        "pk": 4,
+        "fields": {"project": 1, "worker": 3}},
+    {
+        "model": "task_manager.soloworkeronproject",
+        "pk": 5,
+        "fields": {"project": 1, "worker": 4}},
+    {
+        "model": "task_manager.soloworkeronproject",
+        "pk": 6,
+        "fields": {"project": 1, "worker": 6}},
+    {
+        "model": "task_manager.soloworkeronproject",
+        "pk": 7,
+        "fields": {"project": 3, "worker": 8}},
+    {
+        "model": "task_manager.soloworkeronproject",
+        "pk": 8,
+        "fields": {"project": 3, "worker": 6}},
+    {
+        "model": "task_manager.soloworkeronproject",
+        "pk": 9,
+        "fields": {"project": 5, "worker": 1}},
+    {
+        "model": "task_manager.soloworkeronproject",
+        "pk": 10,
+        "fields": {"project": 5, "worker": 2}},
+    {
+        "model": "task_manager.soloworkeronproject",
+        "pk": 11,
+        "fields": {"project": 5, "worker": 3}},
+    {
+        "model": "task_manager.soloworkeronproject",
+        "pk": 12,
+        "fields": {"project": 5, "worker": 4}},
+    {
+        "model": "task_manager.soloworkeronproject",
+        "pk": 13,
+        "fields": {"project": 5, "worker": 5}},
+    {
+        "model": "task_manager.soloworkeronproject",
+        "pk": 14,
+        "fields": {"project": 5, "worker": 6}},
+    {
+        "model": "task_manager.soloworkeronproject",
+        "pk": 15,
+        "fields": {"project": 5, "worker": 7}},
+    {
+        "model": "task_manager.soloworkeronproject",
+        "pk": 16,
+        "fields": {"project": 5, "worker": 8}},
+    {
+        "model": "task_manager.teamonproject",
+        "pk": 1,
+        "fields": {"project": 4, "team": 3}},
+    {
+        "model": "task_manager.teamonproject",
+        "pk": 2,
+        "fields": {"project": 4, "team": 4}},
+    {
+        "model": "task_manager.teamonproject",
+        "pk": 4,
+        "fields": {"project": 1, "team": 2}},
+    {
+        "model": "task_manager.teamonproject",
+        "pk": 6,
+        "fields": {"project": 2, "team": 2}},
+    {
+        "model": "task_manager.teamonproject",
+        "pk": 7,
+        "fields": {"project": 2, "team": 4}},
+    {"model": "task_manager.workertask", "pk": 1, "fields": {"task": 3, "worker": 8}},
+    {"model": "task_manager.workertask", "pk": 2, "fields": {"task": 3, "worker": 4}},
+    {"model": "task_manager.workertask", "pk": 3, "fields": {"task": 2, "worker": 8}},
+    {"model": "task_manager.workertask", "pk": 4, "fields": {"task": 2, "worker": 1}},
+    {"model": "task_manager.workertask", "pk": 5, "fields": {"task": 2, "worker": 5}},
+    {"model": "task_manager.workertask", "pk": 6, "fields": {"task": 5, "worker": 1}},
+    {"model": "task_manager.workertask", "pk": 7, "fields": {"task": 5, "worker": 2}},
+    {"model": "task_manager.workertask", "pk": 8, "fields": {"task": 5, "worker": 3}},
+    {"model": "task_manager.workertask", "pk": 9, "fields": {"task": 5, "worker": 4}},
+    {"model": "task_manager.workertask", "pk": 10, "fields": {"task": 5, "worker": 5}},
+    {"model": "task_manager.workertask", "pk": 11, "fields": {"task": 5, "worker": 6}},
+    {"model": "task_manager.workertask", "pk": 12, "fields": {"task": 5, "worker": 7}},
+    {"model": "task_manager.workertask", "pk": 13, "fields": {"task": 5, "worker": 8}},
+    {"model": "task_manager.workertask", "pk": 14, "fields": {"task": 1, "worker": 8}},
+    {"model": "task_manager.workertask", "pk": 15, "fields": {"task": 1, "worker": 1}},
+    {"model": "task_manager.workertask", "pk": 16, "fields": {"task": 1, "worker": 5}},
+    {"model": "task_manager.workertask", "pk": 17, "fields": {"task": 1, "worker": 7}},
+    {"model": "task_manager.workertask", "pk": 18, "fields": {"task": 4, "worker": 2}},
+    {"model": "task_manager.workertask", "pk": 19, "fields": {"task": 4, "worker": 3}},
+    {"model": "task_manager.workertask", "pk": 20, "fields": {"task": 4, "worker": 5}},
+    {"model": "task_manager.workertask", "pk": 21, "fields": {"task": 4, "worker": 6}}]

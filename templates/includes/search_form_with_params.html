@@ -1,0 +1,14 @@
+{% load custom_filters %}
+<div class="container d-flex justify-content-center">
+  <form method="get">
+    <select name="field">
+      {% for field in allowed_fields %}
+        <option value="{{ field }}" {% if request.GET.field == field %}selected{% endif %}>
+          {{ field|title|before_underscore }}
+        </option>
+      {% endfor %}
+    </select>
+    <input type="text" name="query" placeholder="Search..." value="{{ request.GET.query }}">
+    <button type="submit">🔍</button>
+  </form>
+</div>

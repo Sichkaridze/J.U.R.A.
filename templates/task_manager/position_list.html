@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+    <br>
+  <div class="d-flex align-items-center">
+    <h2>Positions:</h2>
+    <a href="{% url 'task-manager:position-create' %}" class="btn link-to-page">➕</a>
+    {% include 'includes/search_form_with_params.html' %}
+  </div>
+    <br>
+    {% if position_list %}
+    <table class="table">
+      <tr>
+        <th>Name</th>
+        <th>Responsibilities</th>
+        <th></th>
+      </tr>
+      <br>
+    {% for position in position_list %}
+      <tr>
+        <td><a class="text-highlight" href="{% url 'task-manager:position-update' pk=position.id %}">{{ position.name }}</a></td>
+        <td> {% for responsibility in position.responsibilities.all %} {{ responsibility }}<br> {% endfor %}</td>
+        <td style="width: 1%;"><a class="btn float-end me-5" href="{% url 'task-manager:position-delete' pk=position.id %}">❌</a></td>
+      </tr>
+    {% endfor %}
+
+    </table>
+    {% else %}
+      <p>There are no positions yet!</p>
+    {% endif %}
+{% endblock %}

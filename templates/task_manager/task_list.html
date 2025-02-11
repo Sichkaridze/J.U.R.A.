@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block content %}
+    <br>
+  <div class="d-flex align-items-center">
+    <h2>Tasks:
+      <a href="{% url 'task-manager:task-create' %}" class="btn link-to-page">➕</a>
+    </h2>
+    {% include 'includes/search_form_with_params.html' %}
+  </div>
+    <br>
+    {% if task_list %}
+    <table class="table">
+      <tr>
+        <th>Task</th>
+        <th>Task type</th>
+        <th>Deadline</th>
+        <th>Priority</th>
+        <th></th>
+      </tr>
+      <br>
+    {% for task in task_list %}
+      <tr>
+        <td><a class="text-highlight" href="{% url 'task-manager:task-detail' pk=task.id %}">{{ task.name }}</a></td>
+        <td> {% for res in task.tasktype.all %} {{ res }}<br> {% endfor %}</td>
+        <td>{{ task.deadline }}</td>
+        <td>{{ task.priority }}</td>
+        <td style="width: 1%;">
+          <div class="btn-group float-end me-5">
+            <a class="btn" href="{% url 'task-manager:task-update' pk=task.id %}">✏️</a>
+            <a class="btn" href="{% url 'task-manager:task-delete' pk=task.id %}">❌</a>
+            <a class="btn" href="{% url 'task-manager:task-done' pk=task.id %}">✅</a>
+          </div>
+        </td>
+      </tr>
+    {% endfor %}
+
+    </table>
+    {% else %}
+      <p>There are no tasks yet!</p>
+    {% endif %}
+{% endblock %}
