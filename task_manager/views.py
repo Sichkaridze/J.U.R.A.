@@ -64,7 +64,7 @@ class PositionListView(SearchMixin, ListView):
     paginate_by = 3
 
     def get_queryset(self):
-        return Position.objects.prefetch_related("responsibilities").all()
+        return super().get_queryset().prefetch_related("responsibilities").all()
 
 
 class PositionDetailView(DetailView):
@@ -123,7 +123,7 @@ class WorkerListView(SearchMixin, ListView):
     QUERY_FIELDS = ["username", "first_name", "last_name", "position", "level"]
 
     def get_queryset(self):
-        return Worker.objects.select_related("position").all()
+        return super().get_queryset().select_related("position").all()
 
 class WorkerDetailView(DetailView):
     model = Worker
@@ -154,7 +154,7 @@ class TeamListView(SearchMixin, ListView):
     QUERY_FIELDS = ["name", "members__username", "description"]
 
     def get_queryset(self):
-        return Team.objects.prefetch_related("members").all()
+        return super().get_queryset().prefetch_related("members").all()
 
 class TeamDetailView(DetailView):
     model = Team
@@ -185,7 +185,7 @@ class ProjectListView(SearchMixin, ListView):
     QUERY_FIELDS = ["name"]
 
     def get_queryset(self):
-        return Project.objects.select_related().prefetch_related("tasks").all()
+        return super().get_queryset().select_related().prefetch_related("tasks").all()
 
 class ProjectDetailView(DetailView):
     model = Project
@@ -216,7 +216,7 @@ class TaskListView(SearchMixin, ListView):
     QUERY_FIELDS = ["name", "task_type__name", "priority"]
 
     def get_queryset(self):
-        return Task.objects.select_related("project").prefetch_related("task_types").all()
+        return super().get_queryset().select_related("project").prefetch_related("task_types").all()
 
 class TaskDetailView(DetailView):
     model = Task
