@@ -63,6 +63,9 @@ class PositionListView(SearchMixin, ListView):
     QUERY_FIELDS = ["name", "responsibilities__description"]
     paginate_by = 3
 
+    def get_queryset(self):
+        return Position.objects.prefetch_related("responsibilities").all()
+
 
 class PositionDetailView(DetailView):
     model = Position
@@ -119,6 +122,9 @@ class WorkerListView(SearchMixin, ListView):
     model = Worker
     QUERY_FIELDS = ["username", "first_name", "last_name", "position", "level"]
 
+    def get_queryset(self):
+        return Worker.objects.select_related("position").all()
+
 class WorkerDetailView(DetailView):
     model = Worker
 
@@ -146,6 +152,9 @@ class WorkerDeleteView(DeleteView):
 class TeamListView(SearchMixin, ListView):
     model = Team
     QUERY_FIELDS = ["name", "members__username", "description"]
+
+    def get_queryset(self):
+        return Team.objects.prefetch_related("members").all()
 
 class TeamDetailView(DetailView):
     model = Team
@@ -175,6 +184,9 @@ class ProjectListView(SearchMixin, ListView):
     model = Project
     QUERY_FIELDS = ["name"]
 
+    def get_queryset(self):
+        return Project.objects.select_related("manager").prefetch_related("tasks").all()
+
 class ProjectDetailView(DetailView):
     model = Project
 
@@ -202,6 +214,9 @@ class ProjectDeleteView(DeleteView):
 class TaskListView(SearchMixin, ListView):
     model = Task
     QUERY_FIELDS = ["name", "tasktype__name", "priority"]
+
+    def get_queryset(self):
+        return Task.objects.select_related("assigned_to", "project").prefetch_related("tags").all()
 
 class TaskDetailView(DetailView):
     model = Task
