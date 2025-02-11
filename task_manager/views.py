@@ -213,7 +213,7 @@ class ProjectDeleteView(DeleteView):
 
 class TaskListView(SearchMixin, ListView):
     model = Task
-    QUERY_FIELDS = ["name", "task_type__name", "priority"]
+    QUERY_FIELDS = ["name", "task_types__name", "priority"]
 
     def get_queryset(self):
         return super().get_queryset().select_related("project").prefetch_related("task_types").all()
