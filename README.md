@@ -101,9 +101,17 @@ Follow the instructions to set up the admin credentials.
 Or use the existing one:
 
 #### Username: Admin
-#### Password: SampleAdmin
+#### Password: AdminSample
 
-### 8. Enable Django Support in PyCharm (Optional)
+### 8. Loading Test Data
+
+To populate the database with test data, use the following command:
+
+```sh
+  python manage.py loaddata test_data.json
+```
+
+### 9. Enable Django Support in PyCharm (Optional)
 
 If you are using PyCharm, follow these steps to enable Django framework support:
 
@@ -127,7 +135,7 @@ To run the Django server directly from PyCharm:
 
 Now you can run the server directly from PyCharm.
 
-### 9. Run the Development Server
+### 10. Run the Development Server
 ```sh
   python manage.py runserver
 ```
