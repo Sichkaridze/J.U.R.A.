@@ -15,13 +15,13 @@
     <br>
     <h3 class="mb-4">Quick Links</h3>
     <ul class="list-unstyled">
-        <li><a href="/task-types/" class="d-block py-2">📌 Task Types</a></li>
-        <li><a href="/responsibilities/" class="d-block py-2">📎 Responsibilities</a></li>
-        <li><a href="/positions/" class="d-block py-2">🎭 Positions</a></li>
-        <li><a href="/workers/" class="d-block py-2">👨‍💻 Workers</a></li>
-        <li><a href="/teams/" class="d-block py-2">👥 Teams</a></li>
-        <li><a href="/projects/" class="d-block py-2">📂 Projects</a></li>
-        <li><a href="/tasks/" class="d-block py-2">📝 Tasks</a></li>
+        <li><a href="{% url 'task-manager:responsibilities-list' %}" class="d-block py-2">📎 Responsibilities</a></li>
+        <li><a href="{% url 'task-manager:positions-list' %}" class="d-block py-2">🎭 Positions</a></li>
+        <li><a href="{% url 'task-manager:workers-list' %}" class="d-block py-2">👨‍💻 Workers</a></li>
+        <li><a href="{% url 'task-manager:teams-list' %}" class="d-block py-2">👥 Teams</a></li>
+        <li><a href="{% url 'task-manager:projects-list' %}" class="d-block py-2">📂 Projects</a></li>
+        <li><a href="{% url 'task-manager:task-types-list' %}" class="d-block py-2">📌 Task Types</a></li>
+        <li><a href="{% url 'task-manager:tasks-list' %}" class="d-block py-2">📝 Tasks</a></li>
         <li><a href="#/archive/" class="d-block py-2">🗄️️ Archive (Awaiting...)</a></li>
     </ul>
     <h3 class="mt-4">Resources</h3>
