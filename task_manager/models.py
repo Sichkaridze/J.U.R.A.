@@ -106,7 +106,7 @@ class Task(models.Model):
     is_completed = models.BooleanField(default=False)
     is_completed_in_time = models.IntegerField(choices=CompletionStatus.choices, null=True, blank=True, default=None)
     priority = models.IntegerField(choices=Priority.choices, default=Priority.NORMAL)
-    tasktype = models.ManyToManyField(TaskType, related_name="tasktypes")
+    task_types = models.ManyToManyField(TaskType, related_name="tasks")
     project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name='tasks', null=True)
     workers = models.ManyToManyField(Worker, through='WorkerTask', related_name='tasks')
     created_by = models.ForeignKey(Worker, on_delete=models.SET_DEFAULT, default=1, related_name='created_tasks')

@@ -2,7 +2,7 @@ from django.contrib.auth import login
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
-from django.views import generic, View
+from django.views import View
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 
 from task_manager.forms import WorkerCreateForm, WorkerUpdateForm, TeamForm, ProjectForm, TaskForm, PositionForm, \
@@ -185,7 +185,7 @@ class ProjectListView(SearchMixin, ListView):
     QUERY_FIELDS = ["name"]
 
     def get_queryset(self):
-        return Project.objects.select_related("manager").prefetch_related("tasks").all()
+        return Project.objects.select_related().prefetch_related("tasks").all()
 
 class ProjectDetailView(DetailView):
     model = Project
@@ -213,10 +213,10 @@ class ProjectDeleteView(DeleteView):
 
 class TaskListView(SearchMixin, ListView):
     model = Task
-    QUERY_FIELDS = ["name", "tasktype__name", "priority"]
+    QUERY_FIELDS = ["name", "task_type__name", "priority"]
 
     def get_queryset(self):
-        return Task.objects.select_related("assigned_to", "project").prefetch_related("tags").all()
+        return Task.objects.select_related("project").prefetch_related("task_types").all()
 
 class TaskDetailView(DetailView):
     model = Task

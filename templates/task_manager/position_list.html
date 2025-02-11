@@ -17,7 +17,7 @@
       <br>
     {% for position in position_list %}
       <tr>
-        <td><a class="text-highlight" href="{% url 'task-manager:position-update' pk=position.id %}">{{ position.name }}</a></td>
+        <td><a class="text-highlight" href="{% url 'task-manager:position-detail' pk=position.id %}">{{ position.name }}</a></td>
         <td> {% for responsibility in position.responsibilities.all %} {{ responsibility }}<br> {% endfor %}</td>
         <td style="width: 1%;"><a class="btn float-end me-5" href="{% url 'task-manager:position-delete' pk=position.id %}">❌</a></td>
       </tr>
