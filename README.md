@@ -5,7 +5,7 @@
 
 The project is deployed on Render:
 
-<a href="https://j-u-r-a.onrender.com/" target="_blank">🔗 J.U.R.A. Live Demo</a>
+🔗 [J.U.R.A. Live Demo](https://j-u-r-a.onrender.com/) (To open in a new tab: **Cmd + click** or **Ctrl + click** )  
 
 Credentials for DEMO:
  - #### Username: Admin
