@@ -3,9 +3,10 @@
 
 ## Live Demo
 
-The project is deployed on Render:
+The project is deployed on Render:  
+(To open in a new tab: **Cmd + click** or **Ctrl + click** )  
 
-🔗 [J.U.R.A. Live Demo](https://j-u-r-a.onrender.com/) (To open in a new tab: **Cmd + click** or **Ctrl + click** )  
+🔗 [J.U.R.A. Live Demo](https://j-u-r-a.onrender.com/) 
 
 Credentials for DEMO:
  - #### Username: Admin
