@@ -7,6 +7,10 @@ The project is deployed on Render:
 
 🔗 [J.U.R.A. Live Demo](https://j-u-r-a.onrender.com/)
 
+Credentials for DEMO:
+ - #### Username: Admin
+ - #### Password: AdminSample
+
 🕒 Please note: Since the application is hosted on a free-tier service,
 it may take about a minute to start if it’s been inactive.
 The server automatically shuts down after 15 minutes of inactivity.
