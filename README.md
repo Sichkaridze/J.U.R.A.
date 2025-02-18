@@ -16,6 +16,13 @@ Credentials for DEMO:
 it may take about a minute to start if it’s been inactive.
 The server automatically shuts down after 15 minutes of inactivity.
 
+## Here are some sneak peeks of how it may look when you open the link 👇
+
+<img width="1680" alt="Screenshot 2025-02-18 at 19 38 48" src="https://github.com/user-attachments/assets/e812c614-902e-4156-a4fa-eb1e72bc5e22" />  
+
+---  
+
+<img width="1680" alt="Screenshot 2025-02-18 at 19 38 34" src="https://github.com/user-attachments/assets/be74536f-65b2-4e86-bd29-3acc17c04dad" />
 
 ## Overview
 J.U.R.A. is a task management system designed for IT companies, built with Django and Bootstrap. The project provides efficient task tracking, team management, and project organization features.  
